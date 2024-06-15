@@ -95,9 +95,26 @@
 		{{/each}}
 	</select>
 	{{#each masteries}}
-	<input type="checkbox" name="attr_tradeMastery" value="{{this}}">
+	<input type="checkbox" name="attr_tradeMastery" value="{{this}}" title="{{capitalize @key}}">
 	{{/each}}
 	<input type="number" name="attr_tradeModifier" value="0" readonly>
+</fieldset>
+
+<span>Languages</span>
+<fieldset class="repeating_language">
+	<select>
+		<option value="none" selected disabled>Choose</option>
+		{{#each language-lists as |list|}}
+		<optgroup label="{{@key}}">
+			{{#each list as |language|}}
+			<option>{{titleize language}}</option>
+			{{/each}}
+		</optgroup>
+		{{/each}}
+	</select>
+	{{#each language-masteries}}
+	<input type="checkbox" title="{{capitalize this}}">
+	{{/each}}
 </fieldset>
 
 {{#each points}}

@@ -23,6 +23,13 @@
 		"master": 8,
 		"grandmaster": 10
 	},
+	"language-masteries": ["limited", "fluent"],
+	"language-lists": {
+		"Mortal": ["common", "human", "dwarven", "elvish", "gnomish", "halfling"],
+		"Exotic": ["draconic", "giant", "fey", "orcish", "elemental"],
+		"Divine": ["celestial", "fiend"],
+		"Outer": ["deep speech"]
+	},
 	"points": ["stamina", "mana", "hit"],
 	"defenses": ["physical", "mystical"],
 	"stats": ["might", "agility", "charisma", "intelligence"],

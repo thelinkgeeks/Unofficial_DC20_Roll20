@@ -173,12 +173,43 @@
 		<option value="charisma">Charisma</option>
 		<option value="intelligence">Intelligence</option>
 	</select>
-	<input type="checkbox" name="attr_tradeMastery" value="2">
-	<input type="checkbox" name="attr_tradeMastery" value="4">
-	<input type="checkbox" name="attr_tradeMastery" value="6">
-	<input type="checkbox" name="attr_tradeMastery" value="8">
-	<input type="checkbox" name="attr_tradeMastery" value="10">
+	<input type="checkbox" name="attr_tradeMastery" value="2" title="Novice">
+	<input type="checkbox" name="attr_tradeMastery" value="4" title="Adept">
+	<input type="checkbox" name="attr_tradeMastery" value="6" title="Expert">
+	<input type="checkbox" name="attr_tradeMastery" value="8" title="Master">
+	<input type="checkbox" name="attr_tradeMastery" value="10" title="Grandmaster">
 	<input type="number" name="attr_tradeModifier" value="0" readonly>
+</fieldset>
+
+<span>Languages</span>
+<fieldset class="repeating_language">
+	<select>
+		<option value="none" selected disabled>Choose</option>
+		<optgroup label="Mortal">
+			<option>Common</option>
+			<option>Human</option>
+			<option>Dwarven</option>
+			<option>Elvish</option>
+			<option>Gnomish</option>
+			<option>Halfling</option>
+		</optgroup>
+		<optgroup label="Exotic">
+			<option>Draconic</option>
+			<option>Giant</option>
+			<option>Fey</option>
+			<option>Orcish</option>
+			<option>Elemental</option>
+		</optgroup>
+		<optgroup label="Divine">
+			<option>Celestial</option>
+			<option>Fiend</option>
+		</optgroup>
+		<optgroup label="Outer">
+			<option>Deep Speech</option>
+		</optgroup>
+	</select>
+	<input type="checkbox" title="Limited">
+	<input type="checkbox" title="Fluent">
 </fieldset>
 
 <span>Stamina Points</span>
