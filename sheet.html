@@ -163,6 +163,24 @@
 <input type="checkbox" name="attr_skill8Mastery" value="10">
 <input type="number" name="attr_skill8" value="-2" readonly>
 
+<span>Trades</span>
+<fieldset class="repeating_trade">
+	<input type="text" name="attr_tradeName" placeholder="Name">
+	<select name="attr_tradeStat">
+		<option value="none" selected disabled>Choose</option>
+		<option value="might">Might</option>
+		<option value="agility">Agility</option>
+		<option value="charisma">Charisma</option>
+		<option value="intelligence">Intelligence</option>
+	</select>
+	<input type="checkbox" name="attr_tradeMastery" value="2">
+	<input type="checkbox" name="attr_tradeMastery" value="4">
+	<input type="checkbox" name="attr_tradeMastery" value="6">
+	<input type="checkbox" name="attr_tradeMastery" value="8">
+	<input type="checkbox" name="attr_tradeMastery" value="10">
+	<input type="number" name="attr_tradeModifier" value="0" readonly>
+</fieldset>
+
 <span>Stamina Points</span>
 <input type="number" name="attr_staminaPoints" value="0">
 <span>Max</span>
@@ -206,7 +224,31 @@ on("change:level", () => {
 			combatMastery: mastery
 		});
 	});
-})
+});
+
+on("change:might change:agility change:charisma change:intelligence", () => {
+	getSectionIDs('repeating_trade', ids => {
+		const trades = [];
+
+		ids.forEach(id => trades.push({"stat": `repeating_trade_${id}_tradeStat`, "mastery": `repeating_trade_${id}_tradeMastery`, "mod": `repeating_trade_${id}_tradeModifier`}));
+
+		for(let i = 0; i < trades.length; i++) {
+			getAttrs([trades[i].stat, trades[i].mastery, trades[i].mod, "might", "agility", "charisma", "intelligence"], values => {
+				const stat = values[trades[i].stat];
+				const might = +values.might || 0;
+				const agility = +values.agility || 0;
+				const charisma = +values.charisma || 0;
+				const intelligence = +values.intelligence || 0;
+				const mastery = +values[trades[i].mastery] || 0;
+				const total = stat == "might" ? might + mastery : stat == "agility" ? agility + mastery : stat == "charisma" ? charisma + mastery : intelligence + mastery;
+				console.log(mastery)
+				setAttrs({
+					[trades[i].mod]: total
+				});
+			});
+		}
+	});
+});
 
 on("change:might change:level", () => {
 	getAttrs(["might", "level"], values => {
@@ -554,6 +596,22 @@ on("change:skill8Mastery change:intelligence", () => {
 			});
 		});
 
+on("change:repeating_trade:tradeStat change:repeating_trade:tradeMastery", () => {
+	getAttrs(["repeating_trade_tradeStat"], values => {
+		const stat = values.repeating_trade_tradeStat || "";
+
+		getAttrs(["repeating_trade_tradeMastery", stat], values => {
+			const statMod = +values[stat] || 0;
+			const mastery = +values.repeating_trade_tradeMastery || 0;
+			const total = statMod + mastery;
+
+			setAttrs({
+				"repeating_trade_tradeModifier": total
+			});
+		});
+	});
+});
+
 function section_name(section, id, field) {
 	return `repeating_${section}_${id}_${field}`;
 }
@@ -595,21 +653,6 @@ function section_name(section, id, field) {
 		//});
 	//});
 
-//	
-//		on('change:prime', eventInfo => {
-//			getAttrs(['points', prime], values => {
-//				console.log(eventInfo.previousValue, values.prime)
-//				const prime = +values.prime || 0;
-//				const previous = +eventInfo.previousValue || 0;
-//				const difference = previous - prime;
-//				const points = +values.points || 0;
-//				const total = points - difference;
-//
-//				setAttrs({
-//					points: total
-//				});
-//			});
-//		});
 //	
 //		on('change:might', eventInfo => {
 //			getAttrs(['points', might], values => {

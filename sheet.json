@@ -25,6 +25,6 @@
 	},
 	"points": ["stamina", "mana", "hit"],
 	"defenses": ["physical", "mystical"],
-	"tabs": ["character", "npc", "charmancer"],
-	"stats": ["prime", "might", "agility", "charisma", "intelligence"]
+	"stats": ["might", "agility", "charisma", "intelligence"],
+	"tabs": ["character", "npc", "charmancer"]
 }
