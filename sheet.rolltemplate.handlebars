@@ -52,6 +52,10 @@
 {{#each skillsList as |skills|}}
 <span>{{capitalize @key}}</span>
 <input type="number" name="attr_{{@key}}" value="-2" min="-2" />
+<span>Save</span>
+<input type="hidden" name="attr_{{@key}}Save" value="-2">
+<span type="number" name="attr_{{@key}}Save"></span>
+<input type="checkbox" name="attr_{{@key}}SaveMastery">
 {{#each skills as |skill|}}
 <span>{{capitalize skill}}</span>
 {{#each @root.masteries as |mastery|}}
