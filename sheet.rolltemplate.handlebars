@@ -55,27 +55,28 @@
 {{#each skills as |skill|}}
 <span>{{capitalize skill}}</span>
 {{#each @root.masteries as |mastery|}}
-<input type="checkbox" name="attr_{{skill}}-mastery" value="{{mastery}}">
+<input type="checkbox" name="attr_{{skill}}Mastery" value="{{mastery}}">
 {{/each}}
+<input type="hidden" name="attr_{{skill}}" value="-2">
 <span name="attr_{{skill}}"></span>
 {{/each}}
 {{/each}}
 
 <script type="text/worker">
 {{#each skillsList as |skills|}}
-	on("change:{{@key}}", () => {
-		getAttrs(["{{@key}}"], values => {
-			const score = +values.{{@key}} || 0;
-			let output = {};
+	{{#each skills as |skill|}}
+		on("change:{{skill}}Mastery change:{{@../key}}", () => {
+			getAttrs(["{{skill}}Mastery", "{{@../key}}"], values => {
+				const stat = +values.{{@../key}} || 0;
+				const mastery = +values.{{skill}}Mastery || 0;
+				const total = stat + mastery;
 
-			{{#each skills as |skill|}}
-			output["{{skill}}"] = score;
-			{{/each}}
-
-			setAttrs(output);
+				setAttrs({
+					"{{skill}}": total
+				});
+			});
 		});
-	});
-
+	{{/each}}
 {{/each}}
 
 //	on("clicked:character clicked:charmancer clicked:npc", eventInfo => {
