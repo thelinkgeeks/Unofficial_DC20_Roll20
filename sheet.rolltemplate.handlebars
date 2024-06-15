@@ -73,6 +73,16 @@
 {{/each}}
 {{/each}}
 
+{{#each points}}
+<span>{{capitalize this}} Points</span>
+<input type="number" name="attr_{{this}}Points" value="0">
+<span>Max</span>
+<input type="number" name="attr_{{this}}Points_max" value="0" readonly>
+{{/each}}
+
+<span>Temp</span>
+<input type="number" name="attr_tempHitPoints" value="0">
+
 <script type="text/worker">
 on("change:level", () => {
 	getAttrs(["level"], values => {
@@ -84,6 +94,18 @@ on("change:level", () => {
 		});
 	});
 })
+
+on("change:might change:level", () => {
+	getAttrs(["might", "level"], values => {
+		const might = +values.might || 0;
+		const level = +values.level || 1;
+		const total = 6 + level + might;
+
+		setAttrs({
+			"hitPoints_max": total
+		});
+	});
+});
 
 {{#each skillsList as |skills|}}
 	on("change:{{@key}}SaveMastery change:{{@key}}", () => {

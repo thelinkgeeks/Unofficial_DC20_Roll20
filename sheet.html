@@ -149,6 +149,22 @@
 <input type="checkbox" name="attr_religionMastery" value="10">
 <input type="number" name="attr_religion" value="-2" readonly>
 
+<span>Stamina Points</span>
+<input type="number" name="attr_staminaPoints" value="0">
+<span>Max</span>
+<input type="number" name="attr_staminaPoints_max" value="0" readonly>
+<span>Mana Points</span>
+<input type="number" name="attr_manaPoints" value="0">
+<span>Max</span>
+<input type="number" name="attr_manaPoints_max" value="0" readonly>
+<span>Hit Points</span>
+<input type="number" name="attr_hitPoints" value="0">
+<span>Max</span>
+<input type="number" name="attr_hitPoints_max" value="0" readonly>
+
+<span>Temp</span>
+<input type="number" name="attr_tempHitPoints" value="0">
+
 <script type="text/worker">
 on("change:level", () => {
 	getAttrs(["level"], values => {
@@ -160,6 +176,18 @@ on("change:level", () => {
 		});
 	});
 })
+
+on("change:might change:level", () => {
+	getAttrs(["might", "level"], values => {
+		const might = +values.might || 0;
+		const level = +values.level || 1;
+		const total = 6 + level + might;
+
+		setAttrs({
+			"hitPoints_max": total
+		});
+	});
+});
 
 	on("change:primeSaveMastery change:prime", () => {
 		getAttrs(["prime", "combatMastery", "primeSaveMastery"], values => {
