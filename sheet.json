@@ -1,0 +1,26 @@
+{
+	"skillsList": {
+		"prime": ["awareness"],
+		"might": ["athletics", "intimidation"],
+		"agility": ["acrobatics", "trickery", "stealth"],
+		"charisma": ["animal", "influence", "stealth"],
+		"intelligence": [
+			"investigation",
+			"medicine",
+			"survival",
+			"arcana",
+			"history",
+			"nature",
+			"religion"
+		]
+	},
+	"masteries": {
+		"novice": 2,
+		"adept": 4,
+		"expert": 6,
+		"master": 8,
+		"grandmaster": 10
+	},
+	"tabs": ["character", "npc", "charmancer"],
+	"stats": ["prime", "might", "agility", "charisma", "intelligence"]
+}
