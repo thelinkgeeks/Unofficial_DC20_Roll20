@@ -22,6 +22,7 @@
 		"grandmaster": 10
 	},
 	"points": ["stamina", "mana", "hit"],
+	"defenses": ["physical", "mystical"],
 	"tabs": ["character", "npc", "charmancer"],
 	"stats": ["prime", "might", "agility", "charisma", "intelligence"]
 }

@@ -165,6 +165,23 @@
 <span>Temp</span>
 <input type="number" name="attr_tempHitPoints" value="0">
 
+<span>Physical Defense</span>
+<input type="number" name="attr_physicalDefense" value="0" readonly>
+<span>Heavy</span>
+<input type="number" name="attr_physicalHeavy" value="0" readonly>
+<span>Brutal</span>
+<input type="number" name="attr_physicalBrutal" value="0" readonly>
+<span>Physical Damage Reduction</span>
+<input type="number" name="attr_physicalDamageReduction" value="0">
+<span>Mystical Defense</span>
+<input type="number" name="attr_mysticalDefense" value="0" readonly>
+<span>Heavy</span>
+<input type="number" name="attr_mysticalHeavy" value="0" readonly>
+<span>Brutal</span>
+<input type="number" name="attr_mysticalBrutal" value="0" readonly>
+<span>Mystical Damage Reduction</span>
+<input type="number" name="attr_mysticalDamageReduction" value="0">
+
 <script type="text/worker">
 on("change:level", () => {
 	getAttrs(["level"], values => {
@@ -185,6 +202,36 @@ on("change:might change:level", () => {
 
 		setAttrs({
 			"hitPoints_max": total
+		});
+	});
+});
+
+on("change:agility change:armorBonus change:combatMastery", () => {
+	getAttrs(["agility", "armorBonus", "combatMastery"], values => {
+		const agility = +values.agility || 0;
+		const armorBonus = +values.armorBonus || 0;
+		const cm = +values.combatMastery || 0;
+		const total = 8 + cm + agility + armorBonus;
+
+		setAttrs({
+			"physicalDefense": total,
+			"physicalHeavy": total + 5,
+			"physicalBrutal": total + 10
+		});
+	});
+});
+
+on("change:charisma change:intelligence change:combatMastery", () => {
+	getAttrs(["charisma", "intelligence", "combatMastery"], values => {
+		const charisma = +values.charisma || 0;
+		const intelligence = +values.intelligence || 0;
+		const cm = +values.combatMastery || 0;
+		const total = 8 + cm + charisma + intelligence;
+
+		setAttrs({
+			"mysticalDefense": total,
+			"mysticalHeavy": total + 5,
+			"mysticalBrutal": total + 10
 		});
 	});
 });
