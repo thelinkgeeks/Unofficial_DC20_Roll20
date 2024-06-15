@@ -65,11 +65,23 @@
 <input type="number" name="attr_{{@key}}Save" value="-2" readonly>
 <input type="checkbox" name="attr_{{@key}}SaveMastery" value="1">
 {{#each skills as |skill|}}
+{{#if skill}}
 <span>{{capitalize skill}}</span>
+{{else}}
+<input type="text" name="attr_skill{{@index}}Name">
+{{/if}}
 {{#each @root.masteries as |mastery|}}
+{{#if skill}}
 <input type="checkbox" name="attr_{{skill}}Mastery" value="{{mastery}}">
+{{else}}
+<input type="checkbox" name="attr_skill{{@../index}}Mastery" value="{{mastery}}">
+{{/if}}
 {{/each}}
+{{#if skill}}
 <input type="number" name="attr_{{skill}}" value="-2" readonly>
+{{else}}
+<input type="number" name="attr_skill{{@index}}" value="-2" readonly>
+{{/if}}
 {{/each}}
 {{/each}}
 
@@ -148,6 +160,30 @@ on("change:charisma change:intelligence change:combatMastery", () => {
 	});
 });
 
+on("change:skill7Mastery change:intelligence", () => {
+	getAttrs(["skill7Mastery", "intelligence"], values => {
+		const mastery = +values.skill7Mastery || 0;
+		const intelligence = +values.intelligence || 0;
+		const total = intelligence + mastery;
+
+		setAttrs({
+			"skill7": total
+		});
+	});
+});
+
+on("change:skill8Mastery change:intelligence", () => {
+	getAttrs(["skill8Mastery", "intelligence"], values => {
+		const mastery = +values.skill8Mastery || 0;
+		const intelligence = +values.intelligence || 0;
+		const total = intelligence + mastery;
+
+		setAttrs({
+			"skill8": total
+		});
+	});
+});
+
 {{#each skillsList as |skills|}}
 	on("change:{{@key}}SaveMastery change:{{@key}}", () => {
 		getAttrs(["{{@key}}", "combatMastery", "{{@key}}SaveMastery"], values => {
@@ -156,7 +192,7 @@ on("change:charisma change:intelligence change:combatMastery", () => {
 			const sm = +values.{{@key}}SaveMastery || 0;
 			let total = stat;
 
-			if (values.{{@key}}SaveMastery == 1) {
+			if (sm == 1) {
 				total = stat + cm;
 			}
 
@@ -182,6 +218,10 @@ on("change:charisma change:intelligence change:combatMastery", () => {
 		});
 	{{/each}}
 {{/each}}
+
+function section_name(section, id, field) {
+	return `repeating_${section}_${id}_${field}`;
+}
 
 //	on("clicked:character clicked:charmancer clicked:npc", eventInfo => {
 //		getAttrs(["character", "charmancer", "npc"], values => {

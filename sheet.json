@@ -3,7 +3,7 @@
 		"prime": ["awareness"],
 		"might": ["athletics", "intimidation"],
 		"agility": ["acrobatics", "trickery", "stealth"],
-		"charisma": ["animal", "influence", "stealth"],
+		"charisma": ["animal", "influence", "insight"],
 		"intelligence": [
 			"investigation",
 			"medicine",
@@ -11,7 +11,9 @@
 			"arcana",
 			"history",
 			"nature",
-			"religion"
+			"religion",
+			"",
+			""
 		]
 	},
 	"masteries": {
