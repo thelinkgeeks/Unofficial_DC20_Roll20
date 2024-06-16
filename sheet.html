@@ -269,6 +269,58 @@
 	<input type="number" name="attr_attackModifier" value="-1" readonly>
 </div>
 
+<div>
+	<span>Attacks</span>
+	<fieldset class="repeating_attack">
+		<span>Name</span>
+		<input type="text" name="attr_attackName" placeholder="Name">
+		<span>Damage</span>
+		<input type="number" name="attr_attackDamage" value="0" min="0">
+		<span>Damage Type</span>
+		<input type="text" name="attr_attackType" placeholder="Damage Type">
+		<span>Special</span>
+		<textarea></textarea>
+	</fieldset>
+</div>
+
+<div>
+	<span>Death</span>
+	<span>Exhaustion</span>
+	<input type="hidden" name="attr_exhaustion" value="0">
+	<input type="checkbox" name="attr_exhaustion" value="-1">
+	<input type="checkbox" name="attr_exhaustion" value="-2">
+	<input type="checkbox" name="attr_exhaustion" value="-3">
+	<input type="checkbox" name="attr_exhaustion" value="-4">
+	<input type="checkbox" name="attr_exhaustion" value="-5">
+	<span>Death Threshold</span>
+	<input type="number" name="attr_deathThreshold" value="0" readonly>
+</div>
+
+<div>
+	<span>Move Speed</span>
+	<input type="number" name="attr_move" value="0" min="0">
+	<span>Jump Distance</span>
+	<input type="number" name="attr_jump" value="1" min="1" readonly>
+</div>
+
+<div>
+	<span>Resources</span>
+	<span>Name</span>
+	<span>Total</span>
+	<span>Max</span>
+	<span>Rest Points</span>
+	<input type="number" name="attr_restPoints" value="0" min="0">
+	<input type="number" name="attr_restPoints_max" value="0" readonly>
+	<span>Grit Points</span>
+	<input type="number" name="attr_gritPoints" value="0" min="0">
+	<input type="number" name="attr_gritPoints_max" value="0" readonly>
+	<fieldset class="repeating_resource">
+		<input type="text" name="attr_resourceName" placeholder="Name">
+		<input type="number" name="attr_resource" value="0" min="0">
+		<input type="number" name="attr_resource_max" value="0">
+	</fieldset>
+</div>
+
 <script type="text/worker">
 // COMBAT MASTERY and HIT POINTS
 // When the level is changed, set the combat mastery
@@ -288,7 +340,7 @@ on("change:might change:level", () => {
 	});
 });
 
-// PRIME STAT
+// STATS
 // When the stats are changed, set the prime stat
 on("change:might change:agility change:charisma change:intelligence", () => {
 	getAttrs(["might", "agility", "charisma", "intelligence"], values => {
@@ -674,6 +726,70 @@ on("change:charisma change:intelligence change:combatMastery", () => {
 			"mysticalDefense": total,
 			"mysticalHeavy": total + 5,
 			"mysticalBrutal": total + 10
+		});
+	});
+});
+
+//DEATH
+// When the prime is changed, set the death threshold
+on("change:prime", () => {
+	getAttrs(["prime"], values => {
+		const prime = +values.prime || 0;
+		let total = prime * -1;
+
+		if (prime < 0) {
+			total = 0;
+		}
+
+		setAttrs({
+			"deathThreshold": total
+		});
+	});
+});
+
+// JUMP
+// When the agility stat is changed, set the jump distance
+on("change:agility", () => {
+	getAttrs(["agility"], values => {
+		const agility = +values.agility || 0;
+		let total = agility;
+
+		if (agility < 0) {
+			total = 1;
+		}
+
+		setAttrs({
+			"jump": total
+		});
+	});
+});
+
+// RESOURCES
+// When the might stat or level is changed, set the rest points
+on("change:might change:level", () => {
+	getAttrs(["might", "level"], values => {
+		const might = +values.might || 0;
+		const level = +values.level || 0;
+		let total = level + might;
+
+		if (total < 0) {
+			total = 0;
+		}
+
+		setAttrs({
+			"restPoints_max": total
+		});
+	});
+});
+
+// When the charisma stat is changed, set the grit points
+on("change:charisma", () => {
+	getAttrs(["charisma"], values => {
+		const charisma = +values.charisma || 0;
+		const total = charisma + 2;
+
+		setAttrs({
+			"gritPoints_max": total
 		});
 	});
 });

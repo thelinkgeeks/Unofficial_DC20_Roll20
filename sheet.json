@@ -33,5 +33,6 @@
 	"points": ["stamina", "mana", "hit"],
 	"defenses": ["physical", "mystical"],
 	"stats": ["might", "agility", "charisma", "intelligence"],
+	"exhaustion": [-1, -2, -3, -4, -5],
 	"tabs": ["character", "npc", "charmancer"]
 }
