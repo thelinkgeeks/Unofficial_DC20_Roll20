@@ -154,7 +154,6 @@ on("change:might change:level", () => {
 	});
 });
 
-<<<<<<< HEAD
 // PRIME STAT
 // When the stats are changed, set the prime stat
 on("change:might change:agility change:charisma change:intelligence", () => {
@@ -242,8 +241,6 @@ on("change:skill7Mastery change:skill8Mastery change:intelligence", () => {
 
 // TRADES
 // When the stats are changed, set the trades modifiers
-=======
->>>>>>> 06f672e6d09358f070459cdfcd7eee9729a576fa
 on("change:might change:agility change:charisma change:intelligence", () => {
 	getSectionIDs('repeating_trade', ids => {
 		const trades = [];
@@ -259,11 +256,7 @@ on("change:might change:agility change:charisma change:intelligence", () => {
 				const intelligence = +values.intelligence || 0;
 				const mastery = +values[trades[i].mastery] || 0;
 				const total = stat == "might" ? might + mastery : stat == "agility" ? agility + mastery : stat == "charisma" ? charisma + mastery : intelligence + mastery;
-<<<<<<< HEAD
 
-=======
-				console.log(mastery)
->>>>>>> 06f672e6d09358f070459cdfcd7eee9729a576fa
 				setAttrs({
 					[trades[i].mod]: total
 				});
@@ -272,7 +265,6 @@ on("change:might change:agility change:charisma change:intelligence", () => {
 	});
 });
 
-<<<<<<< HEAD
 // When the trade stat or mastery is changed, set the trade modifier
 on("change:repeating_trade:tradeStat change:repeating_trade:tradeMastery", () => {
 	getAttrs(["repeating_trade_tradeStat"], values => {
@@ -300,25 +292,12 @@ on("change:prime change:combatMastery", () => {
 
 		setAttrs({
 			"attackModifier": total
-=======
-on("change:might change:level", () => {
-	getAttrs(["might", "level"], values => {
-		const might = +values.might || 0;
-		const level = +values.level || 1;
-		const total = 6 + level + might;
-
-		setAttrs({
-			"hitPoints_max": total
->>>>>>> 06f672e6d09358f070459cdfcd7eee9729a576fa
 		});
 	});
 });
 
-<<<<<<< HEAD
 // DEFENSES
 // When agility, armor bonus, or combat mastery is changed, set the physical defenses
-=======
->>>>>>> 06f672e6d09358f070459cdfcd7eee9729a576fa
 on("change:agility change:armorBonus change:combatMastery", () => {
 	getAttrs(["agility", "armorBonus", "combatMastery"], values => {
 		const agility = +values.agility || 0;
@@ -334,10 +313,7 @@ on("change:agility change:armorBonus change:combatMastery", () => {
 	});
 });
 
-<<<<<<< HEAD
 // When charisma, intelligence, or combat mastery is changed, set the mystical defenses
-=======
->>>>>>> 06f672e6d09358f070459cdfcd7eee9729a576fa
 on("change:charisma change:intelligence change:combatMastery", () => {
 	getAttrs(["charisma", "intelligence", "combatMastery"], values => {
 		const charisma = +values.charisma || 0;
@@ -352,5 +328,4 @@ on("change:charisma change:intelligence change:combatMastery", () => {
 		});
 	});
 });
-<<<<<<< HEAD
 </script>
