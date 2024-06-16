@@ -1,6 +1,6 @@
 {
 	"skillsList": {
-		"prime": ["awareness"],
+		"": ["awareness"],
 		"might": ["athletics", "intimidation"],
 		"agility": ["acrobatics", "trickery", "stealth"],
 		"charisma": ["animal", "influence", "insight"],

@@ -1,262 +1,595 @@
+<div>
+	<span>Player Name</span>
+	<input type="text" name="attr_playerName" placeholder="Enter Your Name">
+	<span>Character Name</span>
+	<input type="text" name="attr_character_name" placeholder="Enter Your Character's Name">
+	<span>Level</span>
+	<input type="number" name="attr_level" value="1" min="1">
+	<span>Combat Mastery</span>
+	<input type="text" name="attr_combatMastery" value="1" readonly>
+</div>
 
+<div>
+	<span>Prime</span>
+	<input type="number" name="attr_prime" value="-2" readonly>
+	<span>Awareness</span>
+	<input type="checkbox" name="attr_awarenessMastery" value="2" title="Novice">
+	<input type="checkbox" name="attr_awarenessMastery" value="4" title="Adept">
+	<input type="checkbox" name="attr_awarenessMastery" value="6" title="Expert">
+	<input type="checkbox" name="attr_awarenessMastery" value="8" title="Master">
+	<input type="checkbox" name="attr_awarenessMastery" value="10" title="Grandmaster">
+	<input type="number" name="attr_awareness" value="-2" readonly>
+	<span>Might</span>
+	<input type="number" name="attr_might" value="-2" min="-2" />
+	<span>Save</span>
+	<input type="number" name="attr_mightSave" value="-2" readonly>
+	<input type="checkbox" name="attr_mightSaveMastery" value="1" title="Save Mastery">
+	<span>Athletics</span>
+	<input type="checkbox" name="attr_athleticsMastery" value="2" title="Novice">
+	<input type="checkbox" name="attr_athleticsMastery" value="4" title="Adept">
+	<input type="checkbox" name="attr_athleticsMastery" value="6" title="Expert">
+	<input type="checkbox" name="attr_athleticsMastery" value="8" title="Master">
+	<input type="checkbox" name="attr_athleticsMastery" value="10" title="Grandmaster">
+	<input type="number" name="attr_athletics" value="-2" readonly>
+	<span>Intimidation</span>
+	<input type="checkbox" name="attr_intimidationMastery" value="2" title="Novice">
+	<input type="checkbox" name="attr_intimidationMastery" value="4" title="Adept">
+	<input type="checkbox" name="attr_intimidationMastery" value="6" title="Expert">
+	<input type="checkbox" name="attr_intimidationMastery" value="8" title="Master">
+	<input type="checkbox" name="attr_intimidationMastery" value="10" title="Grandmaster">
+	<input type="number" name="attr_intimidation" value="-2" readonly>
+	<span>Agility</span>
+	<input type="number" name="attr_agility" value="-2" min="-2" />
+	<span>Save</span>
+	<input type="number" name="attr_agilitySave" value="-2" readonly>
+	<input type="checkbox" name="attr_agilitySaveMastery" value="1" title="Save Mastery">
+	<span>Acrobatics</span>
+	<input type="checkbox" name="attr_acrobaticsMastery" value="2" title="Novice">
+	<input type="checkbox" name="attr_acrobaticsMastery" value="4" title="Adept">
+	<input type="checkbox" name="attr_acrobaticsMastery" value="6" title="Expert">
+	<input type="checkbox" name="attr_acrobaticsMastery" value="8" title="Master">
+	<input type="checkbox" name="attr_acrobaticsMastery" value="10" title="Grandmaster">
+	<input type="number" name="attr_acrobatics" value="-2" readonly>
+	<span>Trickery</span>
+	<input type="checkbox" name="attr_trickeryMastery" value="2" title="Novice">
+	<input type="checkbox" name="attr_trickeryMastery" value="4" title="Adept">
+	<input type="checkbox" name="attr_trickeryMastery" value="6" title="Expert">
+	<input type="checkbox" name="attr_trickeryMastery" value="8" title="Master">
+	<input type="checkbox" name="attr_trickeryMastery" value="10" title="Grandmaster">
+	<input type="number" name="attr_trickery" value="-2" readonly>
+	<span>Stealth</span>
+	<input type="checkbox" name="attr_stealthMastery" value="2" title="Novice">
+	<input type="checkbox" name="attr_stealthMastery" value="4" title="Adept">
+	<input type="checkbox" name="attr_stealthMastery" value="6" title="Expert">
+	<input type="checkbox" name="attr_stealthMastery" value="8" title="Master">
+	<input type="checkbox" name="attr_stealthMastery" value="10" title="Grandmaster">
+	<input type="number" name="attr_stealth" value="-2" readonly>
+	<span>Charisma</span>
+	<input type="number" name="attr_charisma" value="-2" min="-2" />
+	<span>Save</span>
+	<input type="number" name="attr_charismaSave" value="-2" readonly>
+	<input type="checkbox" name="attr_charismaSaveMastery" value="1" title="Save Mastery">
+	<span>Animal</span>
+	<input type="checkbox" name="attr_animalMastery" value="2" title="Novice">
+	<input type="checkbox" name="attr_animalMastery" value="4" title="Adept">
+	<input type="checkbox" name="attr_animalMastery" value="6" title="Expert">
+	<input type="checkbox" name="attr_animalMastery" value="8" title="Master">
+	<input type="checkbox" name="attr_animalMastery" value="10" title="Grandmaster">
+	<input type="number" name="attr_animal" value="-2" readonly>
+	<span>Influence</span>
+	<input type="checkbox" name="attr_influenceMastery" value="2" title="Novice">
+	<input type="checkbox" name="attr_influenceMastery" value="4" title="Adept">
+	<input type="checkbox" name="attr_influenceMastery" value="6" title="Expert">
+	<input type="checkbox" name="attr_influenceMastery" value="8" title="Master">
+	<input type="checkbox" name="attr_influenceMastery" value="10" title="Grandmaster">
+	<input type="number" name="attr_influence" value="-2" readonly>
+	<span>Insight</span>
+	<input type="checkbox" name="attr_insightMastery" value="2" title="Novice">
+	<input type="checkbox" name="attr_insightMastery" value="4" title="Adept">
+	<input type="checkbox" name="attr_insightMastery" value="6" title="Expert">
+	<input type="checkbox" name="attr_insightMastery" value="8" title="Master">
+	<input type="checkbox" name="attr_insightMastery" value="10" title="Grandmaster">
+	<input type="number" name="attr_insight" value="-2" readonly>
+	<span>Intelligence</span>
+	<input type="number" name="attr_intelligence" value="-2" min="-2" />
+	<span>Save</span>
+	<input type="number" name="attr_intelligenceSave" value="-2" readonly>
+	<input type="checkbox" name="attr_intelligenceSaveMastery" value="1" title="Save Mastery">
+	<span>Investigation</span>
+	<input type="checkbox" name="attr_investigationMastery" value="2" title="Novice">
+	<input type="checkbox" name="attr_investigationMastery" value="4" title="Adept">
+	<input type="checkbox" name="attr_investigationMastery" value="6" title="Expert">
+	<input type="checkbox" name="attr_investigationMastery" value="8" title="Master">
+	<input type="checkbox" name="attr_investigationMastery" value="10" title="Grandmaster">
+	<input type="number" name="attr_investigation" value="-2" readonly>
+	<span>Medicine</span>
+	<input type="checkbox" name="attr_medicineMastery" value="2" title="Novice">
+	<input type="checkbox" name="attr_medicineMastery" value="4" title="Adept">
+	<input type="checkbox" name="attr_medicineMastery" value="6" title="Expert">
+	<input type="checkbox" name="attr_medicineMastery" value="8" title="Master">
+	<input type="checkbox" name="attr_medicineMastery" value="10" title="Grandmaster">
+	<input type="number" name="attr_medicine" value="-2" readonly>
+	<span>Survival</span>
+	<input type="checkbox" name="attr_survivalMastery" value="2" title="Novice">
+	<input type="checkbox" name="attr_survivalMastery" value="4" title="Adept">
+	<input type="checkbox" name="attr_survivalMastery" value="6" title="Expert">
+	<input type="checkbox" name="attr_survivalMastery" value="8" title="Master">
+	<input type="checkbox" name="attr_survivalMastery" value="10" title="Grandmaster">
+	<input type="number" name="attr_survival" value="-2" readonly>
+	<span>Arcana</span>
+	<input type="checkbox" name="attr_arcanaMastery" value="2" title="Novice">
+	<input type="checkbox" name="attr_arcanaMastery" value="4" title="Adept">
+	<input type="checkbox" name="attr_arcanaMastery" value="6" title="Expert">
+	<input type="checkbox" name="attr_arcanaMastery" value="8" title="Master">
+	<input type="checkbox" name="attr_arcanaMastery" value="10" title="Grandmaster">
+	<input type="number" name="attr_arcana" value="-2" readonly>
+	<span>History</span>
+	<input type="checkbox" name="attr_historyMastery" value="2" title="Novice">
+	<input type="checkbox" name="attr_historyMastery" value="4" title="Adept">
+	<input type="checkbox" name="attr_historyMastery" value="6" title="Expert">
+	<input type="checkbox" name="attr_historyMastery" value="8" title="Master">
+	<input type="checkbox" name="attr_historyMastery" value="10" title="Grandmaster">
+	<input type="number" name="attr_history" value="-2" readonly>
+	<span>Nature</span>
+	<input type="checkbox" name="attr_natureMastery" value="2" title="Novice">
+	<input type="checkbox" name="attr_natureMastery" value="4" title="Adept">
+	<input type="checkbox" name="attr_natureMastery" value="6" title="Expert">
+	<input type="checkbox" name="attr_natureMastery" value="8" title="Master">
+	<input type="checkbox" name="attr_natureMastery" value="10" title="Grandmaster">
+	<input type="number" name="attr_nature" value="-2" readonly>
+	<span>Religion</span>
+	<input type="checkbox" name="attr_religionMastery" value="2" title="Novice">
+	<input type="checkbox" name="attr_religionMastery" value="4" title="Adept">
+	<input type="checkbox" name="attr_religionMastery" value="6" title="Expert">
+	<input type="checkbox" name="attr_religionMastery" value="8" title="Master">
+	<input type="checkbox" name="attr_religionMastery" value="10" title="Grandmaster">
+	<input type="number" name="attr_religion" value="-2" readonly>
+	<input type="text" name="attr_skill7Name">
+	<input type="checkbox" name="attr_skill7Mastery" value="2" title="Novice">
+	<input type="checkbox" name="attr_skill7Mastery" value="4" title="Adept">
+	<input type="checkbox" name="attr_skill7Mastery" value="6" title="Expert">
+	<input type="checkbox" name="attr_skill7Mastery" value="8" title="Master">
+	<input type="checkbox" name="attr_skill7Mastery" value="10" title="Grandmaster">
+	<input type="number" name="attr_skill7" value="-2" readonly>
+	<input type="text" name="attr_skill8Name">
+	<input type="checkbox" name="attr_skill8Mastery" value="2" title="Novice">
+	<input type="checkbox" name="attr_skill8Mastery" value="4" title="Adept">
+	<input type="checkbox" name="attr_skill8Mastery" value="6" title="Expert">
+	<input type="checkbox" name="attr_skill8Mastery" value="8" title="Master">
+	<input type="checkbox" name="attr_skill8Mastery" value="10" title="Grandmaster">
+	<input type="number" name="attr_skill8" value="-2" readonly>
+</div>
 
+<div>
+	<span>Trades</span>
+	<fieldset class="repeating_trade">
+		<input type="text" name="attr_tradeName" placeholder="Name">
+		<select name="attr_tradeStat">
+			<option value="none" selected disabled>Choose</option>
+			<option value="might">Might</option>
+			<option value="agility">Agility</option>
+			<option value="charisma">Charisma</option>
+			<option value="intelligence">Intelligence</option>
+		</select>
+		<input type="checkbox" name="attr_tradeMastery" value="2" title="Novice">
+		<input type="checkbox" name="attr_tradeMastery" value="4" title="Adept">
+		<input type="checkbox" name="attr_tradeMastery" value="6" title="Expert">
+		<input type="checkbox" name="attr_tradeMastery" value="8" title="Master">
+		<input type="checkbox" name="attr_tradeMastery" value="10" title="Grandmaster">
+		<input type="number" name="attr_tradeModifier" value="0" readonly>
+	</fieldset>
+</div>
 
-
-<span>Player Name</span>
-<input type="text" name="attr_playerName" placeholder="Enter Your Name">
-<span>Character Name</span>
-<input type="text" name="attr_character_name" placeholder="Enter Your Character's Name">
-<span>Level</span>
-<input type="number" name="attr_level" value="1">
-<span>Combat Mastery</span>
-<input type="text" name="attr_combatMastery" value="1" readonly>
-
-<span>Prime</span>
-<input type="number" name="attr_prime" value="-2" min="-2" />
-<span>Save</span>
-<input type="number" name="attr_primeSave" value="-2" readonly>
-<input type="checkbox" name="attr_primeSaveMastery" value="1">
-<span>Awareness</span>
-<input type="checkbox" name="attr_awarenessMastery" value="2">
-<input type="checkbox" name="attr_awarenessMastery" value="4">
-<input type="checkbox" name="attr_awarenessMastery" value="6">
-<input type="checkbox" name="attr_awarenessMastery" value="8">
-<input type="checkbox" name="attr_awarenessMastery" value="10">
-<input type="number" name="attr_awareness" value="-2" readonly>
-<span>Might</span>
-<input type="number" name="attr_might" value="-2" min="-2" />
-<span>Save</span>
-<input type="number" name="attr_mightSave" value="-2" readonly>
-<input type="checkbox" name="attr_mightSaveMastery" value="1">
-<span>Athletics</span>
-<input type="checkbox" name="attr_athleticsMastery" value="2">
-<input type="checkbox" name="attr_athleticsMastery" value="4">
-<input type="checkbox" name="attr_athleticsMastery" value="6">
-<input type="checkbox" name="attr_athleticsMastery" value="8">
-<input type="checkbox" name="attr_athleticsMastery" value="10">
-<input type="number" name="attr_athletics" value="-2" readonly>
-<span>Intimidation</span>
-<input type="checkbox" name="attr_intimidationMastery" value="2">
-<input type="checkbox" name="attr_intimidationMastery" value="4">
-<input type="checkbox" name="attr_intimidationMastery" value="6">
-<input type="checkbox" name="attr_intimidationMastery" value="8">
-<input type="checkbox" name="attr_intimidationMastery" value="10">
-<input type="number" name="attr_intimidation" value="-2" readonly>
-<span>Agility</span>
-<input type="number" name="attr_agility" value="-2" min="-2" />
-<span>Save</span>
-<input type="number" name="attr_agilitySave" value="-2" readonly>
-<input type="checkbox" name="attr_agilitySaveMastery" value="1">
-<span>Acrobatics</span>
-<input type="checkbox" name="attr_acrobaticsMastery" value="2">
-<input type="checkbox" name="attr_acrobaticsMastery" value="4">
-<input type="checkbox" name="attr_acrobaticsMastery" value="6">
-<input type="checkbox" name="attr_acrobaticsMastery" value="8">
-<input type="checkbox" name="attr_acrobaticsMastery" value="10">
-<input type="number" name="attr_acrobatics" value="-2" readonly>
-<span>Trickery</span>
-<input type="checkbox" name="attr_trickeryMastery" value="2">
-<input type="checkbox" name="attr_trickeryMastery" value="4">
-<input type="checkbox" name="attr_trickeryMastery" value="6">
-<input type="checkbox" name="attr_trickeryMastery" value="8">
-<input type="checkbox" name="attr_trickeryMastery" value="10">
-<input type="number" name="attr_trickery" value="-2" readonly>
-<span>Stealth</span>
-<input type="checkbox" name="attr_stealthMastery" value="2">
-<input type="checkbox" name="attr_stealthMastery" value="4">
-<input type="checkbox" name="attr_stealthMastery" value="6">
-<input type="checkbox" name="attr_stealthMastery" value="8">
-<input type="checkbox" name="attr_stealthMastery" value="10">
-<input type="number" name="attr_stealth" value="-2" readonly>
-<span>Charisma</span>
-<input type="number" name="attr_charisma" value="-2" min="-2" />
-<span>Save</span>
-<input type="number" name="attr_charismaSave" value="-2" readonly>
-<input type="checkbox" name="attr_charismaSaveMastery" value="1">
-<span>Animal</span>
-<input type="checkbox" name="attr_animalMastery" value="2">
-<input type="checkbox" name="attr_animalMastery" value="4">
-<input type="checkbox" name="attr_animalMastery" value="6">
-<input type="checkbox" name="attr_animalMastery" value="8">
-<input type="checkbox" name="attr_animalMastery" value="10">
-<input type="number" name="attr_animal" value="-2" readonly>
-<span>Influence</span>
-<input type="checkbox" name="attr_influenceMastery" value="2">
-<input type="checkbox" name="attr_influenceMastery" value="4">
-<input type="checkbox" name="attr_influenceMastery" value="6">
-<input type="checkbox" name="attr_influenceMastery" value="8">
-<input type="checkbox" name="attr_influenceMastery" value="10">
-<input type="number" name="attr_influence" value="-2" readonly>
-<span>Insight</span>
-<input type="checkbox" name="attr_insightMastery" value="2">
-<input type="checkbox" name="attr_insightMastery" value="4">
-<input type="checkbox" name="attr_insightMastery" value="6">
-<input type="checkbox" name="attr_insightMastery" value="8">
-<input type="checkbox" name="attr_insightMastery" value="10">
-<input type="number" name="attr_insight" value="-2" readonly>
-<span>Intelligence</span>
-<input type="number" name="attr_intelligence" value="-2" min="-2" />
-<span>Save</span>
-<input type="number" name="attr_intelligenceSave" value="-2" readonly>
-<input type="checkbox" name="attr_intelligenceSaveMastery" value="1">
-<span>Investigation</span>
-<input type="checkbox" name="attr_investigationMastery" value="2">
-<input type="checkbox" name="attr_investigationMastery" value="4">
-<input type="checkbox" name="attr_investigationMastery" value="6">
-<input type="checkbox" name="attr_investigationMastery" value="8">
-<input type="checkbox" name="attr_investigationMastery" value="10">
-<input type="number" name="attr_investigation" value="-2" readonly>
-<span>Medicine</span>
-<input type="checkbox" name="attr_medicineMastery" value="2">
-<input type="checkbox" name="attr_medicineMastery" value="4">
-<input type="checkbox" name="attr_medicineMastery" value="6">
-<input type="checkbox" name="attr_medicineMastery" value="8">
-<input type="checkbox" name="attr_medicineMastery" value="10">
-<input type="number" name="attr_medicine" value="-2" readonly>
-<span>Survival</span>
-<input type="checkbox" name="attr_survivalMastery" value="2">
-<input type="checkbox" name="attr_survivalMastery" value="4">
-<input type="checkbox" name="attr_survivalMastery" value="6">
-<input type="checkbox" name="attr_survivalMastery" value="8">
-<input type="checkbox" name="attr_survivalMastery" value="10">
-<input type="number" name="attr_survival" value="-2" readonly>
-<span>Arcana</span>
-<input type="checkbox" name="attr_arcanaMastery" value="2">
-<input type="checkbox" name="attr_arcanaMastery" value="4">
-<input type="checkbox" name="attr_arcanaMastery" value="6">
-<input type="checkbox" name="attr_arcanaMastery" value="8">
-<input type="checkbox" name="attr_arcanaMastery" value="10">
-<input type="number" name="attr_arcana" value="-2" readonly>
-<span>History</span>
-<input type="checkbox" name="attr_historyMastery" value="2">
-<input type="checkbox" name="attr_historyMastery" value="4">
-<input type="checkbox" name="attr_historyMastery" value="6">
-<input type="checkbox" name="attr_historyMastery" value="8">
-<input type="checkbox" name="attr_historyMastery" value="10">
-<input type="number" name="attr_history" value="-2" readonly>
-<span>Nature</span>
-<input type="checkbox" name="attr_natureMastery" value="2">
-<input type="checkbox" name="attr_natureMastery" value="4">
-<input type="checkbox" name="attr_natureMastery" value="6">
-<input type="checkbox" name="attr_natureMastery" value="8">
-<input type="checkbox" name="attr_natureMastery" value="10">
-<input type="number" name="attr_nature" value="-2" readonly>
-<span>Religion</span>
-<input type="checkbox" name="attr_religionMastery" value="2">
-<input type="checkbox" name="attr_religionMastery" value="4">
-<input type="checkbox" name="attr_religionMastery" value="6">
-<input type="checkbox" name="attr_religionMastery" value="8">
-<input type="checkbox" name="attr_religionMastery" value="10">
-<input type="number" name="attr_religion" value="-2" readonly>
-<input type="text" name="attr_skill7Name">
-<input type="checkbox" name="attr_skill7Mastery" value="2">
-<input type="checkbox" name="attr_skill7Mastery" value="4">
-<input type="checkbox" name="attr_skill7Mastery" value="6">
-<input type="checkbox" name="attr_skill7Mastery" value="8">
-<input type="checkbox" name="attr_skill7Mastery" value="10">
-<input type="number" name="attr_skill7" value="-2" readonly>
-<input type="text" name="attr_skill8Name">
-<input type="checkbox" name="attr_skill8Mastery" value="2">
-<input type="checkbox" name="attr_skill8Mastery" value="4">
-<input type="checkbox" name="attr_skill8Mastery" value="6">
-<input type="checkbox" name="attr_skill8Mastery" value="8">
-<input type="checkbox" name="attr_skill8Mastery" value="10">
-<input type="number" name="attr_skill8" value="-2" readonly>
-
-<span>Trades</span>
-<fieldset class="repeating_trade">
-	<input type="text" name="attr_tradeName" placeholder="Name">
-	<select name="attr_tradeStat">
-		<option value="none" selected disabled>Choose</option>
-		<option value="might">Might</option>
-		<option value="agility">Agility</option>
-		<option value="charisma">Charisma</option>
-		<option value="intelligence">Intelligence</option>
-	</select>
-	<input type="checkbox" name="attr_tradeMastery" value="2" title="Novice">
-	<input type="checkbox" name="attr_tradeMastery" value="4" title="Adept">
-	<input type="checkbox" name="attr_tradeMastery" value="6" title="Expert">
-	<input type="checkbox" name="attr_tradeMastery" value="8" title="Master">
-	<input type="checkbox" name="attr_tradeMastery" value="10" title="Grandmaster">
-	<input type="number" name="attr_tradeModifier" value="0" readonly>
-</fieldset>
-
-<span>Languages</span>
-<fieldset class="repeating_language">
-	<select>
-		<option value="none" selected disabled>Choose</option>
-		<optgroup label="Mortal">
+<div>
+	<span>Languages</span>
+	<fieldset class="repeating_language">
+		<select>
+			<option value="none" selected disabled>Choose</option>
+			<option disabled style="background: grey; font-weight: bold; color: white;">Mortal</option>
 			<option>Common</option>
 			<option>Human</option>
 			<option>Dwarven</option>
 			<option>Elvish</option>
 			<option>Gnomish</option>
 			<option>Halfling</option>
-		</optgroup>
-		<optgroup label="Exotic">
+			<option disabled style="background: grey; font-weight: bold; color: white;">Exotic</option>
 			<option>Draconic</option>
 			<option>Giant</option>
 			<option>Fey</option>
 			<option>Orcish</option>
 			<option>Elemental</option>
-		</optgroup>
-		<optgroup label="Divine">
+			<option disabled style="background: grey; font-weight: bold; color: white;">Divine</option>
 			<option>Celestial</option>
 			<option>Fiend</option>
-		</optgroup>
-		<optgroup label="Outer">
+			<option disabled style="background: grey; font-weight: bold; color: white;">Outer</option>
 			<option>Deep Speech</option>
-		</optgroup>
-	</select>
-	<input type="checkbox" title="Limited">
-	<input type="checkbox" title="Fluent">
-</fieldset>
+		</select>
+		<input type="checkbox" title="Limited">
+		<input type="checkbox" title="Fluent">
+	</fieldset>
+</div>
 
-<span>Stamina Points</span>
-<input type="number" name="attr_staminaPoints" value="0">
-<span>Max</span>
-<input type="number" name="attr_staminaPoints_max" value="0" readonly>
-<span>Mana Points</span>
-<input type="number" name="attr_manaPoints" value="0">
-<span>Max</span>
-<input type="number" name="attr_manaPoints_max" value="0" readonly>
-<span>Hit Points</span>
-<input type="number" name="attr_hitPoints" value="0">
-<span>Max</span>
-<input type="number" name="attr_hitPoints_max" value="0" readonly>
+<div>
+	<span>Combat Masteries</span>
+	<textarea></textarea>
+</div>
 
-<span>Temp</span>
-<input type="number" name="attr_tempHitPoints" value="0">
+<div>
+	<span>Currency</span>
+	<textarea></textarea>
+</div>
 
-<span>Physical Defense</span>
-<input type="number" name="attr_physicalDefense" value="0" readonly>
-<span>Heavy</span>
-<input type="number" name="attr_physicalHeavy" value="0" readonly>
-<span>Brutal</span>
-<input type="number" name="attr_physicalBrutal" value="0" readonly>
-<span>Physical Damage Reduction</span>
-<input type="number" name="attr_physicalDamageReduction" value="0">
-<span>Mystical Defense</span>
-<input type="number" name="attr_mysticalDefense" value="0" readonly>
-<span>Heavy</span>
-<input type="number" name="attr_mysticalHeavy" value="0" readonly>
-<span>Brutal</span>
-<input type="number" name="attr_mysticalBrutal" value="0" readonly>
-<span>Mystical Damage Reduction</span>
-<input type="number" name="attr_mysticalDamageReduction" value="0">
+<div>
+	<span>Stamina Points</span>
+	<input type="number" name="attr_staminaPoints" value="0">
+	<span>Max</span>
+	<input type="number" name="attr_staminaPoints_max" value="0" readonly>
+	<span>Mana Points</span>
+	<input type="number" name="attr_manaPoints" value="0">
+	<span>Max</span>
+	<input type="number" name="attr_manaPoints_max" value="0" readonly>
+	<span>Hit Points</span>
+	<input type="number" name="attr_hitPoints" value="0">
+	<span>Max</span>
+	<input type="number" name="attr_hitPoints_max" value="0" readonly>
+
+	<span>Temp</span>
+	<input type="number" name="attr_tempHitPoints" value="0">
+</div>
+
+<div>
+	<span>Physical Defense</span>
+	<input type="number" name="attr_physicalDefense" value="0" readonly>
+	<span>Heavy</span>
+	<input type="number" name="attr_physicalHeavy" value="0" readonly>
+	<span>Brutal</span>
+	<input type="number" name="attr_physicalBrutal" value="0" readonly>
+	<span>Physical Damage Reduction</span>
+	<input type="number" name="attr_physicalDamageReduction" value="0">
+	<span>Mystical Defense</span>
+	<input type="number" name="attr_mysticalDefense" value="0" readonly>
+	<span>Heavy</span>
+	<input type="number" name="attr_mysticalHeavy" value="0" readonly>
+	<span>Brutal</span>
+	<input type="number" name="attr_mysticalBrutal" value="0" readonly>
+	<span>Mystical Damage Reduction</span>
+	<input type="number" name="attr_mysticalDamageReduction" value="0">
+</div>
+
+<div>
+	<span>Combat</span>
+	<span>Actions Points</span>
+	<input type="checkbox">
+	<input type="checkbox">
+	<input type="checkbox">
+	<input type="checkbox">
+	<span>Minor Action Point</span>
+	<input type="checkbox">
+	<span>Attack/Spell Check</span>
+	<input type="number" name="attr_attackModifier" value="-1" readonly>
+</div>
 
 <script type="text/worker">
-on("change:level", () => {
-	getAttrs(["level"], values => {
-		const level = +values.level || 1;
+// COMBAT MASTERY and HIT POINTS
+// When the level is changed, set the combat mastery
+// When the level or might is changed, set the hit points
+on("change:might change:level", () => {
+	getAttrs(["level", "might"], values => {
+		const level = +values.level || 0;
 		const mastery = Math.ceil(level / 2);
 
+		const might = +values.might || 0;
+		const total = 6 + level + might;
+
 		setAttrs({
-			combatMastery: mastery
+			"combatMastery": mastery,
+			"hitPoints_max": total
 		});
 	});
 });
 
+// PRIME STAT
+// When the stats are changed, set the prime stat
+on("change:might change:agility change:charisma change:intelligence", () => {
+	getAttrs(["might", "agility", "charisma", "intelligence"], values => {
+		const might = +values.might || 0;
+		const agility = +values.agility || 0;
+		const charisma = +values.charisma || 0;
+		const intelligence = +values.intelligence || 0;
+		const max = Math.max(might, agility, charisma, intelligence);
+
+		setAttrs({
+			"prime": max
+		});
+	});
+});
+
+// SAVES
+// When the stats or save mastery is changed, set the save modifier
+on("change:mightSaveMastery change:might", () => {
+	getAttrs(["might", "combatMastery", "mightSaveMastery"], values => {
+		const stat = +values.might || 0;
+		const cm = +values.combatMastery || 0;
+		const sm = +values.mightSaveMastery || 0;
+		let total = stat;
+
+		if (sm == 1) {
+			total = stat + cm;
+		}
+
+		setAttrs({
+			mightSave: total
+		});
+	});
+});
+on("change:agilitySaveMastery change:agility", () => {
+	getAttrs(["agility", "combatMastery", "agilitySaveMastery"], values => {
+		const stat = +values.agility || 0;
+		const cm = +values.combatMastery || 0;
+		const sm = +values.agilitySaveMastery || 0;
+		let total = stat;
+
+		if (sm == 1) {
+			total = stat + cm;
+		}
+
+		setAttrs({
+			agilitySave: total
+		});
+	});
+});
+on("change:charismaSaveMastery change:charisma", () => {
+	getAttrs(["charisma", "combatMastery", "charismaSaveMastery"], values => {
+		const stat = +values.charisma || 0;
+		const cm = +values.combatMastery || 0;
+		const sm = +values.charismaSaveMastery || 0;
+		let total = stat;
+
+		if (sm == 1) {
+			total = stat + cm;
+		}
+
+		setAttrs({
+			charismaSave: total
+		});
+	});
+});
+on("change:intelligenceSaveMastery change:intelligence", () => {
+	getAttrs(["intelligence", "combatMastery", "intelligenceSaveMastery"], values => {
+		const stat = +values.intelligence || 0;
+		const cm = +values.combatMastery || 0;
+		const sm = +values.intelligenceSaveMastery || 0;
+		let total = stat;
+
+		if (sm == 1) {
+			total = stat + cm;
+		}
+
+		setAttrs({
+			intelligenceSave: total
+		});
+	});
+});
+
+// SKILLS
+// When the stats or skill mastery is changed, set the skill modifier
+on("change:awarenessMastery change:prime", () => {
+	getAttrs(["awarenessMastery", ""], values => {
+		const stat = +values.prime || 0;
+		const mastery = +values.awarenessMastery || 0;
+		const total = stat + mastery;
+
+		setAttrs({
+			"awareness": total
+		});
+	});
+});
+on("change:athleticsMastery change:might", () => {
+	getAttrs(["athleticsMastery", "might"], values => {
+		const stat = +values.might || 0;
+		const mastery = +values.athleticsMastery || 0;
+		const total = stat + mastery;
+
+		setAttrs({
+			"athletics": total
+		});
+	});
+});
+on("change:intimidationMastery change:might", () => {
+	getAttrs(["intimidationMastery", "might"], values => {
+		const stat = +values.might || 0;
+		const mastery = +values.intimidationMastery || 0;
+		const total = stat + mastery;
+
+		setAttrs({
+			"intimidation": total
+		});
+	});
+});
+on("change:acrobaticsMastery change:agility", () => {
+	getAttrs(["acrobaticsMastery", "agility"], values => {
+		const stat = +values.agility || 0;
+		const mastery = +values.acrobaticsMastery || 0;
+		const total = stat + mastery;
+
+		setAttrs({
+			"acrobatics": total
+		});
+	});
+});
+on("change:trickeryMastery change:agility", () => {
+	getAttrs(["trickeryMastery", "agility"], values => {
+		const stat = +values.agility || 0;
+		const mastery = +values.trickeryMastery || 0;
+		const total = stat + mastery;
+
+		setAttrs({
+			"trickery": total
+		});
+	});
+});
+on("change:stealthMastery change:agility", () => {
+	getAttrs(["stealthMastery", "agility"], values => {
+		const stat = +values.agility || 0;
+		const mastery = +values.stealthMastery || 0;
+		const total = stat + mastery;
+
+		setAttrs({
+			"stealth": total
+		});
+	});
+});
+on("change:animalMastery change:charisma", () => {
+	getAttrs(["animalMastery", "charisma"], values => {
+		const stat = +values.charisma || 0;
+		const mastery = +values.animalMastery || 0;
+		const total = stat + mastery;
+
+		setAttrs({
+			"animal": total
+		});
+	});
+});
+on("change:influenceMastery change:charisma", () => {
+	getAttrs(["influenceMastery", "charisma"], values => {
+		const stat = +values.charisma || 0;
+		const mastery = +values.influenceMastery || 0;
+		const total = stat + mastery;
+
+		setAttrs({
+			"influence": total
+		});
+	});
+});
+on("change:insightMastery change:charisma", () => {
+	getAttrs(["insightMastery", "charisma"], values => {
+		const stat = +values.charisma || 0;
+		const mastery = +values.insightMastery || 0;
+		const total = stat + mastery;
+
+		setAttrs({
+			"insight": total
+		});
+	});
+});
+on("change:investigationMastery change:intelligence", () => {
+	getAttrs(["investigationMastery", "intelligence"], values => {
+		const stat = +values.intelligence || 0;
+		const mastery = +values.investigationMastery || 0;
+		const total = stat + mastery;
+
+		setAttrs({
+			"investigation": total
+		});
+	});
+});
+on("change:medicineMastery change:intelligence", () => {
+	getAttrs(["medicineMastery", "intelligence"], values => {
+		const stat = +values.intelligence || 0;
+		const mastery = +values.medicineMastery || 0;
+		const total = stat + mastery;
+
+		setAttrs({
+			"medicine": total
+		});
+	});
+});
+on("change:survivalMastery change:intelligence", () => {
+	getAttrs(["survivalMastery", "intelligence"], values => {
+		const stat = +values.intelligence || 0;
+		const mastery = +values.survivalMastery || 0;
+		const total = stat + mastery;
+
+		setAttrs({
+			"survival": total
+		});
+	});
+});
+on("change:arcanaMastery change:intelligence", () => {
+	getAttrs(["arcanaMastery", "intelligence"], values => {
+		const stat = +values.intelligence || 0;
+		const mastery = +values.arcanaMastery || 0;
+		const total = stat + mastery;
+
+		setAttrs({
+			"arcana": total
+		});
+	});
+});
+on("change:historyMastery change:intelligence", () => {
+	getAttrs(["historyMastery", "intelligence"], values => {
+		const stat = +values.intelligence || 0;
+		const mastery = +values.historyMastery || 0;
+		const total = stat + mastery;
+
+		setAttrs({
+			"history": total
+		});
+	});
+});
+on("change:natureMastery change:intelligence", () => {
+	getAttrs(["natureMastery", "intelligence"], values => {
+		const stat = +values.intelligence || 0;
+		const mastery = +values.natureMastery || 0;
+		const total = stat + mastery;
+
+		setAttrs({
+			"nature": total
+		});
+	});
+});
+on("change:religionMastery change:intelligence", () => {
+	getAttrs(["religionMastery", "intelligence"], values => {
+		const stat = +values.intelligence || 0;
+		const mastery = +values.religionMastery || 0;
+		const total = stat + mastery;
+
+		setAttrs({
+			"religion": total
+		});
+	});
+});
+on("change:Mastery change:intelligence", () => {
+	getAttrs(["Mastery", "intelligence"], values => {
+		const stat = +values.intelligence || 0;
+		const mastery = +values.Mastery || 0;
+		const total = stat + mastery;
+
+		setAttrs({
+			"": total
+		});
+	});
+});
+on("change:Mastery change:intelligence", () => {
+	getAttrs(["Mastery", "intelligence"], values => {
+		const stat = +values.intelligence || 0;
+		const mastery = +values.Mastery || 0;
+		const total = stat + mastery;
+
+		setAttrs({
+			"": total
+		});
+	});
+});
+
+// When custom skill mastery or intelligence is changed, set the custom skill modifiers
+on("change:skill7Mastery change:skill8Mastery change:intelligence", () => {
+	getAttrs(["skill7Mastery", "skill8Mastery", "intelligence"], values => {
+		const mastery7 = +values.skill7Mastery || 0;
+		const mastery8 = +values.skill8Mastery || 0;
+		const intelligence = +values.intelligence || 0;
+		const total7 = intelligence + mastery7;
+		const total8 = intelligence + mastery8;
+
+		setAttrs({
+			"skill7": total7,
+			"skill8": total8
+		});
+	});
+});
+
+// TRADES
+// When the stats are changed, set the trades modifiers
 on("change:might change:agility change:charisma change:intelligence", () => {
 	getSectionIDs('repeating_trade', ids => {
 		const trades = [];
@@ -272,7 +605,7 @@ on("change:might change:agility change:charisma change:intelligence", () => {
 				const intelligence = +values.intelligence || 0;
 				const mastery = +values[trades[i].mastery] || 0;
 				const total = stat == "might" ? might + mastery : stat == "agility" ? agility + mastery : stat == "charisma" ? charisma + mastery : intelligence + mastery;
-				console.log(mastery)
+
 				setAttrs({
 					[trades[i].mod]: total
 				});
@@ -281,18 +614,39 @@ on("change:might change:agility change:charisma change:intelligence", () => {
 	});
 });
 
-on("change:might change:level", () => {
-	getAttrs(["might", "level"], values => {
-		const might = +values.might || 0;
-		const level = +values.level || 1;
-		const total = 6 + level + might;
+// When the trade stat or mastery is changed, set the trade modifier
+on("change:repeating_trade:tradeStat change:repeating_trade:tradeMastery", () => {
+	getAttrs(["repeating_trade_tradeStat"], values => {
+		const stat = values.repeating_trade_tradeStat;
 
-		setAttrs({
-			"hitPoints_max": total
+		getAttrs(["repeating_trade_tradeMastery", stat], values => {
+			const statMod = +values[stat] || 0;
+			const mastery = +values.repeating_trade_tradeMastery || 0;
+			const total = statMod + mastery;
+
+			setAttrs({
+				"repeating_trade_tradeModifier": total
+			});
 		});
 	});
 });
 
+// ATTACKS
+// When prime or combat mastery is changed, set the attack modifier
+on("change:prime change:combatMastery", () => {
+	getAttrs(["prime", "combatMastery"], values => {
+		const prime = +values.prime || 0;
+		const cm = +values.combatMastery || 0;
+		const total = prime + cm;
+
+		setAttrs({
+			"attackModifier": total
+		});
+	});
+});
+
+// DEFENSES
+// When agility, armor bonus, or combat mastery is changed, set the physical defenses
 on("change:agility change:armorBonus change:combatMastery", () => {
 	getAttrs(["agility", "armorBonus", "combatMastery"], values => {
 		const agility = +values.agility || 0;
@@ -308,6 +662,7 @@ on("change:agility change:armorBonus change:combatMastery", () => {
 	});
 });
 
+// When charisma, intelligence, or combat mastery is changed, set the mystical defenses
 on("change:charisma change:intelligence change:combatMastery", () => {
 	getAttrs(["charisma", "intelligence", "combatMastery"], values => {
 		const charisma = +values.charisma || 0;
@@ -322,428 +677,4 @@ on("change:charisma change:intelligence change:combatMastery", () => {
 		});
 	});
 });
-
-on("change:skill7Mastery change:intelligence", () => {
-	getAttrs(["skill7Mastery", "intelligence"], values => {
-		const mastery = +values.skill7Mastery || 0;
-		const intelligence = +values.intelligence || 0;
-		const total = intelligence + mastery;
-
-		setAttrs({
-			"skill7": total
-		});
-	});
-});
-
-on("change:skill8Mastery change:intelligence", () => {
-	getAttrs(["skill8Mastery", "intelligence"], values => {
-		const mastery = +values.skill8Mastery || 0;
-		const intelligence = +values.intelligence || 0;
-		const total = intelligence + mastery;
-
-		setAttrs({
-			"skill8": total
-		});
-	});
-});
-
-	on("change:primeSaveMastery change:prime", () => {
-		getAttrs(["prime", "combatMastery", "primeSaveMastery"], values => {
-			const stat = +values.prime || 0;
-			const cm = +values.combatMastery || 0;
-			const sm = +values.primeSaveMastery || 0;
-			let total = stat;
-
-			if (sm == 1) {
-				total = stat + cm;
-			}
-
-			setAttrs({
-				"primeSave": total
-			});
-		});
-	});
-	on("change:mightSaveMastery change:might", () => {
-		getAttrs(["might", "combatMastery", "mightSaveMastery"], values => {
-			const stat = +values.might || 0;
-			const cm = +values.combatMastery || 0;
-			const sm = +values.mightSaveMastery || 0;
-			let total = stat;
-
-			if (sm == 1) {
-				total = stat + cm;
-			}
-
-			setAttrs({
-				"mightSave": total
-			});
-		});
-	});
-	on("change:agilitySaveMastery change:agility", () => {
-		getAttrs(["agility", "combatMastery", "agilitySaveMastery"], values => {
-			const stat = +values.agility || 0;
-			const cm = +values.combatMastery || 0;
-			const sm = +values.agilitySaveMastery || 0;
-			let total = stat;
-
-			if (sm == 1) {
-				total = stat + cm;
-			}
-
-			setAttrs({
-				"agilitySave": total
-			});
-		});
-	});
-	on("change:charismaSaveMastery change:charisma", () => {
-		getAttrs(["charisma", "combatMastery", "charismaSaveMastery"], values => {
-			const stat = +values.charisma || 0;
-			const cm = +values.combatMastery || 0;
-			const sm = +values.charismaSaveMastery || 0;
-			let total = stat;
-
-			if (sm == 1) {
-				total = stat + cm;
-			}
-
-			setAttrs({
-				"charismaSave": total
-			});
-		});
-	});
-	on("change:intelligenceSaveMastery change:intelligence", () => {
-		getAttrs(["intelligence", "combatMastery", "intelligenceSaveMastery"], values => {
-			const stat = +values.intelligence || 0;
-			const cm = +values.combatMastery || 0;
-			const sm = +values.intelligenceSaveMastery || 0;
-			let total = stat;
-
-			if (sm == 1) {
-				total = stat + cm;
-			}
-
-			setAttrs({
-				"intelligenceSave": total
-			});
-		});
-	});
-
-		on("change:awarenessMastery change:prime", () => {
-			getAttrs(["awarenessMastery", "prime"], values => {
-				const stat = +values.prime || 0;
-				const mastery = +values.awarenessMastery || 0;
-				const total = stat + mastery;
-
-				setAttrs({
-					"awareness": total
-				});
-			});
-		});
-		on("change:athleticsMastery change:might", () => {
-			getAttrs(["athleticsMastery", "might"], values => {
-				const stat = +values.might || 0;
-				const mastery = +values.athleticsMastery || 0;
-				const total = stat + mastery;
-
-				setAttrs({
-					"athletics": total
-				});
-			});
-		});
-		on("change:intimidationMastery change:might", () => {
-			getAttrs(["intimidationMastery", "might"], values => {
-				const stat = +values.might || 0;
-				const mastery = +values.intimidationMastery || 0;
-				const total = stat + mastery;
-
-				setAttrs({
-					"intimidation": total
-				});
-			});
-		});
-		on("change:acrobaticsMastery change:agility", () => {
-			getAttrs(["acrobaticsMastery", "agility"], values => {
-				const stat = +values.agility || 0;
-				const mastery = +values.acrobaticsMastery || 0;
-				const total = stat + mastery;
-
-				setAttrs({
-					"acrobatics": total
-				});
-			});
-		});
-		on("change:trickeryMastery change:agility", () => {
-			getAttrs(["trickeryMastery", "agility"], values => {
-				const stat = +values.agility || 0;
-				const mastery = +values.trickeryMastery || 0;
-				const total = stat + mastery;
-
-				setAttrs({
-					"trickery": total
-				});
-			});
-		});
-		on("change:stealthMastery change:agility", () => {
-			getAttrs(["stealthMastery", "agility"], values => {
-				const stat = +values.agility || 0;
-				const mastery = +values.stealthMastery || 0;
-				const total = stat + mastery;
-
-				setAttrs({
-					"stealth": total
-				});
-			});
-		});
-		on("change:animalMastery change:charisma", () => {
-			getAttrs(["animalMastery", "charisma"], values => {
-				const stat = +values.charisma || 0;
-				const mastery = +values.animalMastery || 0;
-				const total = stat + mastery;
-
-				setAttrs({
-					"animal": total
-				});
-			});
-		});
-		on("change:influenceMastery change:charisma", () => {
-			getAttrs(["influenceMastery", "charisma"], values => {
-				const stat = +values.charisma || 0;
-				const mastery = +values.influenceMastery || 0;
-				const total = stat + mastery;
-
-				setAttrs({
-					"influence": total
-				});
-			});
-		});
-		on("change:insightMastery change:charisma", () => {
-			getAttrs(["insightMastery", "charisma"], values => {
-				const stat = +values.charisma || 0;
-				const mastery = +values.insightMastery || 0;
-				const total = stat + mastery;
-
-				setAttrs({
-					"insight": total
-				});
-			});
-		});
-		on("change:investigationMastery change:intelligence", () => {
-			getAttrs(["investigationMastery", "intelligence"], values => {
-				const stat = +values.intelligence || 0;
-				const mastery = +values.investigationMastery || 0;
-				const total = stat + mastery;
-
-				setAttrs({
-					"investigation": total
-				});
-			});
-		});
-		on("change:medicineMastery change:intelligence", () => {
-			getAttrs(["medicineMastery", "intelligence"], values => {
-				const stat = +values.intelligence || 0;
-				const mastery = +values.medicineMastery || 0;
-				const total = stat + mastery;
-
-				setAttrs({
-					"medicine": total
-				});
-			});
-		});
-		on("change:survivalMastery change:intelligence", () => {
-			getAttrs(["survivalMastery", "intelligence"], values => {
-				const stat = +values.intelligence || 0;
-				const mastery = +values.survivalMastery || 0;
-				const total = stat + mastery;
-
-				setAttrs({
-					"survival": total
-				});
-			});
-		});
-		on("change:arcanaMastery change:intelligence", () => {
-			getAttrs(["arcanaMastery", "intelligence"], values => {
-				const stat = +values.intelligence || 0;
-				const mastery = +values.arcanaMastery || 0;
-				const total = stat + mastery;
-
-				setAttrs({
-					"arcana": total
-				});
-			});
-		});
-		on("change:historyMastery change:intelligence", () => {
-			getAttrs(["historyMastery", "intelligence"], values => {
-				const stat = +values.intelligence || 0;
-				const mastery = +values.historyMastery || 0;
-				const total = stat + mastery;
-
-				setAttrs({
-					"history": total
-				});
-			});
-		});
-		on("change:natureMastery change:intelligence", () => {
-			getAttrs(["natureMastery", "intelligence"], values => {
-				const stat = +values.intelligence || 0;
-				const mastery = +values.natureMastery || 0;
-				const total = stat + mastery;
-
-				setAttrs({
-					"nature": total
-				});
-			});
-		});
-		on("change:religionMastery change:intelligence", () => {
-			getAttrs(["religionMastery", "intelligence"], values => {
-				const stat = +values.intelligence || 0;
-				const mastery = +values.religionMastery || 0;
-				const total = stat + mastery;
-
-				setAttrs({
-					"religion": total
-				});
-			});
-		});
-		on("change:Mastery change:intelligence", () => {
-			getAttrs(["Mastery", "intelligence"], values => {
-				const stat = +values.intelligence || 0;
-				const mastery = +values.Mastery || 0;
-				const total = stat + mastery;
-
-				setAttrs({
-					"": total
-				});
-			});
-		});
-		on("change:Mastery change:intelligence", () => {
-			getAttrs(["Mastery", "intelligence"], values => {
-				const stat = +values.intelligence || 0;
-				const mastery = +values.Mastery || 0;
-				const total = stat + mastery;
-
-				setAttrs({
-					"": total
-				});
-			});
-		});
-
-on("change:repeating_trade:tradeStat change:repeating_trade:tradeMastery", () => {
-	getAttrs(["repeating_trade_tradeStat"], values => {
-		const stat = values.repeating_trade_tradeStat || "";
-
-		getAttrs(["repeating_trade_tradeMastery", stat], values => {
-			const statMod = +values[stat] || 0;
-			const mastery = +values.repeating_trade_tradeMastery || 0;
-			const total = statMod + mastery;
-
-			setAttrs({
-				"repeating_trade_tradeModifier": total
-			});
-		});
-	});
-});
-
-function section_name(section, id, field) {
-	return `repeating_${section}_${id}_${field}`;
-}
-
-//	on("clicked:character clicked:charmancer clicked:npc", eventInfo => {
-//		getAttrs(["character", "charmancer", "npc"], values => {
-//			const character = values.character;
-//			const charmancer = values.charmancer;
-//			const npc = values.npc;
-//			const trigger = eventInfo.triggerName;
-//			let output = {};
-//
-//			
-//					output.character = trigger.includes("character") ? 1 : 0
-//			
-//					output.npc = trigger.includes("npc") ? 1 : 0
-//			
-//					output.charmancer = trigger.includes("charmancer") ? 1 : 0
-//			
-//
-//			setAttrs(output);
-//		});
-//	});
-
-	//on('change:attributes', () => {
-		//getAttrs(['attributes'], values => {
-			//const method = values.attributes;
-
-			//setAttrs({
-				//array: method === 'Standard Array' ? 1 : 0,
-				//buy: method === 'Point Buy' ? 1 : 0,
-				//roll: method === 'Roll Method' ? 1 : 0,
-				//might: method === 'Point Buy' ? -2 : "none",
-				//agility: method === 'Point Buy' ? -2 : "none",
-				//intelligence: method === 'Point Buy' ? -2 : "none",
-				//charisma: method === 'Point Buy' ? -2 : "none",
-				//points: method === 'Point Buy' ? 12 : 0
-			//});
-		//});
-	//});
-
-//	
-//		on('change:might', eventInfo => {
-//			getAttrs(['points', might], values => {
-//				console.log(eventInfo.previousValue, values.might)
-//				const might = +values.might || 0;
-//				const previous = +eventInfo.previousValue || 0;
-//				const difference = previous - might;
-//				const points = +values.points || 0;
-//				const total = points - difference;
-//
-//				setAttrs({
-//					points: total
-//				});
-//			});
-//		});
-//	
-//		on('change:agility', eventInfo => {
-//			getAttrs(['points', agility], values => {
-//				console.log(eventInfo.previousValue, values.agility)
-//				const agility = +values.agility || 0;
-//				const previous = +eventInfo.previousValue || 0;
-//				const difference = previous - agility;
-//				const points = +values.points || 0;
-//				const total = points - difference;
-//
-//				setAttrs({
-//					points: total
-//				});
-//			});
-//		});
-//	
-//		on('change:charisma', eventInfo => {
-//			getAttrs(['points', charisma], values => {
-//				console.log(eventInfo.previousValue, values.charisma)
-//				const charisma = +values.charisma || 0;
-//				const previous = +eventInfo.previousValue || 0;
-//				const difference = previous - charisma;
-//				const points = +values.points || 0;
-//				const total = points - difference;
-//
-//				setAttrs({
-//					points: total
-//				});
-//			});
-//		});
-//	
-//		on('change:intelligence', eventInfo => {
-//			getAttrs(['points', intelligence], values => {
-//				console.log(eventInfo.previousValue, values.intelligence)
-//				const intelligence = +values.intelligence || 0;
-//				const previous = +eventInfo.previousValue || 0;
-//				const difference = previous - intelligence;
-//				const points = +values.points || 0;
-//				const total = points - difference;
-//
-//				setAttrs({
-//					points: total
-//				});
-//			});
-//		});
-//	
 </script>
-

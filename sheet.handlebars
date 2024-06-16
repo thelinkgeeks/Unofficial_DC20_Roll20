@@ -1,0 +1,331 @@
+{{!-- Character Information --}}
+<div>
+	<span>Player Name</span>
+	<input type="text" name="attr_playerName" placeholder="Enter Your Name">
+	<span>Character Name</span>
+	<input type="text" name="attr_character_name" placeholder="Enter Your Character's Name">
+	<span>Level</span>
+	<input type="number" name="attr_level" value="1" min="1">
+	<span>Combat Mastery</span>
+	<input type="text" name="attr_combatMastery" value="1" readonly>
+</div>
+
+{{!-- Character Stats and Skills --}}
+<div>
+	{{#each skillsList as |skills|}}
+	{{#if @key}}
+	<span>{{capitalize @key}}</span>
+	<input type="number" name="attr_{{@key}}" value="-2" min="-2" />
+	<span>Save</span>
+	<input type="number" name="attr_{{@key}}Save" value="-2" readonly>
+	<input type="checkbox" name="attr_{{@key}}SaveMastery" value="1" title="Save Mastery">
+	{{else}}
+	<span>Prime</span>
+	<input type="number" name="attr_prime" value="-2" readonly>
+	{{/if}}
+	{{#each skills as |skill|}}
+	{{#if skill}}
+	<span>{{capitalize skill}}</span>
+	{{else}}
+	<input type="text" name="attr_skill{{@index}}Name">
+	{{/if}}
+	{{#each @root.masteries as |mastery|}}
+	{{#if skill}}
+	<input type="checkbox" name="attr_{{skill}}Mastery" value="{{mastery}}" title="{{capitalize @key}}">
+	{{else}}
+	<input type="checkbox" name="attr_skill{{@../index}}Mastery" value="{{mastery}}" title="{{capitalize @key}}">
+	{{/if}}
+	{{/each}}
+	{{#if skill}}
+	<input type="number" name="attr_{{skill}}" value="-2" readonly>
+	{{else}}
+	<input type="number" name="attr_skill{{@index}}" value="-2" readonly>
+	{{/if}}
+	{{/each}}
+	{{/each}}
+</div>
+
+{{!-- Character Trades --}}
+<div>
+	<span>Trades</span>
+	<fieldset class="repeating_trade">
+		<input type="text" name="attr_tradeName" placeholder="Name">
+		<select name="attr_tradeStat">
+			<option value="none" selected disabled>Choose</option>
+			{{#each stats}}
+			<option value="{{this}}">{{capitalize this}}</option>
+			{{/each}}
+		</select>
+		{{#each masteries}}
+		<input type="checkbox" name="attr_tradeMastery" value="{{this}}" title="{{capitalize @key}}">
+		{{/each}}
+		<input type="number" name="attr_tradeModifier" value="0" readonly>
+	</fieldset>
+</div>
+
+{{!-- Character Languages --}}
+<div>
+	<span>Languages</span>
+	<fieldset class="repeating_language">
+		<select>
+			<option value="none" selected disabled>Choose</option>
+			{{#each language-lists as |list|}}
+			<option disabled style="background: grey; font-weight: bold; color: white;">{{@key}}</option>
+			{{#each list as |language|}}
+			<option>{{titleize language}}</option>
+			{{/each}}
+			{{/each}}
+		</select>
+		{{#each language-masteries}}
+		<input type="checkbox" title="{{capitalize this}}">
+		{{/each}}
+	</fieldset>
+</div>
+
+{{!-- Character Combat Masteries --}}
+<div>
+	<span>Combat Masteries</span>
+	<textarea></textarea>
+</div>
+
+{{!-- Character Currency --}}
+<div>
+	<span>Currency</span>
+	<textarea></textarea>
+</div>
+
+{{!-- Character Stamina, Mana, Hit Points, and Temporary Hit Points --}}
+<div>
+	{{#each points}}
+	<span>{{capitalize this}} Points</span>
+	<input type="number" name="attr_{{this}}Points" value="0">
+	<span>Max</span>
+	<input type="number" name="attr_{{this}}Points_max" value="0" readonly>
+	{{/each}}
+
+	<span>Temp</span>
+	<input type="number" name="attr_tempHitPoints" value="0">
+</div>
+
+{{!-- Character Defenses --}}
+<div>
+	{{#each defenses}}
+	<span>{{capitalize this}} Defense</span>
+	<input type="number" name="attr_{{this}}Defense" value="0" readonly>
+	<span>Heavy</span>
+	<input type="number" name="attr_{{this}}Heavy" value="0" readonly>
+	<span>Brutal</span>
+	<input type="number" name="attr_{{this}}Brutal" value="0" readonly>
+	<span>{{capitalize this}} Damage Reduction</span>
+	<input type="number" name="attr_{{this}}DamageReduction" value="0">
+	{{/each}}
+</div>
+
+{{!-- Character Combat Information --}}
+<div>
+	<span>Combat</span>
+	<span>Actions Points</span>
+	<input type="checkbox">
+	<input type="checkbox">
+	<input type="checkbox">
+	<input type="checkbox">
+	<span>Minor Action Point</span>
+	<input type="checkbox">
+	<span>Attack/Spell Check</span>
+	<input type="number" name="attr_attackModifier" value="-1" readonly>
+</div>
+
+<script type="text/worker">
+// COMBAT MASTERY and HIT POINTS
+// When the level is changed, set the combat mastery
+// When the level or might is changed, set the hit points
+on("change:might change:level", () => {
+	getAttrs(["level", "might"], values => {
+		const level = +values.level || 0;
+		const mastery = Math.ceil(level / 2);
+
+		const might = +values.might || 0;
+		const total = 6 + level + might;
+
+		setAttrs({
+			"combatMastery": mastery,
+			"hitPoints_max": total
+		});
+	});
+});
+
+// PRIME STAT
+// When the stats are changed, set the prime stat
+on("change:might change:agility change:charisma change:intelligence", () => {
+	getAttrs(["might", "agility", "charisma", "intelligence"], values => {
+		const might = +values.might || 0;
+		const agility = +values.agility || 0;
+		const charisma = +values.charisma || 0;
+		const intelligence = +values.intelligence || 0;
+		const max = Math.max(might, agility, charisma, intelligence);
+
+		setAttrs({
+			"prime": max
+		});
+	});
+});
+
+// SAVES
+// When the stats or save mastery is changed, set the save modifier
+{{#each stats as |stat|}}
+on("change:{{stat}}SaveMastery change:{{stat}}", () => {
+	getAttrs(["{{stat}}", "combatMastery", "{{stat}}SaveMastery"], values => {
+		const stat = +values.{{stat}} || 0;
+		const cm = +values.combatMastery || 0;
+		const sm = +values.{{stat}}SaveMastery || 0;
+		let total = stat;
+
+		if (sm == 1) {
+			total = stat + cm;
+		}
+
+		setAttrs({
+			{{stat}}Save: total
+		});
+	});
+});
+{{/each}}
+
+// SKILLS
+// When the stats or skill mastery is changed, set the skill modifier
+{{#each skillsList as |skills|}}
+	{{#each skills as |skill|}}
+		{{#if @../key }}
+on("change:{{skill}}Mastery change:{{@../key}}", () => {
+	getAttrs(["{{skill}}Mastery", "{{@../key}}"], values => {
+		const stat = +values.{{@../key}} || 0;
+		const mastery = +values.{{skill}}Mastery || 0;
+		const total = stat + mastery;
+
+		setAttrs({
+			"{{skill}}": total
+		});
+	});
+});
+		{{else}}
+on("change:{{skill}}Mastery change:prime", () => {
+	getAttrs(["{{skill}}Mastery", "{{@../key}}"], values => {
+		const stat = +values.prime || 0;
+		const mastery = +values.{{skill}}Mastery || 0;
+		const total = stat + mastery;
+
+		setAttrs({
+			"{{skill}}": total
+		});
+	});
+});
+		{{/if}}
+	{{/each}}
+{{/each}}
+
+// When custom skill mastery or intelligence is changed, set the custom skill modifiers
+on("change:skill7Mastery change:skill8Mastery change:intelligence", () => {
+	getAttrs(["skill7Mastery", "skill8Mastery", "intelligence"], values => {
+		const mastery7 = +values.skill7Mastery || 0;
+		const mastery8 = +values.skill8Mastery || 0;
+		const intelligence = +values.intelligence || 0;
+		const total7 = intelligence + mastery7;
+		const total8 = intelligence + mastery8;
+
+		setAttrs({
+			"skill7": total7,
+			"skill8": total8
+		});
+	});
+});
+
+// TRADES
+// When the stats are changed, set the trades modifiers
+on("change:might change:agility change:charisma change:intelligence", () => {
+	getSectionIDs('repeating_trade', ids => {
+		const trades = [];
+
+		ids.forEach(id => trades.push({"stat": `repeating_trade_${id}_tradeStat`, "mastery": `repeating_trade_${id}_tradeMastery`, "mod": `repeating_trade_${id}_tradeModifier`}));
+
+		for(let i = 0; i < trades.length; i++) {
+			getAttrs([trades[i].stat, trades[i].mastery, trades[i].mod, "might", "agility", "charisma", "intelligence"], values => {
+				const stat = values[trades[i].stat];
+				const might = +values.might || 0;
+				const agility = +values.agility || 0;
+				const charisma = +values.charisma || 0;
+				const intelligence = +values.intelligence || 0;
+				const mastery = +values[trades[i].mastery] || 0;
+				const total = stat == "might" ? might + mastery : stat == "agility" ? agility + mastery : stat == "charisma" ? charisma + mastery : intelligence + mastery;
+
+				setAttrs({
+					[trades[i].mod]: total
+				});
+			});
+		}
+	});
+});
+
+// When the trade stat or mastery is changed, set the trade modifier
+on("change:repeating_trade:tradeStat change:repeating_trade:tradeMastery", () => {
+	getAttrs(["repeating_trade_tradeStat"], values => {
+		const stat = values.repeating_trade_tradeStat;
+
+		getAttrs(["repeating_trade_tradeMastery", stat], values => {
+			const statMod = +values[stat] || 0;
+			const mastery = +values.repeating_trade_tradeMastery || 0;
+			const total = statMod + mastery;
+
+			setAttrs({
+				"repeating_trade_tradeModifier": total
+			});
+		});
+	});
+});
+
+// ATTACKS
+// When prime or combat mastery is changed, set the attack modifier
+on("change:prime change:combatMastery", () => {
+	getAttrs(["prime", "combatMastery"], values => {
+		const prime = +values.prime || 0;
+		const cm = +values.combatMastery || 0;
+		const total = prime + cm;
+
+		setAttrs({
+			"attackModifier": total
+		});
+	});
+});
+
+// DEFENSES
+// When agility, armor bonus, or combat mastery is changed, set the physical defenses
+on("change:agility change:armorBonus change:combatMastery", () => {
+	getAttrs(["agility", "armorBonus", "combatMastery"], values => {
+		const agility = +values.agility || 0;
+		const armorBonus = +values.armorBonus || 0;
+		const cm = +values.combatMastery || 0;
+		const total = 8 + cm + agility + armorBonus;
+
+		setAttrs({
+			"physicalDefense": total,
+			"physicalHeavy": total + 5,
+			"physicalBrutal": total + 10
+		});
+	});
+});
+
+// When charisma, intelligence, or combat mastery is changed, set the mystical defenses
+on("change:charisma change:intelligence change:combatMastery", () => {
+	getAttrs(["charisma", "intelligence", "combatMastery"], values => {
+		const charisma = +values.charisma || 0;
+		const intelligence = +values.intelligence || 0;
+		const cm = +values.combatMastery || 0;
+		const total = 8 + cm + charisma + intelligence;
+
+		setAttrs({
+			"mysticalDefense": total,
+			"mysticalHeavy": total + 5,
+			"mysticalBrutal": total + 10
+		});
+	});
+});
+</script>
