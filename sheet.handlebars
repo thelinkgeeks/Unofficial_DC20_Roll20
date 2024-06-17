@@ -150,6 +150,19 @@
 	</fieldset>
 </div>
 
+{{!-- Character Inventory --}}
+<div>
+	<span>Inventory</span>
+	<fieldset class="repeating_inventory">
+		<span>Name</span>
+		<input type="text" placeholder="Name">
+		<span>Quantity</span>
+		<input type="number" name="attr_inventoryQuantity" value="1" min="1">
+		<span>Weight</span>
+		<input type="number" name="attr_inventoryWeight" value="0" min="0">
+	</fieldset>
+</div>
+
 {{!-- Character Death --}}
 <div>
 	<span>Death</span>
@@ -186,6 +199,15 @@
 		<input type="text" name="attr_resourceName" placeholder="Name">
 		<input type="number" name="attr_resource" value="0" min="0">
 		<input type="number" name="attr_resource_max" value="0">
+	</fieldset>
+</div>
+
+{{!-- Character Features --}}
+<div>
+	<span>Features</span>
+	<fieldset class="repeating_resource">
+		<input type="text" placeholder="Name">
+		<textarea></textarea>
 	</fieldset>
 </div>
 
