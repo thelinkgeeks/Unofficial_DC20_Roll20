@@ -1,434 +1,392 @@
-input[type="text"],
-input[type="number"] {
-	height: 24px !important;
+input[type=text],
+input[type=number] {
+  height: 24px !important;
 }
 
-input[type="number"] {
-	width: 6ch !important;
+input[type=number] {
+  width: 6ch !important;
 }
 
-input[type="text"]:read-only {
-	width: 4ch !important;
+input[type=text]:-moz-read-only {
+  width: 4ch !important;
+}
+
+input[type=text]:read-only {
+  width: 4ch !important;
 }
 
 .container {
-	width: 100%;
-	padding: 0;
-	box-sizing: border-box;
-	display: grid;
-	grid-template-areas:
-		"info info info info info info info info"
-		"info info info info info info info info"
-		"stats stats stats points points points defenses defenses"
-		"stats stats stats points points points defenses defenses"
-		"stats stats stats points points points defenses defenses"
-		"stats stats stats combat combat combat death death"
-		"stats stats stats combat combat combat death death"
-		"stats stats stats combat combat combat move move"
-		"stats stats stats combat combat combat resources resources"
-		"stats stats stats attacks attacks attacks resources resources"
-		"stats stats stats attacks attacks attacks resources resources"
-		"stats stats stats attacks attacks attacks resources resources"
-		"trades trades trades inventory inventory inventory features features"
-		"trades trades trades inventory inventory inventory features features"
-		"languages languages languages inventory inventory inventory features features"
-		"languages languages languages inventory inventory inventory features features"
-		"combat-masteries combat-masteries combat-masteries inventory inventory inventory features features"
-		"combat-masteries combat-masteries combat-masteries inventory inventory inventory features features"
-		"currency currency currency inventory inventory inventory features features"
-		"currency currency currency inventory inventory inventory features features";
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-areas: "info info info info info info info info" "info info info info info info info info" "stats stats stats points points points defenses defenses" "stats stats stats points points points defenses defenses" "stats stats stats points points points defenses defenses" "stats stats stats combat combat combat death death" "stats stats stats combat combat combat death death" "stats stats stats combat combat combat move move" "stats stats stats combat combat combat resources resources" "stats stats stats attacks attacks attacks resources resources" "stats stats stats attacks attacks attacks resources resources" "stats stats stats attacks attacks attacks resources resources" "trades trades trades inventory inventory inventory features features" "trades trades trades inventory inventory inventory features features" "languages languages languages inventory inventory inventory features features" "languages languages languages inventory inventory inventory features features" "combat-masteries combat-masteries combat-masteries inventory inventory inventory features features" "combat-masteries combat-masteries combat-masteries inventory inventory inventory features features" "currency currency currency inventory inventory inventory features features" "currency currency currency inventory inventory inventory features features";
 }
 
 .info {
-	grid-area: info;
-	display: grid;
-	grid-template-areas:
-		"player player class class level"
-		"name name ancestry ancestry cm";
+  grid-area: info;
+  display: grid;
+  grid-template-areas: "player player class class level" "name name ancestry ancestry cm";
 }
 
 .info span {
-	display: block;
+  display: block;
 }
 
 .player {
-	grid-area: player;
+  grid-area: player;
 }
 
 .class {
-	grid-area: class;
+  grid-area: class;
 }
 
 .level {
-	grid-area: level;
+  grid-area: level;
 }
 
 .name {
-	grid-area: name;
+  grid-area: name;
 }
 
 .ancestry {
-	grid-area: ancestry;
+  grid-area: ancestry;
 }
 
 .cm {
-	grid-area: cm;
+  grid-area: cm;
 }
 
 .stats {
-	grid-area: stats;
-	min-width: 244px;
-	max-width: 284px;
-	display: grid;
-	grid-template-areas:
-		"prime-stat . . ."
-		". awareness-skill awareness-masteries-0 awareness-value"
-		"might-stat . . might-save"
-		". athletics-skill athletics-masteries-0 athletics-value"
-		". intimidation-skill intimidation-masteries-1 intimidation-value"
-		"agility-stat . . agility-save"
-		". acrobatics-skill acrobatics-masteries-0 acrobatics-value"
-		". trickery-skill trickery-masteries-1 trickery-value"
-		". stealth-skill stealth-masteries-2 stealth-value"
-		"charisma-stat . . charisma-save"
-		". animal-skill animal-masteries-0 animal-value"
-		". influence-skill influence-masteries-1 influence-value"
-		". insight-skill insight-masteries-2 insight-value"
-		"intelligence-stat . . intelligence-save"
-		". investigation-skill investigation-masteries-0 investigation-value"
-		". medicine-skill medicine-masteries-1 medicine-value"
-		". survival-skill survival-masteries-2 survival-value"
-		". arcana-skill arcana-masteries-3 arcana-value"
-		". history-skill history-masteries-4 history-value"
-		". nature-skill nature-masteries-5 nature-value"
-		". occultism-skill occultism-masteries-6 occultism-value"
-		". religion-skill religion-masteries-7 religion-value"
-		". skill-8 -masteries-8 value-8"
-		". skill-9 -masteries-9 value-9";
+  grid-area: stats;
+  min-width: 244px;
+  max-width: 284px;
+  display: grid;
+  grid-template-areas: "prime-stat . . ." ". awareness-skill awareness-masteries-0 awareness-value" "might-stat . . might-save" ". athletics-skill athletics-masteries-0 athletics-value" ". intimidation-skill intimidation-masteries-1 intimidation-value" "agility-stat . . agility-save" ". acrobatics-skill acrobatics-masteries-0 acrobatics-value" ". trickery-skill trickery-masteries-1 trickery-value" ". stealth-skill stealth-masteries-2 stealth-value" "charisma-stat . . charisma-save" ". animal-skill animal-masteries-0 animal-value" ". influence-skill influence-masteries-1 influence-value" ". insight-skill insight-masteries-2 insight-value" "intelligence-stat . . intelligence-save" ". investigation-skill investigation-masteries-0 investigation-value" ". medicine-skill medicine-masteries-1 medicine-value" ". survival-skill survival-masteries-2 survival-value" ". arcana-skill arcana-masteries-3 arcana-value" ". history-skill history-masteries-4 history-value" ". nature-skill nature-masteries-5 nature-value" ". occultism-skill occultism-masteries-6 occultism-value" ". religion-skill religion-masteries-7 religion-value" ". skill-8 -masteries-8 value-8" ". skill-9 -masteries-9 value-9";
 }
 
 .stats span {
-	display: block;
+  display: block;
 }
 
 .prime-stat {
-	grid-area: prime-stat;
+  grid-area: prime-stat;
 }
 
 .awareness-skill {
-	grid-area: awareness-skill;
+  grid-area: awareness-skill;
 }
 
 .awareness-masteries-0 {
-	grid-area: awareness-masteries-0;
+  grid-area: awareness-masteries-0;
 }
 
 .awareness-value {
-	grid-area: awareness-value;
+  grid-area: awareness-value;
 }
 
 .might-stat {
-	grid-area: might-stat;
+  grid-area: might-stat;
 }
 
 .might-save {
-	grid-area: might-save;
+  grid-area: might-save;
 }
 
 .athletics-skill {
-	grid-area: athletics-skill;
+  grid-area: athletics-skill;
 }
 
 .athletics-masteries-0 {
-	grid-area: athletics-masteries-0;
+  grid-area: athletics-masteries-0;
 }
 
 .athletics-value {
-	grid-area: athletics-value;
+  grid-area: athletics-value;
 }
 
 .intimidation-skill {
-	grid-area: intimidation-skill;
+  grid-area: intimidation-skill;
 }
 
 .intimidation-masteries-1 {
-	grid-area: intimidation-masteries-1;
+  grid-area: intimidation-masteries-1;
 }
 
 .intimidation-value {
-	grid-area: intimidation-value;
+  grid-area: intimidation-value;
 }
 
 .agility-stat {
-	grid-area: agility-stat;
+  grid-area: agility-stat;
 }
 
 .agility-save {
-	grid-area: agility-save;
+  grid-area: agility-save;
 }
 
 .acrobatics-skill {
-	grid-area: acrobatics-skill;
+  grid-area: acrobatics-skill;
 }
 
 .acrobatics-masteries-0 {
-	grid-area: acrobatics-masteries-0;
+  grid-area: acrobatics-masteries-0;
 }
 
 .acrobatics-value {
-	grid-area: acrobatics-value;
+  grid-area: acrobatics-value;
 }
 
 .trickery-skill {
-	grid-area: trickery-skill;
+  grid-area: trickery-skill;
 }
 
 .trickery-masteries-1 {
-	grid-area: trickery-masteries-1;
+  grid-area: trickery-masteries-1;
 }
 
 .trickery-value {
-	grid-area: trickery-value;
+  grid-area: trickery-value;
 }
 
 .stealth-skill {
-	grid-area: stealth-skill;
+  grid-area: stealth-skill;
 }
 
 .stealth-masteries-2 {
-	grid-area: stealth-masteries-2;
+  grid-area: stealth-masteries-2;
 }
 
 .stealth-value {
-	grid-area: stealth-value;
+  grid-area: stealth-value;
 }
 
 .charisma-stat {
-	grid-area: charisma-stat;
+  grid-area: charisma-stat;
 }
 
 .charisma-save {
-	grid-area: charisma-save;
+  grid-area: charisma-save;
 }
 
 .animal-skill {
-	grid-area: animal-skill;
+  grid-area: animal-skill;
 }
 
 .animal-masteries-0 {
-	grid-area: animal-masteries-0;
+  grid-area: animal-masteries-0;
 }
 
 .animal-value {
-	grid-area: animal-value;
+  grid-area: animal-value;
 }
 
 .influence-skill {
-	grid-area: influence-skill;
+  grid-area: influence-skill;
 }
 
 .influence-masteries-1 {
-	grid-area: influence-masteries-1;
+  grid-area: influence-masteries-1;
 }
 
 .influence-value {
-	grid-area: influence-value;
+  grid-area: influence-value;
 }
 
 .insight-skill {
-	grid-area: insight-skill;
+  grid-area: insight-skill;
 }
 
 .insight-masteries-2 {
-	grid-area: insight-masteries-2;
+  grid-area: insight-masteries-2;
 }
 
 .insight-value {
-	grid-area: insight-value;
+  grid-area: insight-value;
 }
 
 .intelligence-stat {
-	grid-area: intelligence-stat;
+  grid-area: intelligence-stat;
 }
 
 .intelligence-save {
-	grid-area: intelligence-save;
+  grid-area: intelligence-save;
 }
 
 .investigation-skill {
-	grid-area: investigation-skill;
+  grid-area: investigation-skill;
 }
 
 .investigation-masteries-0 {
-	grid-area: investigation-masteries-0;
+  grid-area: investigation-masteries-0;
 }
 
 .investigation-value {
-	grid-area: investigation-value;
+  grid-area: investigation-value;
 }
 
 .medicine-skill {
-	grid-area: medicine-skill;
+  grid-area: medicine-skill;
 }
 
 .medicine-masteries-1 {
-	grid-area: medicine-masteries-1;
+  grid-area: medicine-masteries-1;
 }
 
 .medicine-value {
-	grid-area: medicine-value;
+  grid-area: medicine-value;
 }
 
 .survival-skill {
-	grid-area: survival-skill;
+  grid-area: survival-skill;
 }
 
 .survival-masteries-2 {
-	grid-area: survival-masteries-2;
+  grid-area: survival-masteries-2;
 }
 
 .survival-value {
-	grid-area: survival-value;
+  grid-area: survival-value;
 }
 
 .arcana-skill {
-	grid-area: arcana-skill;
+  grid-area: arcana-skill;
 }
 
 .arcana-masteries-3 {
-	grid-area: arcana-masteries-3;
+  grid-area: arcana-masteries-3;
 }
 
 .arcana-value {
-	grid-area: arcana-value;
+  grid-area: arcana-value;
 }
 
 .history-skill {
-	grid-area: history-skill;
+  grid-area: history-skill;
 }
 
 .history-masteries-4 {
-	grid-area: history-masteries-4;
+  grid-area: history-masteries-4;
 }
 
 .history-value {
-	grid-area: history-value;
+  grid-area: history-value;
 }
 
 .nature-skill {
-	grid-area: nature-skill;
+  grid-area: nature-skill;
 }
 
 .nature-masteries-5 {
-	grid-area: nature-masteries-5;
+  grid-area: nature-masteries-5;
 }
 
 .nature-value {
-	grid-area: nature-value;
+  grid-area: nature-value;
 }
 
 .occultism-skill {
-	grid-area: occultism-skill;
+  grid-area: occultism-skill;
 }
 
 .occultism-masteries-6 {
-	grid-area: occultism-masteries-6;
+  grid-area: occultism-masteries-6;
 }
 
 .occultism-value {
-	grid-area: occultism-value;
+  grid-area: occultism-value;
 }
 
 .religion-skill {
-	grid-area: religion-skill;
+  grid-area: religion-skill;
 }
 
 .religion-masteries-7 {
-	grid-area: religion-masteries-7;
+  grid-area: religion-masteries-7;
 }
 
 .religion-value {
-	grid-area: religion-value;
+  grid-area: religion-value;
 }
 
 .skill-8 {
-	grid-area: skill-8;
+  grid-area: skill-8;
 }
 
 .skill-8 input,
 .skill-9 input {
-	width: 10ch;
-	height: 24px !important;
+  width: 10ch;
+  height: 24px !important;
 }
 
 .-masteries-8 {
-	grid-area: -masteries-8;
+  grid-area: -masteries-8;
 }
 
 .value-8 {
-	grid-area: value-8;
+  grid-area: value-8;
 }
 
 .skill-9 {
-	grid-area: skill-9;
+  grid-area: skill-9;
 }
 
 .-masteries-9 {
-	grid-area: -masteries-9;
+  grid-area: -masteries-9;
 }
 
 .value-9 {
-	grid-area: value-9;
+  grid-area: value-9;
 }
 
 .trades {
-	grid-area: trades;
+  grid-area: trades;
 }
 
 .languages {
-	grid-area: languages;
+  grid-area: languages;
 }
 
 .combat-masteries {
-	grid-area: combat-masteries;
+  grid-area: combat-masteries;
 }
 
 .currency {
-	grid-area: currency;
+  grid-area: currency;
 }
 
 .points {
-	grid-area: points;
+  grid-area: points;
 }
 
 .defenses {
-	grid-area: defenses;
+  grid-area: defenses;
 }
 
 .combat {
-	grid-area: combat;
+  grid-area: combat;
 }
 
 .attacks {
-	grid-area: attacks;
+  grid-area: attacks;
 }
 
 .inventory {
-	grid-area: inventory;
+  grid-area: inventory;
 }
 
 .death {
-	grid-area: death;
+  grid-area: death;
 }
 
 .move {
-	grid-area: move;
+  grid-area: move;
 }
 
 .resources {
-	grid-area: resources;
+  grid-area: resources;
 }
 
 .features {
-	grid-area: features;
+  grid-area: features;
 }
