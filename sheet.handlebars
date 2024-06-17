@@ -1,214 +1,248 @@
-{{!-- Character Information --}}
-<div>
-	<span>Player Name</span>
-	<input type="text" name="attr_playerName" placeholder="Enter Your Name">
-	<span>Character Name</span>
-	<input type="text" name="attr_character_name" placeholder="Enter Your Character's Name">
-	<span>Level</span>
-	<input type="number" name="attr_level" value="1" min="1">
-	<span>Combat Mastery</span>
-	<input type="text" name="attr_combatMastery" value="1" readonly>
-</div>
+<div class="container">
+	{{!-- Character Information --}}
+	<div class="info">
+		<div class="player">
+			<span>Player Name</span>
+			<input type="text" name="attr_playerName" placeholder="Enter Your Name">
+		</div>
+		<div class="name">
+			<span>Character Name</span>
+			<input type="text" name="attr_character_name" placeholder="Enter Your Character's Name">
+		</div>
+		<div class="class">
+			<span>Class & Subclass</span>
+			<input type="text" name="attr_class" placeholder="Class - Subclass">
+		</div>
+		<div class="ancestry">
+			<span>Ancestry & Background</span>
+			<input type="text" name="attr_ancestry" placeholder="Ancestry & Background">
+		</div>
+		<div class="level">
+			<span>Level</span>
+			<input type="number" name="attr_level" value="1" min="1">
+		</div>
+		<div class="cm">
+			<span>Combat Mastery</span>
+			<input type="number" name="attr_combatMastery" value="1" readonly>
+		</div>
+	</div>
 
-{{!-- Character Stats and Skills --}}
-<div>
-	{{#each skillsList as |skills|}}
-	{{#if @key}}
-	<span>{{capitalize @key}}</span>
-	<input type="number" name="attr_{{@key}}" value="-2" min="-2" />
-	<span>Save</span>
-	<input type="number" name="attr_{{@key}}Save" value="-2" readonly>
-	<input type="checkbox" name="attr_{{@key}}SaveMastery" value="1" title="Save Mastery">
-	{{else}}
-	<span>Prime</span>
-	<input type="number" name="attr_prime" value="-2" readonly>
-	{{/if}}
-	{{#each skills as |skill|}}
-	{{#if skill}}
-	<span>{{capitalize skill}}</span>
-	{{else}}
-	<input type="text" name="attr_skill{{@index}}Name">
-	{{/if}}
-	{{#each @root.masteries as |mastery|}}
-	{{#if skill}}
-	<input type="checkbox" name="attr_{{skill}}Mastery" value="{{mastery}}" title="{{capitalize @key}}">
-	{{else}}
-	<input type="checkbox" name="attr_skill{{@../index}}Mastery" value="{{mastery}}" title="{{capitalize @key}}">
-	{{/if}}
-	{{/each}}
-	{{#if skill}}
-	<input type="number" name="attr_{{skill}}" value="-2" readonly>
-	{{else}}
-	<input type="number" name="attr_skill{{@index}}" value="-2" readonly>
-	{{/if}}
-	{{/each}}
-	{{/each}}
-</div>
-
-{{!-- Character Trades --}}
-<div>
-	<span>Trades</span>
-	<fieldset class="repeating_trade">
-		<input type="text" name="attr_tradeName" placeholder="Name">
-		<select name="attr_tradeStat">
-			<option value="none" selected disabled>Choose</option>
-			{{#each stats}}
-			<option value="{{this}}">{{capitalize this}}</option>
+	{{!-- Character Stats and Skills --}}
+	<div class="stats">
+		{{#each skillsList as |skills|}}
+		{{#if @key}}
+		<div class="{{@key}}-stat">
+			<span>{{capitalize @key}}</span>
+			<input type="number" name="attr_{{@key}}" value="-2" min="-2" />
+		</div>
+		<div class="{{@key}}-save">
+			<span>Save</span>
+			<input type="number" name="attr_{{@key}}Save" value="-2" readonly>
+			<input type="checkbox" name="attr_{{@key}}SaveMastery" value="1" title="Save Mastery">
+		</div>
+		{{else}}
+		<div class="prime-stat">
+			<span>Prime</span>
+			<input type="number" name="attr_prime" value="-2" readonly>
+		</div>
+		{{/if}}
+		{{#each skills as |skill|}}
+		{{#if skill}}
+		<div class="{{skill}}-skill">
+			<span>{{capitalize skill}}</span>
+		</div>
+		{{else}}
+		<div class="skill-{{@index}}">
+			<input type="text" name="attr_skill{{@index}}Name">
+		</div>
+		{{/if}}
+		<div class="{{skill}}-masteries-{{@index}}">
+			{{#each @root.masteries as |mastery|}}
+			{{#if skill}}
+			<input type="checkbox" name="attr_{{skill}}Mastery" value="{{mastery}}" title="{{capitalize @key}}">
+			{{else}}
+			<input type="checkbox" name="attr_skill{{@../index}}Mastery" value="{{mastery}}" title="{{capitalize @key}}">
+			{{/if}}
 			{{/each}}
-		</select>
-		{{#each masteries}}
-		<input type="checkbox" name="attr_tradeMastery" value="{{this}}" title="{{capitalize @key}}">
+		</div>
+		{{#if skill}}
+		<div class="{{skill}}-value">
+			<input type="number" name="attr_{{skill}}" value="-2" readonly>
+		</div>
+		{{else}}
+		<div class="value-{{@index}}">
+			<input type="number" name="attr_skill{{@index}}" value="-2" readonly>
+		</div>
+		{{/if}}
 		{{/each}}
-		<input type="number" name="attr_tradeModifier" value="0" readonly>
-	</fieldset>
-</div>
-
-{{!-- Character Languages --}}
-<div>
-	<span>Languages</span>
-	<fieldset class="repeating_language">
-		<select>
-			<option value="none" selected disabled>Choose</option>
-			{{#each language-lists as |list|}}
-			<option disabled style="background: grey; font-weight: bold; color: white;">{{@key}}</option>
-			{{#each list as |language|}}
-			<option>{{titleize language}}</option>
-			{{/each}}
-			{{/each}}
-		</select>
-		{{#each language-masteries}}
-		<input type="checkbox" title="{{capitalize this}}">
 		{{/each}}
-	</fieldset>
-</div>
+	</div>
 
-{{!-- Character Combat Masteries --}}
-<div>
-	<span>Combat Masteries</span>
-	<textarea></textarea>
-</div>
+	{{!-- Character Trades --}}
+	<div class="trades">
+		<span>Trades</span>
+		<fieldset class="repeating_trade">
+			<input type="text" name="attr_tradeName" placeholder="Name">
+			<select name="attr_tradeStat">
+				<option value="none" selected disabled>Choose</option>
+				{{#each stats}}
+				<option value="{{this}}">{{capitalize this}}</option>
+				{{/each}}
+			</select>
+			{{#each masteries}}
+			<input type="checkbox" name="attr_tradeMastery" value="{{this}}" title="{{capitalize @key}}">
+			{{/each}}
+			<input type="number" name="attr_tradeModifier" value="0" readonly>
+		</fieldset>
+	</div>
 
-{{!-- Character Currency --}}
-<div>
-	<span>Currency</span>
-	<textarea></textarea>
-</div>
+	{{!-- Character Languages --}}
+	<div class="languages">
+		<span>Languages</span>
+		<fieldset class="repeating_language">
+			<select>
+				<option value="none" selected disabled>Choose</option>
+				{{#each language-lists as |list|}}
+				<option disabled style="background: grey; font-weight: bold; color: white;">{{@key}}</option>
+				{{#each list as |language|}}
+				<option>{{titleize language}}</option>
+				{{/each}}
+				{{/each}}
+			</select>
+			{{#each language-masteries}}
+			<input type="checkbox" title="{{capitalize this}}">
+			{{/each}}
+		</fieldset>
+	</div>
 
-{{!-- Character Stamina, Mana, Hit Points, and Temporary Hit Points --}}
-<div>
-	{{#each points}}
-	<span>{{capitalize this}} Points</span>
-	<input type="number" name="attr_{{this}}Points" value="0">
-	<span>Max</span>
-	<input type="number" name="attr_{{this}}Points_max" value="0" readonly>
-	{{/each}}
-
-	<span>Temp</span>
-	<input type="number" name="attr_tempHitPoints" value="0">
-</div>
-
-{{!-- Character Defenses --}}
-<div>
-	{{#each defenses}}
-	<span>{{capitalize this}} Defense</span>
-	<input type="number" name="attr_{{this}}Defense" value="0" readonly>
-	<span>Heavy</span>
-	<input type="number" name="attr_{{this}}Heavy" value="0" readonly>
-	<span>Brutal</span>
-	<input type="number" name="attr_{{this}}Brutal" value="0" readonly>
-	<span>{{capitalize this}} Damage Reduction</span>
-	<input type="number" name="attr_{{this}}DamageReduction" value="0">
-	{{/each}}
-</div>
-
-{{!-- Character Combat Information --}}
-<div>
-	<span>Combat</span>
-	<span>Actions Points</span>
-	<input type="checkbox">
-	<input type="checkbox">
-	<input type="checkbox">
-	<input type="checkbox">
-	<span>Minor Action Point</span>
-	<input type="checkbox">
-	<span>Attack/Spell Check</span>
-	<input type="number" name="attr_attackModifier" value="-1" readonly>
-</div>
-
-{{!-- Character Attacks --}}
-<div>
-	<span>Attacks</span>
-	<fieldset class="repeating_attack">
-		<span>Name</span>
-		<input type="text" name="attr_attackName" placeholder="Name">
-		<span>Damage</span>
-		<input type="number" name="attr_attackDamage" value="0" min="0">
-		<span>Damage Type</span>
-		<input type="text" name="attr_attackType" placeholder="Damage Type">
-		<span>Special</span>
+	{{!-- Character Combat Masteries --}}
+	<div class="combat-masteries">
+		<span>Combat Masteries</span>
 		<textarea></textarea>
-	</fieldset>
-</div>
+	</div>
 
-{{!-- Character Inventory --}}
-<div>
-	<span>Inventory</span>
-	<fieldset class="repeating_inventory">
-		<span>Name</span>
-		<input type="text" placeholder="Name">
-		<span>Quantity</span>
-		<input type="number" name="attr_inventoryQuantity" value="1" min="1">
-		<span>Weight</span>
-		<input type="number" name="attr_inventoryWeight" value="0" min="0">
-	</fieldset>
-</div>
-
-{{!-- Character Death --}}
-<div>
-	<span>Death</span>
-	<span>Exhaustion</span>
-	<input type="hidden" name="attr_exhaustion" value="0">
-	{{#each exhaustion}}
-	<input type="checkbox" name="attr_exhaustion" value="{{this}}">
-	{{/each}}
-	<span>Death Threshold</span>
-	<input type="number" name="attr_deathThreshold" value="0" readonly>
-</div>
-
-{{!-- Move and Jump --}}
-<div>
-	<span>Move Speed</span>
-	<input type="number" name="attr_move" value="0" min="0">
-	<span>Jump Distance</span>
-	<input type="number" name="attr_jump" value="1" min="1" readonly>
-</div>
-
-{{!-- Resources --}}
-<div>
-	<span>Resources</span>
-	<span>Name</span>
-	<span>Total</span>
-	<span>Max</span>
-	<span>Rest Points</span>
-	<input type="number" name="attr_restPoints" value="0" min="0">
-	<input type="number" name="attr_restPoints_max" value="0" readonly>
-	<span>Grit Points</span>
-	<input type="number" name="attr_gritPoints" value="0" min="0">
-	<input type="number" name="attr_gritPoints_max" value="0" readonly>
-	<fieldset class="repeating_resource">
-		<input type="text" name="attr_resourceName" placeholder="Name">
-		<input type="number" name="attr_resource" value="0" min="0">
-		<input type="number" name="attr_resource_max" value="0">
-	</fieldset>
-</div>
-
-{{!-- Character Features --}}
-<div>
-	<span>Features</span>
-	<fieldset class="repeating_resource">
-		<input type="text" placeholder="Name">
+	{{!-- Character Currency --}}
+	<div class="currency">
+		<span>Currency</span>
 		<textarea></textarea>
-	</fieldset>
+	</div>
+
+	{{!-- Character Stamina, Mana, Hit Points, and Temporary Hit Points --}}
+	<div class="points">
+		{{#each points}}
+		<span>{{capitalize this}} Points</span>
+		<input type="number" name="attr_{{this}}Points" value="0">
+		<span>Max</span>
+		<input type="number" name="attr_{{this}}Points_max" value="0" readonly>
+		{{/each}}
+
+		<span>Temp</span>
+		<input type="number" name="attr_tempHitPoints" value="0">
+	</div>
+
+	{{!-- Character Defenses --}}
+	<div class="defenses">
+		{{#each defenses}}
+		<span>{{capitalize this}} Defense</span>
+		<input type="number" name="attr_{{this}}Defense" value="0" readonly>
+		<span>Heavy</span>
+		<input type="number" name="attr_{{this}}Heavy" value="0" readonly>
+		<span>Brutal</span>
+		<input type="number" name="attr_{{this}}Brutal" value="0" readonly>
+		<span>{{capitalize this}} Damage Reduction</span>
+		<input type="number" name="attr_{{this}}DamageReduction" value="0">
+		{{/each}}
+	</div>
+
+	{{!-- Character Combat Information --}}
+	<div class="combat">
+		<span>Combat</span>
+		<span>Actions Points</span>
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<span>Minor Action Point</span>
+		<input type="checkbox">
+		<span>Attack/Spell Check</span>
+		<input type="number" name="attr_attackModifier" value="-1" readonly>
+	</div>
+
+	{{!-- Character Attacks --}}
+	<div class="attacks">
+		<span>Attacks</span>
+		<fieldset class="repeating_attack">
+			<span>Name</span>
+			<input type="text" name="attr_attackName" placeholder="Name">
+			<span>Damage</span>
+			<input type="number" name="attr_attackDamage" value="0" min="0">
+			<span>Damage Type</span>
+			<input type="text" name="attr_attackType" placeholder="Damage Type">
+			<span>Special</span>
+			<textarea></textarea>
+		</fieldset>
+	</div>
+
+	{{!-- Character Inventory --}}
+	<div class="inventory">
+		<span>Inventory</span>
+		<fieldset class="repeating_inventory">
+			<span>Name</span>
+			<input type="text" placeholder="Name">
+			<span>Quantity</span>
+			<input type="number" name="attr_inventoryQuantity" value="1" min="1">
+			<span>Weight</span>
+			<input type="number" name="attr_inventoryWeight" value="0" min="0">
+		</fieldset>
+	</div>
+
+	{{!-- Character Death --}}
+	<div class="death">
+		<span>Death</span>
+		<span>Exhaustion</span>
+		<input type="hidden" name="attr_exhaustion" value="0">
+		{{#each exhaustion}}
+		<input type="checkbox" name="attr_exhaustion" value="{{this}}">
+		{{/each}}
+		<span>Death Threshold</span>
+		<input type="number" name="attr_deathThreshold" value="0" readonly>
+	</div>
+
+	{{!-- Move and Jump --}}
+	<div class="move">
+		<span>Move Speed</span>
+		<input type="number" name="attr_move" value="0" min="0">
+		<span>Jump Distance</span>
+		<input type="number" name="attr_jump" value="1" min="1" readonly>
+	</div>
+
+	{{!-- Resources --}}
+	<div class="resources">
+		<span>Resources</span>
+		<span>Name</span>
+		<span>Total</span>
+		<span>Max</span>
+		<span>Rest Points</span>
+		<input type="number" name="attr_restPoints" value="0" min="0">
+		<input type="number" name="attr_restPoints_max" value="0" readonly>
+		<span>Grit Points</span>
+		<input type="number" name="attr_gritPoints" value="0" min="0">
+		<input type="number" name="attr_gritPoints_max" value="0" readonly>
+		<fieldset class="repeating_resource">
+			<input type="text" name="attr_resourceName" placeholder="Name">
+			<input type="number" name="attr_resource" value="0" min="0">
+			<input type="number" name="attr_resource_max" value="0">
+		</fieldset>
+	</div>
+
+	{{!-- Character Features --}}
+	<div class="features">
+		<span>Features</span>
+		<fieldset class="repeating_resource">
+			<input type="text" placeholder="Name">
+			<textarea></textarea>
+		</fieldset>
+	</div>
 </div>
 
 <script type="text/worker">
@@ -300,17 +334,17 @@ on("change:{{skill}}Mastery change:prime", () => {
 {{/each}}
 
 // When custom skill mastery or intelligence is changed, set the custom skill modifiers
-on("change:skill7Mastery change:skill8Mastery change:intelligence", () => {
-	getAttrs(["skill7Mastery", "skill8Mastery", "intelligence"], values => {
-		const mastery7 = +values.skill7Mastery || 0;
+on("change:skill8Mastery change:skill9Mastery change:intelligence", () => {
+	getAttrs(["skill8Mastery", "skill9Mastery", "intelligence"], values => {
 		const mastery8 = +values.skill8Mastery || 0;
+		const mastery9 = +values.skill9Mastery || 0;
 		const intelligence = +values.intelligence || 0;
-		const total7 = intelligence + mastery7;
 		const total8 = intelligence + mastery8;
+		const total9 = intelligence + mastery9;
 
 		setAttrs({
-			"skill7": total7,
-			"skill8": total8
+			"skill8": total8,
+			"skill9": total9
 		});
 	});
 });
