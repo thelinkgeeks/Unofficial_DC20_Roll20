@@ -1,3 +1,16 @@
+input[type="text"],
+input[type="number"] {
+	height: 24px !important;
+}
+
+input[type="number"] {
+	width: 6ch !important;
+}
+
+input[type="text"]:read-only {
+	width: 4ch !important;
+}
+
 .container {
 	width: 100%;
 	padding: 0;
@@ -64,6 +77,8 @@
 
 .stats {
 	grid-area: stats;
+	min-width: 244px;
+	max-width: 284px;
 	display: grid;
 	grid-template-areas:
 		"prime-stat . . ."
@@ -340,8 +355,10 @@
 	grid-area: skill-8;
 }
 
-.skill-8 input {
+.skill-8 input,
+.skill-9 input {
 	width: 10ch;
+	height: 24px !important;
 }
 
 .-masteries-8 {
@@ -354,10 +371,6 @@
 
 .skill-9 {
 	grid-area: skill-9;
-}
-
-.skill-9 input {
-	width: 10ch;
 }
 
 .-masteries-9 {
