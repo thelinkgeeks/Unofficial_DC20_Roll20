@@ -1,0 +1,11 @@
+.info {
+	grid-area: info;
+	display: grid;
+	grid-template-areas:
+		'player player class class level'
+		'name name ancestry ancestry cm';
+
+	span {
+		display: block;
+	}
+}

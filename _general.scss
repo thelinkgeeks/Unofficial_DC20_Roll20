@@ -1,0 +1,12 @@
+input[type='text'] {
+	height: 24px !important;
+
+	&:read-only {
+		width: 4ch !important;
+	}
+}
+
+input[type='number'] {
+	width: 6ch !important;
+	height: 24px !important;
+}

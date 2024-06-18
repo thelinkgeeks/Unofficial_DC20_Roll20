@@ -1,0 +1,37 @@
+.stats {
+	grid-area: stats;
+	display: grid;
+	grid-template-areas:
+		'prime-stat prime-name . .'
+		'. awareness-masteries awareness-value awareness-skill'
+		'might-stat might-name . might-save'
+		'. athletics-masteries athletics-value athletics-skill'
+		'. intimidation-masteries intimidation-value intimidation-skill'
+		'agility-stat agility-name . agility-save'
+		'. acrobatics-masteries acrobatics-value acrobatics-skill'
+		'. trickery-masteries trickery-value trickery-skill'
+		'. stealth-masteries stealth-value stealth-skill'
+		'charisma-stat charisma-name . charisma-save'
+		'. animal-masteries animal-value animal-skill'
+		'. influence-masteries influence-value influence-skill'
+		'. insight-masteries insight-value insight-skill'
+		'intelligence-stat intelligence-name . intelligence-save'
+		'. investigation-masteries investigation-value investigation-skill'
+		'. medicine-masteries medicine-value medicine-skill'
+		'. survival-masteries survival-value survival-skill'
+		'. arcana-masteries arcana-value arcana-skill'
+		'. history-masteries history-value history-skill'
+		'. nature-masteries nature-value nature-skill'
+		'. occultism-masteries occultism-value occultism-skill'
+		'. religion-masteries religion-value religion-skill'
+		'. skill8-masteries skill8-value skill8-skill'
+		'. skill9-masteries skill9-value skill9-skill';
+
+	span {
+		display: block;
+	}
+
+	input[type='text'] {
+		width: 10ch !important;
+	}
+}

@@ -1,0 +1,36 @@
+@each $charsheet in $charsheets {
+	.#{$charsheet} {
+		grid-area: $charsheet;
+	}
+}
+
+@each $stat in $stats {
+	.#{$stat}-stat {
+		grid-area: #{$stat}-stat;
+	}
+
+	.#{$stat}-name {
+		grid-area: #{$stat}-name;
+	}
+
+	@if ($stat !='prime') {
+		.#{$stat}-save {
+			grid-area: #{$stat}-save;
+		}
+	}
+}
+
+@each $skill in $skills {
+	.#{$skill}-skill {
+		grid-area: #{$skill}-skill;
+	}
+
+	.#{$skill}-masteries {
+		grid-area: #{$skill}-masteries;
+		min-width: 80px;
+	}
+
+	.#{$skill}-value {
+		grid-area: #{$skill}-value;
+	}
+}
