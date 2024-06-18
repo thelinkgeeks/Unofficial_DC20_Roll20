@@ -1,0 +1,26 @@
+.trades {
+	max-width: $max-width;
+
+	.repitem {
+		display: flex;
+		gap: .25rem;
+	}
+
+	select {
+		max-width: 8ch !important;
+		height: 24px !important;
+	}
+
+	input.name {
+		min-width: 10ch !important;
+	}
+
+	input[type='checkbox'] {
+		margin: 0 0 0.75rem 0;
+	}
+
+	button {
+		width: 28px;
+		font-size: 11px;
+	}
+}

@@ -1,5 +1,7 @@
 .info {
-	grid-area: info;
+	column-gap: 2rem;
+	row-gap: .5rem;
+	justify-content: center;
 	display: grid;
 	grid-template-areas:
 		'player player class class level'

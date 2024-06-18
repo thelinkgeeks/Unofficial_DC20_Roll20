@@ -88,17 +88,16 @@
 		<div class="trades">
 			<span>Trades</span>
 			<fieldset class="repeating_trade">
-				<input type="text" name="attr_tradeName" placeholder="Name">
-				<select name="attr_tradeStat">
-					<option value="none" selected disabled>Choose</option>
-					{{#each stats}}
-					<option value="{{this}}">{{capitalize this}}</option>
-					{{/each}}
-				</select>
 				{{#each masteries}}
 				<input type="checkbox" name="attr_tradeMastery" value="{{this}}" title="{{capitalize @key}}">
 				{{/each}}
 				<input type="text" name="attr_tradeModifier" value="0" readonly>
+				<input type="text" name="attr_tradeName" class="name" placeholder="Name">
+				<select name="attr_tradeStat">
+					{{#each stats}}
+					<option value="{{this}}">{{truncate (uppercase this) 3}}</option>
+					{{/each}}
+				</select>
 			</fieldset>
 		</div>
 

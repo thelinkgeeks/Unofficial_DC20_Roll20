@@ -6,6 +6,10 @@
   grid-template-areas: "info info info info info info info info" "info info info info info info info info" "stats stats stats points points points defenses defenses" "stats stats stats points points points defenses defenses" "stats stats stats points points points defenses defenses" "stats stats stats combat combat combat death death" "stats stats stats combat combat combat death death" "stats stats stats combat combat combat move move" "stats stats stats combat combat combat resources resources" "stats stats stats attacks attacks attacks resources resources" "stats stats stats attacks attacks attacks resources resources" "stats stats stats attacks attacks attacks resources resources" "trades trades trades inventory inventory inventory features features" "trades trades trades inventory inventory inventory features features" "languages languages languages inventory inventory inventory features features" "languages languages languages inventory inventory inventory features features" "combat-masteries combat-masteries combat-masteries inventory inventory inventory features features" "combat-masteries combat-masteries combat-masteries inventory inventory inventory features features" "currency currency currency inventory inventory inventory features features" "currency currency currency inventory inventory inventory features features";
 }
 
+.info {
+  grid-area: info;
+}
+
 .player {
   grid-area: player;
 }
@@ -394,7 +398,10 @@
 }
 
 .info {
-  grid-area: info;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  row-gap: 0.5rem;
+  justify-content: center;
   display: grid;
   grid-template-areas: "player player class class level" "name name ancestry ancestry cm";
 }
@@ -403,8 +410,8 @@
 }
 
 .stats {
-  grid-area: stats;
   display: grid;
+  max-width: 265px;
   grid-template-areas: "prime-stat prime-name . ." ". awareness-masteries awareness-value awareness-skill" "might-stat might-name . might-save" ". athletics-masteries athletics-value athletics-skill" ". intimidation-masteries intimidation-value intimidation-skill" "agility-stat agility-name . agility-save" ". acrobatics-masteries acrobatics-value acrobatics-skill" ". trickery-masteries trickery-value trickery-skill" ". stealth-masteries stealth-value stealth-skill" "charisma-stat charisma-name . charisma-save" ". animal-masteries animal-value animal-skill" ". influence-masteries influence-value influence-skill" ". insight-masteries insight-value insight-skill" "intelligence-stat intelligence-name . intelligence-save" ". investigation-masteries investigation-value investigation-skill" ". medicine-masteries medicine-value medicine-skill" ". survival-masteries survival-value survival-skill" ". arcana-masteries arcana-value arcana-skill" ". history-masteries history-value history-skill" ". nature-masteries nature-value nature-skill" ". occultism-masteries occultism-value occultism-skill" ". religion-masteries religion-value religion-skill" ". skill8-masteries skill8-value skill8-skill" ". skill9-masteries skill9-value skill9-skill";
 }
 .stats span {
@@ -412,6 +419,28 @@
 }
 .stats input[type=text] {
   width: 10ch !important;
+}
+
+.trades {
+  max-width: 265px;
+}
+.trades .repitem {
+  display: flex;
+  gap: 0.25rem;
+}
+.trades select {
+  max-width: 8ch !important;
+  height: 24px !important;
+}
+.trades input.name {
+  min-width: 10ch !important;
+}
+.trades input[type=checkbox] {
+  margin: 0 0 0.75rem 0;
+}
+.trades button {
+  width: 28px;
+  font-size: 11px;
 }
 
 input[type=text] {
@@ -427,4 +456,12 @@ input[type=text]:read-only {
 input[type=number] {
   width: 6ch !important;
   height: 24px !important;
+}
+
+.repcontainer > .repitem {
+  display: flex;
+}
+
+.charsheet {
+  padding: 0 !important;
 }

@@ -10,3 +10,11 @@ input[type='number'] {
 	width: 6ch !important;
 	height: 24px !important;
 }
+
+.repcontainer>.repitem {
+	display: flex;
+}
+
+.charsheet {
+	padding: 0 !important;
+}

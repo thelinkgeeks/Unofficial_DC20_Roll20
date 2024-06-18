@@ -333,20 +333,19 @@
 		<div class="trades">
 			<span>Trades</span>
 			<fieldset class="repeating_trade">
-				<input type="text" name="attr_tradeName" placeholder="Name">
-				<select name="attr_tradeStat">
-					<option value="none" selected disabled>Choose</option>
-					<option value="might">Might</option>
-					<option value="agility">Agility</option>
-					<option value="charisma">Charisma</option>
-					<option value="intelligence">Intelligence</option>
-				</select>
 				<input type="checkbox" name="attr_tradeMastery" value="2" title="Novice">
 				<input type="checkbox" name="attr_tradeMastery" value="4" title="Adept">
 				<input type="checkbox" name="attr_tradeMastery" value="6" title="Expert">
 				<input type="checkbox" name="attr_tradeMastery" value="8" title="Master">
 				<input type="checkbox" name="attr_tradeMastery" value="10" title="Grandmaster">
 				<input type="text" name="attr_tradeModifier" value="0" readonly>
+				<input type="text" name="attr_tradeName" class="name" placeholder="Name">
+				<select name="attr_tradeStat">
+					<option value="might">MIG</option>
+					<option value="agility">AGI</option>
+					<option value="charisma">CHA</option>
+					<option value="intelligence">INT</option>
+				</select>
 			</fieldset>
 		</div>
 

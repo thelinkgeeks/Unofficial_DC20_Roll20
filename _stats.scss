@@ -1,6 +1,6 @@
 .stats {
-	grid-area: stats;
 	display: grid;
+	max-width: $max-width;
 	grid-template-areas:
 		'prime-stat prime-name . .'
 		'. awareness-masteries awareness-value awareness-skill'
