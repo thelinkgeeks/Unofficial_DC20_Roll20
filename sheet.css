@@ -1,5 +1,6 @@
-.container {
-  width: 100%;
+.sheet-pc {
+  width: 800px;
+  margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
   display: grid;
@@ -397,7 +398,9 @@
   grid-area: skill9-value;
 }
 
-.info {
+.header-pc {
+  background: url(https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/5e%20Darker%20Dungeons/img/sheet-header-bg.png);
+  background-size: 100% 100%;
   -moz-column-gap: 2rem;
        column-gap: 2rem;
   row-gap: 0.5rem;
@@ -405,7 +408,7 @@
   display: grid;
   grid-template-areas: "player player class class level" "name name ancestry ancestry cm";
 }
-.info span {
+.header-pc span {
   display: block;
 }
 
