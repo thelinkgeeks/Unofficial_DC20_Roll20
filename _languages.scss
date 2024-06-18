@@ -1,32 +1,23 @@
-.trades {
+.languages {
 	max-width: $max-width;
 	@include border;
 	margin-bottom: 1rem;
 
 	.repitem {
 		display: flex;
-		gap: 0.2rem;
+		justify-content: space-between;
 	}
 
 	select {
 		height: 24px !important;
-		font-size: 12px !important;
-
-		.stat {
-			max-width: 8ch !important;
-		}
 	}
 
 	input[type='checkbox'] {
-		margin: 0 auto 0.75rem auto;
+		margin: 0 0 0.75rem 0;
 	}
 
 	button {
 		width: 28px;
 		font-size: 11px;
-	}
-
-	.flex {
-		display: flex;
 	}
 }

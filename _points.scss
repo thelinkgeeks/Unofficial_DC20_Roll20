@@ -1,0 +1,11 @@
+.points {
+	@include border;
+	margin-bottom: 1rem;
+	display: flex;
+	justify-content: space-between;
+	margin-left: 1rem;
+
+	span {
+		display: block;
+	}
+}

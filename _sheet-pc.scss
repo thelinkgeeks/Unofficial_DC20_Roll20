@@ -1,15 +1,12 @@
 .sheet-pc {
-	width: 800px;
-	margin: 0 auto;
 	padding: 0;
-	box-sizing: border-box;
 	display: grid;
 	grid-template-areas:
-		'info info info info info info info info'
-		'info info info info info info info info'
+		'header-pc header-pc header-pc header-pc header-pc header-pc header-pc header-pc'
+		'header-pc header-pc header-pc header-pc header-pc header-pc header-pc header-pc'
 		'stats stats stats points points points defenses defenses'
 		'stats stats stats points points points defenses defenses'
-		'stats stats stats points points points defenses defenses'
+		'stats stats stats combat combat combat death death'
 		'stats stats stats combat combat combat death death'
 		'stats stats stats combat combat combat death death'
 		'stats stats stats combat combat combat move move'

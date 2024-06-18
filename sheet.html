@@ -1,513 +1,565 @@
-<div class="sheet-pc">
-	<div class="header-pc">
-		<div class="player">
-			<span>Player Name</span>
-			<input type="text" name="attr_playerName" placeholder="Enter Your Name">
-		</div>
-		<div class="name">
-			<span>Character Name</span>
-			<input type="text" name="attr_character_name" placeholder="Enter Your Character's Name">
-		</div>
-		<div class="class">
-			<span>Class & Subclass</span>
-			<input type="text" name="attr_class" placeholder="Class - Subclass">
-		</div>
-		<div class="ancestry">
-			<span>Ancestry & Background</span>
-			<input type="text" name="attr_ancestry" placeholder="Ancestry & Background">
-		</div>
-		<div class="level">
-			<span>Level</span>
-			<input type="number" name="attr_level" value="1" min="1">
-		</div>
-		<div class="cm">
-			<span>Combat Mastery</span>
-			<input type="text" name="attr_combatMastery" value="1" readonly>
-		</div>
-	</div>
-
-	<div class="stats">
-		<div class="prime-stat">
-			<input type="text" name="attr_prime" value="-2" readonly>
-		</div>
-		<div class="prime-name">
-			<span>Prime</span>
-		</div>
-		<div class="awareness-skill">
-			<span>Awareness</span>
-		</div>
-		<div class="awareness-masteries">
-				<input type="checkbox" name="attr_awarenessMastery" value="2" title="Novice">
-				<input type="checkbox" name="attr_awarenessMastery" value="4" title="Adept">
-				<input type="checkbox" name="attr_awarenessMastery" value="6" title="Expert">
-				<input type="checkbox" name="attr_awarenessMastery" value="8" title="Master">
-				<input type="checkbox" name="attr_awarenessMastery" value="10" title="Grandmaster">
+<div class="container">
+	<div class="sheet-pc">
+		<div class="header-pc">
+			<div class="player">
+				<span>Player Name</span>
+				<input type="text" name="attr_playerName" placeholder="Enter Your Name">
 			</div>
-			<div class="awareness-value">
-				<input type="text" name="attr_awareness" value="-2" readonly>
+			<div class="name">
+				<span>Character Name</span>
+				<input type="text" name="attr_character_name" placeholder="Enter Your Character's Name">
 			</div>
-		<div class="might-stat">
-			<span>MIG</span>
-			<input type="number" name="attr_might" value="-2" min="-2" />
-		</div>
-		<div class="might-name">
-			<span>Might</span>
-		</div>
-		<div class="might-save">
-			<span>Save</span>
-			<input type="text" name="attr_mightSave" value="-2" readonly>
-			<input type="checkbox" name="attr_mightSaveMastery" value="1" title="Save Mastery">
-		</div>
-		<div class="athletics-skill">
-			<span>Athletics</span>
-		</div>
-		<div class="athletics-masteries">
-				<input type="checkbox" name="attr_athleticsMastery" value="2" title="Novice">
-				<input type="checkbox" name="attr_athleticsMastery" value="4" title="Adept">
-				<input type="checkbox" name="attr_athleticsMastery" value="6" title="Expert">
-				<input type="checkbox" name="attr_athleticsMastery" value="8" title="Master">
-				<input type="checkbox" name="attr_athleticsMastery" value="10" title="Grandmaster">
+			<div class="class">
+				<span>Class & Subclass</span>
+				<input type="text" name="attr_class" placeholder="Class - Subclass">
 			</div>
-			<div class="athletics-value">
-				<input type="text" name="attr_athletics" value="-2" readonly>
+			<div class="ancestry">
+				<span>Ancestry & Background</span>
+				<input type="text" name="attr_ancestry" placeholder="Ancestry & Background">
 			</div>
-		<div class="intimidation-skill">
-			<span>Intimidation</span>
-		</div>
-		<div class="intimidation-masteries">
-				<input type="checkbox" name="attr_intimidationMastery" value="2" title="Novice">
-				<input type="checkbox" name="attr_intimidationMastery" value="4" title="Adept">
-				<input type="checkbox" name="attr_intimidationMastery" value="6" title="Expert">
-				<input type="checkbox" name="attr_intimidationMastery" value="8" title="Master">
-				<input type="checkbox" name="attr_intimidationMastery" value="10" title="Grandmaster">
+			<div class="level">
+				<span>Level</span>
+				<input type="number" name="attr_level" value="1" min="1">
 			</div>
-			<div class="intimidation-value">
-				<input type="text" name="attr_intimidation" value="-2" readonly>
-			</div>
-		<div class="agility-stat">
-			<span>AGI</span>
-			<input type="number" name="attr_agility" value="-2" min="-2" />
-		</div>
-		<div class="agility-name">
-			<span>Agility</span>
-		</div>
-		<div class="agility-save">
-			<span>Save</span>
-			<input type="text" name="attr_agilitySave" value="-2" readonly>
-			<input type="checkbox" name="attr_agilitySaveMastery" value="1" title="Save Mastery">
-		</div>
-		<div class="acrobatics-skill">
-			<span>Acrobatics</span>
-		</div>
-		<div class="acrobatics-masteries">
-				<input type="checkbox" name="attr_acrobaticsMastery" value="2" title="Novice">
-				<input type="checkbox" name="attr_acrobaticsMastery" value="4" title="Adept">
-				<input type="checkbox" name="attr_acrobaticsMastery" value="6" title="Expert">
-				<input type="checkbox" name="attr_acrobaticsMastery" value="8" title="Master">
-				<input type="checkbox" name="attr_acrobaticsMastery" value="10" title="Grandmaster">
-			</div>
-			<div class="acrobatics-value">
-				<input type="text" name="attr_acrobatics" value="-2" readonly>
-			</div>
-		<div class="trickery-skill">
-			<span>Trickery</span>
-		</div>
-		<div class="trickery-masteries">
-				<input type="checkbox" name="attr_trickeryMastery" value="2" title="Novice">
-				<input type="checkbox" name="attr_trickeryMastery" value="4" title="Adept">
-				<input type="checkbox" name="attr_trickeryMastery" value="6" title="Expert">
-				<input type="checkbox" name="attr_trickeryMastery" value="8" title="Master">
-				<input type="checkbox" name="attr_trickeryMastery" value="10" title="Grandmaster">
-			</div>
-			<div class="trickery-value">
-				<input type="text" name="attr_trickery" value="-2" readonly>
-			</div>
-		<div class="stealth-skill">
-			<span>Stealth</span>
-		</div>
-		<div class="stealth-masteries">
-				<input type="checkbox" name="attr_stealthMastery" value="2" title="Novice">
-				<input type="checkbox" name="attr_stealthMastery" value="4" title="Adept">
-				<input type="checkbox" name="attr_stealthMastery" value="6" title="Expert">
-				<input type="checkbox" name="attr_stealthMastery" value="8" title="Master">
-				<input type="checkbox" name="attr_stealthMastery" value="10" title="Grandmaster">
-			</div>
-			<div class="stealth-value">
-				<input type="text" name="attr_stealth" value="-2" readonly>
-			</div>
-		<div class="charisma-stat">
-			<span>CHA</span>
-			<input type="number" name="attr_charisma" value="-2" min="-2" />
-		</div>
-		<div class="charisma-name">
-			<span>Charisma</span>
-		</div>
-		<div class="charisma-save">
-			<span>Save</span>
-			<input type="text" name="attr_charismaSave" value="-2" readonly>
-			<input type="checkbox" name="attr_charismaSaveMastery" value="1" title="Save Mastery">
-		</div>
-		<div class="animal-skill">
-			<span>Animal</span>
-		</div>
-		<div class="animal-masteries">
-				<input type="checkbox" name="attr_animalMastery" value="2" title="Novice">
-				<input type="checkbox" name="attr_animalMastery" value="4" title="Adept">
-				<input type="checkbox" name="attr_animalMastery" value="6" title="Expert">
-				<input type="checkbox" name="attr_animalMastery" value="8" title="Master">
-				<input type="checkbox" name="attr_animalMastery" value="10" title="Grandmaster">
-			</div>
-			<div class="animal-value">
-				<input type="text" name="attr_animal" value="-2" readonly>
-			</div>
-		<div class="influence-skill">
-			<span>Influence</span>
-		</div>
-		<div class="influence-masteries">
-				<input type="checkbox" name="attr_influenceMastery" value="2" title="Novice">
-				<input type="checkbox" name="attr_influenceMastery" value="4" title="Adept">
-				<input type="checkbox" name="attr_influenceMastery" value="6" title="Expert">
-				<input type="checkbox" name="attr_influenceMastery" value="8" title="Master">
-				<input type="checkbox" name="attr_influenceMastery" value="10" title="Grandmaster">
-			</div>
-			<div class="influence-value">
-				<input type="text" name="attr_influence" value="-2" readonly>
-			</div>
-		<div class="insight-skill">
-			<span>Insight</span>
-		</div>
-		<div class="insight-masteries">
-				<input type="checkbox" name="attr_insightMastery" value="2" title="Novice">
-				<input type="checkbox" name="attr_insightMastery" value="4" title="Adept">
-				<input type="checkbox" name="attr_insightMastery" value="6" title="Expert">
-				<input type="checkbox" name="attr_insightMastery" value="8" title="Master">
-				<input type="checkbox" name="attr_insightMastery" value="10" title="Grandmaster">
-			</div>
-			<div class="insight-value">
-				<input type="text" name="attr_insight" value="-2" readonly>
-			</div>
-		<div class="intelligence-stat">
-			<span>INT</span>
-			<input type="number" name="attr_intelligence" value="-2" min="-2" />
-		</div>
-		<div class="intelligence-name">
-			<span>Intelligence</span>
-		</div>
-		<div class="intelligence-save">
-			<span>Save</span>
-			<input type="text" name="attr_intelligenceSave" value="-2" readonly>
-			<input type="checkbox" name="attr_intelligenceSaveMastery" value="1" title="Save Mastery">
-		</div>
-		<div class="investigation-skill">
-			<span>Investigation</span>
-		</div>
-		<div class="investigation-masteries">
-				<input type="checkbox" name="attr_investigationMastery" value="2" title="Novice">
-				<input type="checkbox" name="attr_investigationMastery" value="4" title="Adept">
-				<input type="checkbox" name="attr_investigationMastery" value="6" title="Expert">
-				<input type="checkbox" name="attr_investigationMastery" value="8" title="Master">
-				<input type="checkbox" name="attr_investigationMastery" value="10" title="Grandmaster">
-			</div>
-			<div class="investigation-value">
-				<input type="text" name="attr_investigation" value="-2" readonly>
-			</div>
-		<div class="medicine-skill">
-			<span>Medicine</span>
-		</div>
-		<div class="medicine-masteries">
-				<input type="checkbox" name="attr_medicineMastery" value="2" title="Novice">
-				<input type="checkbox" name="attr_medicineMastery" value="4" title="Adept">
-				<input type="checkbox" name="attr_medicineMastery" value="6" title="Expert">
-				<input type="checkbox" name="attr_medicineMastery" value="8" title="Master">
-				<input type="checkbox" name="attr_medicineMastery" value="10" title="Grandmaster">
-			</div>
-			<div class="medicine-value">
-				<input type="text" name="attr_medicine" value="-2" readonly>
-			</div>
-		<div class="survival-skill">
-			<span>Survival</span>
-		</div>
-		<div class="survival-masteries">
-				<input type="checkbox" name="attr_survivalMastery" value="2" title="Novice">
-				<input type="checkbox" name="attr_survivalMastery" value="4" title="Adept">
-				<input type="checkbox" name="attr_survivalMastery" value="6" title="Expert">
-				<input type="checkbox" name="attr_survivalMastery" value="8" title="Master">
-				<input type="checkbox" name="attr_survivalMastery" value="10" title="Grandmaster">
-			</div>
-			<div class="survival-value">
-				<input type="text" name="attr_survival" value="-2" readonly>
-			</div>
-		<div class="arcana-skill">
-			<span>Arcana</span>
-		</div>
-		<div class="arcana-masteries">
-				<input type="checkbox" name="attr_arcanaMastery" value="2" title="Novice">
-				<input type="checkbox" name="attr_arcanaMastery" value="4" title="Adept">
-				<input type="checkbox" name="attr_arcanaMastery" value="6" title="Expert">
-				<input type="checkbox" name="attr_arcanaMastery" value="8" title="Master">
-				<input type="checkbox" name="attr_arcanaMastery" value="10" title="Grandmaster">
-			</div>
-			<div class="arcana-value">
-				<input type="text" name="attr_arcana" value="-2" readonly>
-			</div>
-		<div class="history-skill">
-			<span>History</span>
-		</div>
-		<div class="history-masteries">
-				<input type="checkbox" name="attr_historyMastery" value="2" title="Novice">
-				<input type="checkbox" name="attr_historyMastery" value="4" title="Adept">
-				<input type="checkbox" name="attr_historyMastery" value="6" title="Expert">
-				<input type="checkbox" name="attr_historyMastery" value="8" title="Master">
-				<input type="checkbox" name="attr_historyMastery" value="10" title="Grandmaster">
-			</div>
-			<div class="history-value">
-				<input type="text" name="attr_history" value="-2" readonly>
-			</div>
-		<div class="nature-skill">
-			<span>Nature</span>
-		</div>
-		<div class="nature-masteries">
-				<input type="checkbox" name="attr_natureMastery" value="2" title="Novice">
-				<input type="checkbox" name="attr_natureMastery" value="4" title="Adept">
-				<input type="checkbox" name="attr_natureMastery" value="6" title="Expert">
-				<input type="checkbox" name="attr_natureMastery" value="8" title="Master">
-				<input type="checkbox" name="attr_natureMastery" value="10" title="Grandmaster">
-			</div>
-			<div class="nature-value">
-				<input type="text" name="attr_nature" value="-2" readonly>
-			</div>
-		<div class="occultism-skill">
-			<span>Occultism</span>
-		</div>
-		<div class="occultism-masteries">
-				<input type="checkbox" name="attr_occultismMastery" value="2" title="Novice">
-				<input type="checkbox" name="attr_occultismMastery" value="4" title="Adept">
-				<input type="checkbox" name="attr_occultismMastery" value="6" title="Expert">
-				<input type="checkbox" name="attr_occultismMastery" value="8" title="Master">
-				<input type="checkbox" name="attr_occultismMastery" value="10" title="Grandmaster">
-			</div>
-			<div class="occultism-value">
-				<input type="text" name="attr_occultism" value="-2" readonly>
-			</div>
-		<div class="religion-skill">
-			<span>Religion</span>
-		</div>
-		<div class="religion-masteries">
-				<input type="checkbox" name="attr_religionMastery" value="2" title="Novice">
-				<input type="checkbox" name="attr_religionMastery" value="4" title="Adept">
-				<input type="checkbox" name="attr_religionMastery" value="6" title="Expert">
-				<input type="checkbox" name="attr_religionMastery" value="8" title="Master">
-				<input type="checkbox" name="attr_religionMastery" value="10" title="Grandmaster">
-			</div>
-			<div class="religion-value">
-				<input type="text" name="attr_religion" value="-2" readonly>
-			</div>
-			<div class="skill8-skill">
-				<input type="text" name="attr_skill8Name">
-			</div>
-			<div class="skill8-masteries">
-				<input type="checkbox" name="attr_skill8Mastery" value="2" title="Novice">
-				<input type="checkbox" name="attr_skill8Mastery" value="4" title="Adept">
-				<input type="checkbox" name="attr_skill8Mastery" value="6" title="Expert">
-				<input type="checkbox" name="attr_skill8Mastery" value="8" title="Master">
-				<input type="checkbox" name="attr_skill8Mastery" value="10" title="Grandmaster">
-			</div>
-			<div class="skill8-value">
-				<input type="text" name="attr_skill8" value="-2" readonly>
-			</div>
-			<div class="skill9-skill">
-				<input type="text" name="attr_skill9Name">
-			</div>
-			<div class="skill9-masteries">
-				<input type="checkbox" name="attr_skill9Mastery" value="2" title="Novice">
-				<input type="checkbox" name="attr_skill9Mastery" value="4" title="Adept">
-				<input type="checkbox" name="attr_skill9Mastery" value="6" title="Expert">
-				<input type="checkbox" name="attr_skill9Mastery" value="8" title="Master">
-				<input type="checkbox" name="attr_skill9Mastery" value="10" title="Grandmaster">
-			</div>
-			<div class="skill9-value">
-				<input type="text" name="attr_skill9" value="-2" readonly>
+			<div class="cm">
+				<span>Combat Mastery</span>
+				<input type="text" name="attr_combatMastery" value="1" readonly>
 			</div>
 		</div>
 
-		<div class="trades">
-			<span>Trades</span>
-			<fieldset class="repeating_trade">
-				<input type="checkbox" name="attr_tradeMastery" value="2" title="Novice">
-				<input type="checkbox" name="attr_tradeMastery" value="4" title="Adept">
-				<input type="checkbox" name="attr_tradeMastery" value="6" title="Expert">
-				<input type="checkbox" name="attr_tradeMastery" value="8" title="Master">
-				<input type="checkbox" name="attr_tradeMastery" value="10" title="Grandmaster">
-				<input type="text" name="attr_tradeModifier" value="0" readonly>
-				<input type="text" name="attr_tradeName" class="name" placeholder="Name">
-				<select name="attr_tradeStat">
-					<option value="might">MIG</option>
-					<option value="agility">AGI</option>
-					<option value="charisma">CHA</option>
-					<option value="intelligence">INT</option>
-				</select>
-			</fieldset>
-		</div>
+		<div class="stats">
+			<div class="prime-stat">
+				<input type="text" name="attr_prime" value="-2" readonly>
+			</div>
+			<div class="prime-name">
+				<span>Prime</span>
+			</div>
+			<div class="awareness-skill">
+				<span>Awareness</span>
+			</div>
+			<div class="awareness-masteries">
+					<input type="checkbox" name="attr_awarenessMastery" value="2" title="Novice">
+					<input type="checkbox" name="attr_awarenessMastery" value="4" title="Adept">
+					<input type="checkbox" name="attr_awarenessMastery" value="6" title="Expert">
+					<input type="checkbox" name="attr_awarenessMastery" value="8" title="Master">
+					<input type="checkbox" name="attr_awarenessMastery" value="10" title="Grandmaster">
+				</div>
+				<div class="awareness-value">
+					<input type="text" name="attr_awareness" value="-2" readonly>
+				</div>
+			<div class="might-stat">
+				<span>MIG</span>
+				<input type="number" name="attr_might" value="-2" min="-2" />
+			</div>
+			<div class="might-name">
+				<span>Might</span>
+			</div>
+			<div class="might-save">
+				<span>Save</span>
+				<input type="text" name="attr_mightSave" value="-2" readonly>
+				<input type="checkbox" name="attr_mightSaveMastery" value="1" title="Save Mastery">
+			</div>
+			<div class="athletics-skill">
+				<span>Athletics</span>
+			</div>
+			<div class="athletics-masteries">
+					<input type="checkbox" name="attr_athleticsMastery" value="2" title="Novice">
+					<input type="checkbox" name="attr_athleticsMastery" value="4" title="Adept">
+					<input type="checkbox" name="attr_athleticsMastery" value="6" title="Expert">
+					<input type="checkbox" name="attr_athleticsMastery" value="8" title="Master">
+					<input type="checkbox" name="attr_athleticsMastery" value="10" title="Grandmaster">
+				</div>
+				<div class="athletics-value">
+					<input type="text" name="attr_athletics" value="-2" readonly>
+				</div>
+			<div class="intimidation-skill">
+				<span>Intimidation</span>
+			</div>
+			<div class="intimidation-masteries">
+					<input type="checkbox" name="attr_intimidationMastery" value="2" title="Novice">
+					<input type="checkbox" name="attr_intimidationMastery" value="4" title="Adept">
+					<input type="checkbox" name="attr_intimidationMastery" value="6" title="Expert">
+					<input type="checkbox" name="attr_intimidationMastery" value="8" title="Master">
+					<input type="checkbox" name="attr_intimidationMastery" value="10" title="Grandmaster">
+				</div>
+				<div class="intimidation-value">
+					<input type="text" name="attr_intimidation" value="-2" readonly>
+				</div>
+			<div class="agility-stat">
+				<span>AGI</span>
+				<input type="number" name="attr_agility" value="-2" min="-2" />
+			</div>
+			<div class="agility-name">
+				<span>Agility</span>
+			</div>
+			<div class="agility-save">
+				<span>Save</span>
+				<input type="text" name="attr_agilitySave" value="-2" readonly>
+				<input type="checkbox" name="attr_agilitySaveMastery" value="1" title="Save Mastery">
+			</div>
+			<div class="acrobatics-skill">
+				<span>Acrobatics</span>
+			</div>
+			<div class="acrobatics-masteries">
+					<input type="checkbox" name="attr_acrobaticsMastery" value="2" title="Novice">
+					<input type="checkbox" name="attr_acrobaticsMastery" value="4" title="Adept">
+					<input type="checkbox" name="attr_acrobaticsMastery" value="6" title="Expert">
+					<input type="checkbox" name="attr_acrobaticsMastery" value="8" title="Master">
+					<input type="checkbox" name="attr_acrobaticsMastery" value="10" title="Grandmaster">
+				</div>
+				<div class="acrobatics-value">
+					<input type="text" name="attr_acrobatics" value="-2" readonly>
+				</div>
+			<div class="trickery-skill">
+				<span>Trickery</span>
+			</div>
+			<div class="trickery-masteries">
+					<input type="checkbox" name="attr_trickeryMastery" value="2" title="Novice">
+					<input type="checkbox" name="attr_trickeryMastery" value="4" title="Adept">
+					<input type="checkbox" name="attr_trickeryMastery" value="6" title="Expert">
+					<input type="checkbox" name="attr_trickeryMastery" value="8" title="Master">
+					<input type="checkbox" name="attr_trickeryMastery" value="10" title="Grandmaster">
+				</div>
+				<div class="trickery-value">
+					<input type="text" name="attr_trickery" value="-2" readonly>
+				</div>
+			<div class="stealth-skill">
+				<span>Stealth</span>
+			</div>
+			<div class="stealth-masteries">
+					<input type="checkbox" name="attr_stealthMastery" value="2" title="Novice">
+					<input type="checkbox" name="attr_stealthMastery" value="4" title="Adept">
+					<input type="checkbox" name="attr_stealthMastery" value="6" title="Expert">
+					<input type="checkbox" name="attr_stealthMastery" value="8" title="Master">
+					<input type="checkbox" name="attr_stealthMastery" value="10" title="Grandmaster">
+				</div>
+				<div class="stealth-value">
+					<input type="text" name="attr_stealth" value="-2" readonly>
+				</div>
+			<div class="charisma-stat">
+				<span>CHA</span>
+				<input type="number" name="attr_charisma" value="-2" min="-2" />
+			</div>
+			<div class="charisma-name">
+				<span>Charisma</span>
+			</div>
+			<div class="charisma-save">
+				<span>Save</span>
+				<input type="text" name="attr_charismaSave" value="-2" readonly>
+				<input type="checkbox" name="attr_charismaSaveMastery" value="1" title="Save Mastery">
+			</div>
+			<div class="animal-skill">
+				<span>Animal</span>
+			</div>
+			<div class="animal-masteries">
+					<input type="checkbox" name="attr_animalMastery" value="2" title="Novice">
+					<input type="checkbox" name="attr_animalMastery" value="4" title="Adept">
+					<input type="checkbox" name="attr_animalMastery" value="6" title="Expert">
+					<input type="checkbox" name="attr_animalMastery" value="8" title="Master">
+					<input type="checkbox" name="attr_animalMastery" value="10" title="Grandmaster">
+				</div>
+				<div class="animal-value">
+					<input type="text" name="attr_animal" value="-2" readonly>
+				</div>
+			<div class="influence-skill">
+				<span>Influence</span>
+			</div>
+			<div class="influence-masteries">
+					<input type="checkbox" name="attr_influenceMastery" value="2" title="Novice">
+					<input type="checkbox" name="attr_influenceMastery" value="4" title="Adept">
+					<input type="checkbox" name="attr_influenceMastery" value="6" title="Expert">
+					<input type="checkbox" name="attr_influenceMastery" value="8" title="Master">
+					<input type="checkbox" name="attr_influenceMastery" value="10" title="Grandmaster">
+				</div>
+				<div class="influence-value">
+					<input type="text" name="attr_influence" value="-2" readonly>
+				</div>
+			<div class="insight-skill">
+				<span>Insight</span>
+			</div>
+			<div class="insight-masteries">
+					<input type="checkbox" name="attr_insightMastery" value="2" title="Novice">
+					<input type="checkbox" name="attr_insightMastery" value="4" title="Adept">
+					<input type="checkbox" name="attr_insightMastery" value="6" title="Expert">
+					<input type="checkbox" name="attr_insightMastery" value="8" title="Master">
+					<input type="checkbox" name="attr_insightMastery" value="10" title="Grandmaster">
+				</div>
+				<div class="insight-value">
+					<input type="text" name="attr_insight" value="-2" readonly>
+				</div>
+			<div class="intelligence-stat">
+				<span>INT</span>
+				<input type="number" name="attr_intelligence" value="-2" min="-2" />
+			</div>
+			<div class="intelligence-name">
+				<span>Intelligence</span>
+			</div>
+			<div class="intelligence-save">
+				<span>Save</span>
+				<input type="text" name="attr_intelligenceSave" value="-2" readonly>
+				<input type="checkbox" name="attr_intelligenceSaveMastery" value="1" title="Save Mastery">
+			</div>
+			<div class="investigation-skill">
+				<span>Investigation</span>
+			</div>
+			<div class="investigation-masteries">
+					<input type="checkbox" name="attr_investigationMastery" value="2" title="Novice">
+					<input type="checkbox" name="attr_investigationMastery" value="4" title="Adept">
+					<input type="checkbox" name="attr_investigationMastery" value="6" title="Expert">
+					<input type="checkbox" name="attr_investigationMastery" value="8" title="Master">
+					<input type="checkbox" name="attr_investigationMastery" value="10" title="Grandmaster">
+				</div>
+				<div class="investigation-value">
+					<input type="text" name="attr_investigation" value="-2" readonly>
+				</div>
+			<div class="medicine-skill">
+				<span>Medicine</span>
+			</div>
+			<div class="medicine-masteries">
+					<input type="checkbox" name="attr_medicineMastery" value="2" title="Novice">
+					<input type="checkbox" name="attr_medicineMastery" value="4" title="Adept">
+					<input type="checkbox" name="attr_medicineMastery" value="6" title="Expert">
+					<input type="checkbox" name="attr_medicineMastery" value="8" title="Master">
+					<input type="checkbox" name="attr_medicineMastery" value="10" title="Grandmaster">
+				</div>
+				<div class="medicine-value">
+					<input type="text" name="attr_medicine" value="-2" readonly>
+				</div>
+			<div class="survival-skill">
+				<span>Survival</span>
+			</div>
+			<div class="survival-masteries">
+					<input type="checkbox" name="attr_survivalMastery" value="2" title="Novice">
+					<input type="checkbox" name="attr_survivalMastery" value="4" title="Adept">
+					<input type="checkbox" name="attr_survivalMastery" value="6" title="Expert">
+					<input type="checkbox" name="attr_survivalMastery" value="8" title="Master">
+					<input type="checkbox" name="attr_survivalMastery" value="10" title="Grandmaster">
+				</div>
+				<div class="survival-value">
+					<input type="text" name="attr_survival" value="-2" readonly>
+				</div>
+			<div class="arcana-skill">
+				<span>Arcana</span>
+			</div>
+			<div class="arcana-masteries">
+					<input type="checkbox" name="attr_arcanaMastery" value="2" title="Novice">
+					<input type="checkbox" name="attr_arcanaMastery" value="4" title="Adept">
+					<input type="checkbox" name="attr_arcanaMastery" value="6" title="Expert">
+					<input type="checkbox" name="attr_arcanaMastery" value="8" title="Master">
+					<input type="checkbox" name="attr_arcanaMastery" value="10" title="Grandmaster">
+				</div>
+				<div class="arcana-value">
+					<input type="text" name="attr_arcana" value="-2" readonly>
+				</div>
+			<div class="history-skill">
+				<span>History</span>
+			</div>
+			<div class="history-masteries">
+					<input type="checkbox" name="attr_historyMastery" value="2" title="Novice">
+					<input type="checkbox" name="attr_historyMastery" value="4" title="Adept">
+					<input type="checkbox" name="attr_historyMastery" value="6" title="Expert">
+					<input type="checkbox" name="attr_historyMastery" value="8" title="Master">
+					<input type="checkbox" name="attr_historyMastery" value="10" title="Grandmaster">
+				</div>
+				<div class="history-value">
+					<input type="text" name="attr_history" value="-2" readonly>
+				</div>
+			<div class="nature-skill">
+				<span>Nature</span>
+			</div>
+			<div class="nature-masteries">
+					<input type="checkbox" name="attr_natureMastery" value="2" title="Novice">
+					<input type="checkbox" name="attr_natureMastery" value="4" title="Adept">
+					<input type="checkbox" name="attr_natureMastery" value="6" title="Expert">
+					<input type="checkbox" name="attr_natureMastery" value="8" title="Master">
+					<input type="checkbox" name="attr_natureMastery" value="10" title="Grandmaster">
+				</div>
+				<div class="nature-value">
+					<input type="text" name="attr_nature" value="-2" readonly>
+				</div>
+			<div class="occultism-skill">
+				<span>Occultism</span>
+			</div>
+			<div class="occultism-masteries">
+					<input type="checkbox" name="attr_occultismMastery" value="2" title="Novice">
+					<input type="checkbox" name="attr_occultismMastery" value="4" title="Adept">
+					<input type="checkbox" name="attr_occultismMastery" value="6" title="Expert">
+					<input type="checkbox" name="attr_occultismMastery" value="8" title="Master">
+					<input type="checkbox" name="attr_occultismMastery" value="10" title="Grandmaster">
+				</div>
+				<div class="occultism-value">
+					<input type="text" name="attr_occultism" value="-2" readonly>
+				</div>
+			<div class="religion-skill">
+				<span>Religion</span>
+			</div>
+			<div class="religion-masteries">
+					<input type="checkbox" name="attr_religionMastery" value="2" title="Novice">
+					<input type="checkbox" name="attr_religionMastery" value="4" title="Adept">
+					<input type="checkbox" name="attr_religionMastery" value="6" title="Expert">
+					<input type="checkbox" name="attr_religionMastery" value="8" title="Master">
+					<input type="checkbox" name="attr_religionMastery" value="10" title="Grandmaster">
+				</div>
+				<div class="religion-value">
+					<input type="text" name="attr_religion" value="-2" readonly>
+				</div>
+				<div class="skill8-skill">
+					<input type="text" name="attr_skill8Name">
+				</div>
+				<div class="skill8-masteries">
+					<input type="checkbox" name="attr_skill8Mastery" value="2" title="Novice">
+					<input type="checkbox" name="attr_skill8Mastery" value="4" title="Adept">
+					<input type="checkbox" name="attr_skill8Mastery" value="6" title="Expert">
+					<input type="checkbox" name="attr_skill8Mastery" value="8" title="Master">
+					<input type="checkbox" name="attr_skill8Mastery" value="10" title="Grandmaster">
+				</div>
+				<div class="skill8-value">
+					<input type="text" name="attr_skill8" value="-2" readonly>
+				</div>
+				<div class="skill9-skill">
+					<input type="text" name="attr_skill9Name">
+				</div>
+				<div class="skill9-masteries">
+					<input type="checkbox" name="attr_skill9Mastery" value="2" title="Novice">
+					<input type="checkbox" name="attr_skill9Mastery" value="4" title="Adept">
+					<input type="checkbox" name="attr_skill9Mastery" value="6" title="Expert">
+					<input type="checkbox" name="attr_skill9Mastery" value="8" title="Master">
+					<input type="checkbox" name="attr_skill9Mastery" value="10" title="Grandmaster">
+				</div>
+				<div class="skill9-value">
+					<input type="text" name="attr_skill9" value="-2" readonly>
+				</div>
+			</div>
 
-		<div class="languages">
-			<span>Languages</span>
-			<fieldset class="repeating_language">
-				<select>
-					<option value="none" selected disabled>Choose</option>
-					<option disabled style="background: grey; font-weight: bold; color: white;">Mortal</option>
-					<option>Common</option>
-					<option>Human</option>
-					<option>Dwarven</option>
-					<option>Elvish</option>
-					<option>Gnomish</option>
-					<option>Halfling</option>
-					<option disabled style="background: grey; font-weight: bold; color: white;">Exotic</option>
-					<option>Draconic</option>
-					<option>Giant</option>
-					<option>Fey</option>
-					<option>Orcish</option>
-					<option>Elemental</option>
-					<option disabled style="background: grey; font-weight: bold; color: white;">Divine</option>
-					<option>Celestial</option>
-					<option>Fiend</option>
-					<option disabled style="background: grey; font-weight: bold; color: white;">Outer</option>
-					<option>Deep Speech</option>
-				</select>
-				<input type="checkbox" title="Limited">
-				<input type="checkbox" title="Fluent">
-			</fieldset>
-		</div>
+			<div class="trades">
+				<span>Trades</span>
+				<fieldset class="repeating_trade">
+					<div class="flex">
+						<input type="checkbox" name="attr_tradeMastery" value="2" title="Novice">
+						<input type="checkbox" name="attr_tradeMastery" value="4" title="Adept">
+						<input type="checkbox" name="attr_tradeMastery" value="6" title="Expert">
+						<input type="checkbox" name="attr_tradeMastery" value="8" title="Master">
+						<input type="checkbox" name="attr_tradeMastery" value="10" title="Grandmaster">
+					</div>
+					<input type="text" name="attr_tradeModifier" value="0" readonly>
+					<select name="attr_tradeName">
+						<option value="none" selected disabled>Choose</option>
+						<option>Alchemy</option>
+						<option>Blacksmithing</option>
+						<option>Brewing</option>
+						<option>Carpentry</option>
+						<option>Cartography</option>
+						<option>Cooking</option>
+						<option>Disquise</option>
+						<option>Gaming</option>
+						<option>Glassblowing</option>
+						<option>Herbalism</option>
+						<option>Illustration</option>
+						<option>Jeweler</option>
+						<option>Leatherworking</option>
+						<option>Lockpicking</option>
+						<option>Masonry</option>
+						<option>Musician</option>
+						<option>Sculpting</option>
+						<option>Theatre</option>
+						<option>Tinkering</option>
+						<option>Weaving</option>
+						<option>Vehicles</option>
+					</select>
+					<select name="attr_tradeStat" class="stat">
+						<option value="might">MIG</option>
+						<option value="agility">AGI</option>
+						<option value="charisma">CHA</option>
+						<option value="intelligence">INT</option>
+					</select>
+				</fieldset>
+			</div>
 
-		<div class="combat-masteries">
-			<span>Combat Masteries</span>
-			<textarea></textarea>
-		</div>
+			<div class="languages">
+				<span>Languages</span>
+				<fieldset class="repeating_language">
+					<select name="attr_languageName">
+						<option value="none" selected disabled>Choose</option>
+						<option disabled style="background: grey; font-weight: bold; color: white;">Mortal</option>
+						<option>Common</option>
+						<option>Human</option>
+						<option>Dwarven</option>
+						<option>Elvish</option>
+						<option>Gnomish</option>
+						<option>Halfling</option>
+						<option disabled style="background: grey; font-weight: bold; color: white;">Exotic</option>
+						<option>Draconic</option>
+						<option>Giant</option>
+						<option>Fey</option>
+						<option>Orcish</option>
+						<option>Elemental</option>
+						<option disabled style="background: grey; font-weight: bold; color: white;">Divine</option>
+						<option>Celestial</option>
+						<option>Fiend</option>
+						<option disabled style="background: grey; font-weight: bold; color: white;">Outer</option>
+						<option>Deep Speech</option>
+					</select>
+					<input type="checkbox" name="attr_languageFluency" title="Limited" value="1">
+					<input type="checkbox" name="attr_languageFluency" title="Fluent" value="2">
+				</fieldset>
+			</div>
 
-		<div class="currency">
-			<span>Currency</span>
-			<textarea></textarea>
-		</div>
-
-		<div class="points">
-			<span>Stamina Points</span>
-			<input type="number" name="attr_staminaPoints" value="0">
-			<span>Max</span>
-			<input type="text" name="attr_staminaPoints_max" value="0" readonly>
-			<span>Mana Points</span>
-			<input type="number" name="attr_manaPoints" value="0">
-			<span>Max</span>
-			<input type="text" name="attr_manaPoints_max" value="0" readonly>
-			<span>Hit Points</span>
-			<input type="number" name="attr_hitPoints" value="0">
-			<span>Max</span>
-			<input type="text" name="attr_hitPoints_max" value="0" readonly>
-
-			<span>Temp</span>
-			<input type="number" name="attr_tempHitPoints" value="0">
-		</div>
-
-		<div class="defenses">
-			<span>Physical Defense</span>
-			<input type="text" name="attr_physicalDefense" value="0" readonly>
-			<span>Heavy</span>
-			<input type="text" name="attr_physicalHeavy" value="0" readonly>
-			<span>Brutal</span>
-			<input type="text" name="attr_physicalBrutal" value="0" readonly>
-			<span>Physical Damage Reduction</span>
-			<input type="number" name="attr_physicalDamageReduction" value="0">
-			<span>Mystical Defense</span>
-			<input type="text" name="attr_mysticalDefense" value="0" readonly>
-			<span>Heavy</span>
-			<input type="text" name="attr_mysticalHeavy" value="0" readonly>
-			<span>Brutal</span>
-			<input type="text" name="attr_mysticalBrutal" value="0" readonly>
-			<span>Mystical Damage Reduction</span>
-			<input type="number" name="attr_mysticalDamageReduction" value="0">
-		</div>
-
-		<div class="combat">
-			<span>Combat</span>
-			<span>Actions Points</span>
-			<input type="checkbox">
-			<input type="checkbox">
-			<input type="checkbox">
-			<input type="checkbox">
-			<span>Minor Action Point</span>
-			<input type="checkbox">
-			<span>Attack/Spell Check</span>
-			<input type="text" name="attr_attackModifier" value="-1" readonly>
-		</div>
-
-		<div class="attacks">
-			<span>Attacks</span>
-			<fieldset class="repeating_attack">
-				<span>Name</span>
-				<input type="text" name="attr_attackName" placeholder="Name">
-				<span>Damage</span>
-				<input type="number" name="attr_attackDamage" value="0" min="0">
-				<span>Damage Type</span>
-				<input type="text" name="attr_attackType" placeholder="Damage Type">
-				<span>Special</span>
+			<div class="combat-masteries">
+				<span>Combat Masteries</span>
 				<textarea></textarea>
-			</fieldset>
-		</div>
+			</div>
 
-		<div class="inventory">
-			<span>Inventory</span>
-			<fieldset class="repeating_inventory">
-				<span>Name</span>
-				<input type="text" placeholder="Name">
-				<span>Quantity</span>
-				<input type="number" name="attr_inventoryQuantity" value="1" min="1">
-				<span>Weight</span>
-				<input type="number" name="attr_inventoryWeight" value="0" min="0">
-			</fieldset>
-		</div>
-
-		<div class="death">
-			<span>Death</span>
-			<span>Exhaustion</span>
-			<input type="hidden" name="attr_exhaustion" value="0">
-			<input type="checkbox" name="attr_exhaustion" value="-1">
-			<input type="checkbox" name="attr_exhaustion" value="-2">
-			<input type="checkbox" name="attr_exhaustion" value="-3">
-			<input type="checkbox" name="attr_exhaustion" value="-4">
-			<input type="checkbox" name="attr_exhaustion" value="-5">
-			<span>Death Threshold</span>
-			<input type="text" name="attr_deathThreshold" value="0" readonly>
-		</div>
-
-		<div class="move">
-			<span>Move Speed</span>
-			<input type="number" name="attr_move" value="0" min="0">
-			<span>Jump Distance</span>
-			<input type="text" name="attr_jump" value="1" min="1" readonly>
-		</div>
-
-		<div class="resources">
-			<span>Resources</span>
-			<span>Name</span>
-			<span>Total</span>
-			<span>Max</span>
-			<span>Rest Points</span>
-			<input type="number" name="attr_restPoints" value="0" min="0">
-			<input type="text" name="attr_restPoints_max" value="0" readonly>
-			<span>Grit Points</span>
-			<input type="number" name="attr_gritPoints" value="0" min="0">
-			<input type="text" name="attr_gritPoints_max" value="0" readonly>
-			<fieldset class="repeating_resource">
-				<input type="text" name="attr_resourceName" placeholder="Name">
-				<input type="number" name="attr_resource" value="0" min="0">
-				<input type="number" name="attr_resource_max" value="0">
-			</fieldset>
-		</div>
-
-		<div class="features">
-			<span>Features</span>
-			<fieldset class="repeating_resource">
-				<input type="text" placeholder="Name">
+			<div class="currency">
+				<span>Currency</span>
 				<textarea></textarea>
-			</fieldset>
+			</div>
+
+			<div class="points">
+				<div class="section">
+					<span>Stamina Points</span>
+					<input type="number" name="attr_staminaPoints" value="0">
+					<span>Max</span>
+					<input type="text" name="attr_staminaPoints_max" value="0" readonly>
+				</div>
+				<div class="section">
+					<span>Mana Points</span>
+					<input type="number" name="attr_manaPoints" value="0">
+					<span>Max</span>
+					<input type="text" name="attr_manaPoints_max" value="0" readonly>
+				</div>
+				<div class="section">
+					<span>Hit Points</span>
+					<input type="number" name="attr_hitPoints" value="0">
+					<span>Max</span>
+					<input type="text" name="attr_hitPoints_max" value="0" readonly>
+					<span>Temp</span>
+					<input type="number" name="attr_tempHitPoints" value="0">
+				</div>
+			</div>
+
+			<div class="defenses">
+				<div class="section">
+					<span>Physical Defense</span>
+					<input type="text" name="attr_physicalDefense" value="0" readonly>
+					<span>Heavy</span>
+					<input type="text" name="attr_physicalHeavy" value="0" readonly>
+					<span>Brutal</span>
+					<input type="text" name="attr_physicalBrutal" value="0" readonly>
+					<span>PDR</span>
+					<input type="number" name="attr_physicalDamageReduction" value="0">
+				</div>
+				<div class="section">
+					<span>Mystical Defense</span>
+					<input type="text" name="attr_mysticalDefense" value="0" readonly>
+					<span>Heavy</span>
+					<input type="text" name="attr_mysticalHeavy" value="0" readonly>
+					<span>Brutal</span>
+					<input type="text" name="attr_mysticalBrutal" value="0" readonly>
+					<span>MDR</span>
+					<input type="number" name="attr_mysticalDamageReduction" value="0">
+				</div>
+			</div>
+
+			<div class="combat">
+				<span>Combat</span>
+				<div>
+					<span>Actions Points</span>
+					<input type="checkbox">
+					<input type="checkbox">
+					<input type="checkbox">
+					<input type="checkbox">
+				</div>
+				<div>
+					<span>Minor Action Point</span>
+					<input type="checkbox">
+				</div>
+				<div>
+					<span>Attack/Spell Check</span>
+					<input type="text" name="attr_attackModifier" value="-1" readonly>
+				</div>
+			</div>
+
+			<div class="attacks">
+				<span>Attacks</span>
+				<fieldset class="repeating_attack">
+					<span>Name</span>
+					<input type="text" name="attr_attackName" placeholder="Name">
+					<span>Damage</span>
+					<input type="number" name="attr_attackDamage" value="0" min="0">
+					<span>Damage Type</span>
+					<input type="text" name="attr_attackType" placeholder="Damage Type">
+					<span>Special</span>
+					<textarea></textarea>
+				</fieldset>
+			</div>
+
+			<div class="inventory">
+				<span>Inventory</span>
+				<fieldset class="repeating_inventory">
+					<span>Name</span>
+					<input type="text" placeholder="Name">
+					<span>Quantity</span>
+					<input type="number" name="attr_inventoryQuantity" value="1" min="1">
+					<span>Weight</span>
+					<input type="number" name="attr_inventoryWeight" value="0" min="0">
+				</fieldset>
+			</div>
+
+			<div class="death">
+				<span>Death</span>
+				<div>
+					<span>Exhaustion</span>
+					<input type="hidden" name="attr_exhaustion" value="0">
+					<input type="checkbox" name="attr_exhaustion" value="-1">
+					<input type="checkbox" name="attr_exhaustion" value="-2">
+					<input type="checkbox" name="attr_exhaustion" value="-3">
+					<input type="checkbox" name="attr_exhaustion" value="-4">
+					<input type="checkbox" name="attr_exhaustion" value="-5">
+				</div>
+				<div>
+					<span>Death Threshold</span>
+					<input type="text" name="attr_deathThreshold" value="0" readonly>
+				</div>
+			</div>
+
+			<div class="move">
+				<span>Move Speed</span>
+				<input type="number" name="attr_move" value="0" min="0">
+				<span>Jump Distance</span>
+				<input type="text" name="attr_jump" value="1" min="1" readonly>
+			</div>
+
+			<div class="resources">
+				<span>Resources</span>
+				<div>
+					<span>Name</span>
+					<span>Total</span>
+					<span>Max</span>
+				</div>
+				<div>
+					<span>Rest Points</span>
+					<input type="number" name="attr_restPoints" value="0" min="0">
+					<input type="text" name="attr_restPoints_max" value="0" readonly>
+				</div>
+				<div>
+					<span>Grit Points</span>
+					<input type="number" name="attr_gritPoints" value="0" min="0">
+					<input type="text" name="attr_gritPoints_max" value="0" readonly>
+				</div>
+				<fieldset class="repeating_resource">
+					<input type="text" name="attr_resourceName" placeholder="Name">
+					<input type="number" name="attr_resource" value="0" min="0">
+					<input type="number" name="attr_resource_max" value="0">
+				</fieldset>
+			</div>
+
+			<div class="features">
+				<span>Features</span>
+				<fieldset class="repeating_resource">
+					<input type="text" placeholder="Name">
+					<textarea></textarea>
+				</fieldset>
+			</div>
 		</div>
 	</div>
 

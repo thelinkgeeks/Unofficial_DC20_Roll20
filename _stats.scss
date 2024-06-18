@@ -1,6 +1,8 @@
 .stats {
 	display: grid;
 	max-width: $max-width;
+	@include border;
+	margin-bottom: 1rem;
 	grid-template-areas:
 		'prime-stat prime-name . .'
 		'. awareness-masteries awareness-value awareness-skill'
@@ -33,5 +35,31 @@
 
 	input[type='text'] {
 		width: 10ch !important;
+	}
+
+	// TODO: Do this better
+	.might-name::before {
+		top: 263px;
+		@include border-line;
+	}
+
+	.agility-name::before {
+		top: 388px;
+		@include border-line;
+	}
+
+	.charisma-name::before {
+		top: 548px;
+		@include border-line;
+	}
+
+	.intelligence-name::before {
+		top: 707px;
+		@include border-line;
+	}
+
+	.arcana-skill::before {
+		top: 865px;
+		@include border-line;
 	}
 }

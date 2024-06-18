@@ -35,5 +35,28 @@
 	"defenses": ["physical", "mystical"],
 	"stats": ["might", "agility", "charisma", "intelligence"],
 	"exhaustion": [-1, -2, -3, -4, -5],
+	"trades": [
+		"alchemy",
+		"blacksmithing",
+		"brewing",
+		"carpentry",
+		"cartography",
+		"cooking",
+		"disquise",
+		"gaming",
+		"glassblowing",
+		"herbalism",
+		"illustration",
+		"jeweler",
+		"leatherworking",
+		"lockpicking",
+		"masonry",
+		"musician",
+		"sculpting",
+		"theatre",
+		"tinkering",
+		"weaving",
+		"vehicles"
+	],
 	"tabs": ["character", "npc", "charmancer"]
 }

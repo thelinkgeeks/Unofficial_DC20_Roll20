@@ -1,0 +1,9 @@
+.combat-masteries {
+	max-width: $max-width;
+	@include border;
+	margin-bottom: 1rem;
+
+	textarea {
+		width: 96%;
+	}
+}
