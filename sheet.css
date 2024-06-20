@@ -427,53 +427,76 @@
   border-radius: 12px;
   padding: 1rem;
   margin-bottom: 1rem;
-  grid-template-areas: "prime-stat prime-name . ." ". awareness-masteries awareness-value awareness-skill" "might-stat might-name . might-save" ". athletics-masteries athletics-value athletics-skill" ". intimidation-masteries intimidation-value intimidation-skill" "agility-stat agility-name . agility-save" ". acrobatics-masteries acrobatics-value acrobatics-skill" ". trickery-masteries trickery-value trickery-skill" ". stealth-masteries stealth-value stealth-skill" "charisma-stat charisma-name . charisma-save" ". animal-masteries animal-value animal-skill" ". influence-masteries influence-value influence-skill" ". insight-masteries insight-value insight-skill" "intelligence-stat intelligence-name . intelligence-save" ". investigation-masteries investigation-value investigation-skill" ". medicine-masteries medicine-value medicine-skill" ". survival-masteries survival-value survival-skill" ". arcana-masteries arcana-value arcana-skill" ". history-masteries history-value history-skill" ". nature-masteries nature-value nature-skill" ". occultism-masteries occultism-value occultism-skill" ". religion-masteries religion-value religion-skill" ". skill8-masteries skill8-value skill8-skill" ". skill9-masteries skill9-value skill9-skill";
+  grid-template-areas: "prime" "physical" "might" "agility" "mystical" "charisma" "intelligence";
+}
+.stats .prime {
+  grid-area: prime;
+  display: grid;
+  border-bottom: 0.25rem solid black;
+  padding-bottom: 1rem;
+  grid-template-areas: "prime-stat prime-name . ." ". awareness-masteries awareness-value awareness-skill";
+}
+.stats .might {
+  grid-area: might;
+  display: grid;
+  border-bottom: 0.25rem solid black;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+  grid-template-areas: "might-stat might-name . might-save" ". athletics-masteries athletics-value athletics-skill" ". intimidation-masteries intimidation-value intimidation-skill";
+}
+.stats .agility {
+  grid-area: agility;
+  display: grid;
+  border-bottom: 0.25rem solid black;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  grid-template-areas: "agility-stat agility-name . agility-save" ". acrobatics-masteries acrobatics-value acrobatics-skill" ". trickery-masteries trickery-value trickery-skill" ". stealth-masteries stealth-value stealth-skill";
+}
+.stats .charisma {
+  grid-area: charisma;
+  display: grid;
+  border-bottom: 0.25rem solid black;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  grid-template-areas: "charisma-stat charisma-name . charisma-save" ". animal-masteries animal-value animal-skill" ". influence-masteries influence-value influence-skill" ". insight-masteries insight-value insight-skill";
+}
+.stats .intelligence {
+  grid-area: intelligence;
+  display: grid;
+  padding-top: 1rem;
+  grid-template-areas: "intelligence-stat intelligence-name . intelligence-save" ". investigation-masteries investigation-value investigation-skill" ". medicine-masteries medicine-value medicine-skill" ". survival-masteries survival-value survival-skill" "knowledge arcana-masteries arcana-value arcana-skill" "knowledge history-masteries history-value history-skill" "knowledge nature-masteries nature-value nature-skill" "knowledge occultism-masteries occultism-value occultism-skill" "knowledge religion-masteries religion-value religion-skill" "knowledge skill8-masteries skill8-value skill8-skill" "knowledge skill9-masteries skill9-value skill9-skill";
+}
+.stats .physical {
+  grid-area: physical;
+  text-align: center;
+  padding-top: 0.5rem;
+}
+.stats .mystical {
+  grid-area: mystical;
+  text-align: center;
+  padding-top: 0.5rem;
+}
+.stats .knowledge {
+  grid-area: knowledge;
+  word-break: break-word;
+  width: 0;
+  font-weight: bold;
+  margin-top: 13px;
+}
+.stats .border-top {
+  border-top: 0.25rem solid black;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+}
+.stats .border-bottom {
+  border-bottom: 0.25rem solid black;
+  padding-bottom: 0.5rem;
 }
 .stats span {
   display: block;
 }
 .stats input[type=text] {
   width: 10ch !important;
-}
-.stats .might-name::before {
-  top: 263px;
-  position: absolute;
-  content: "";
-  border-top: 0.25rem solid black;
-  width: 32.6%;
-  left: 46px;
-}
-.stats .agility-name::before {
-  top: 388px;
-  position: absolute;
-  content: "";
-  border-top: 0.25rem solid black;
-  width: 32.6%;
-  left: 46px;
-}
-.stats .charisma-name::before {
-  top: 548px;
-  position: absolute;
-  content: "";
-  border-top: 0.25rem solid black;
-  width: 32.6%;
-  left: 46px;
-}
-.stats .intelligence-name::before {
-  top: 707px;
-  position: absolute;
-  content: "";
-  border-top: 0.25rem solid black;
-  width: 32.6%;
-  left: 46px;
-}
-.stats .arcana-skill::before {
-  top: 865px;
-  position: absolute;
-  content: "";
-  border-top: 0.25rem solid black;
-  width: 32.6%;
-  left: 46px;
 }
 
 .trades {
@@ -511,6 +534,7 @@
   border-radius: 12px;
   padding: 1rem;
   margin-bottom: 1rem;
+  display: grid;
 }
 .languages .repitem {
   display: flex;
@@ -533,6 +557,7 @@
   border-radius: 12px;
   padding: 1rem;
   margin-bottom: 1rem;
+  display: grid;
 }
 .combat-masteries textarea {
   width: 96%;
@@ -543,6 +568,7 @@
   border: 0.25rem solid black;
   border-radius: 12px;
   padding: 1rem;
+  display: grid;
 }
 .currency textarea {
   width: 96%;
@@ -554,7 +580,7 @@
   padding: 1rem;
   margin-bottom: 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-left: 1rem;
 }
 .points .flex {
@@ -595,6 +621,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  align-items: center;
 }
 
 .attacks {
@@ -656,6 +683,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  align-items: center;
 }
 
 .move {
@@ -668,7 +696,8 @@
 
 .flex {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .resources {
@@ -707,6 +736,13 @@
   padding: 1rem;
   margin-bottom: 1rem;
   margin-left: 1rem;
+}
+.features .flex {
+  flex-direction: column;
+  margin: 0 auto;
+}
+.features textarea {
+  width: 96%;
 }
 .features button {
   width: 28px;

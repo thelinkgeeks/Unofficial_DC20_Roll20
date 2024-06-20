@@ -1,6 +1,7 @@
 .currency {
 	max-width: $max-width;
 	@include border;
+	display: grid;
 
 	textarea {
 		width: 96%;

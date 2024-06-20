@@ -2,6 +2,7 @@
 	max-width: $max-width;
 	@include border;
 	margin-bottom: 1rem;
+	display: grid;
 
 	textarea {
 		width: 96%;

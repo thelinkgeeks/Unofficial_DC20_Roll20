@@ -2,32 +2,113 @@
 	display: grid;
 	max-width: $max-width;
 	@include border;
+	// padding: 0;
 	margin-bottom: 1rem;
 	grid-template-areas:
-		'prime-stat prime-name . .'
-		'. awareness-masteries awareness-value awareness-skill'
-		'might-stat might-name . might-save'
-		'. athletics-masteries athletics-value athletics-skill'
-		'. intimidation-masteries intimidation-value intimidation-skill'
-		'agility-stat agility-name . agility-save'
-		'. acrobatics-masteries acrobatics-value acrobatics-skill'
-		'. trickery-masteries trickery-value trickery-skill'
-		'. stealth-masteries stealth-value stealth-skill'
-		'charisma-stat charisma-name . charisma-save'
-		'. animal-masteries animal-value animal-skill'
-		'. influence-masteries influence-value influence-skill'
-		'. insight-masteries insight-value insight-skill'
-		'intelligence-stat intelligence-name . intelligence-save'
-		'. investigation-masteries investigation-value investigation-skill'
-		'. medicine-masteries medicine-value medicine-skill'
-		'. survival-masteries survival-value survival-skill'
-		'. arcana-masteries arcana-value arcana-skill'
-		'. history-masteries history-value history-skill'
-		'. nature-masteries nature-value nature-skill'
-		'. occultism-masteries occultism-value occultism-skill'
-		'. religion-masteries religion-value religion-skill'
-		'. skill8-masteries skill8-value skill8-skill'
-		'. skill9-masteries skill9-value skill9-skill';
+		"prime"
+		"physical"
+		"might"
+		"agility"
+		"mystical"
+		"charisma"
+		"intelligence";
+
+	.prime {
+		grid-area: prime;
+		display: grid;
+		border-bottom: .25rem solid black;
+		padding-bottom: 1rem;
+		grid-template-areas:
+			'prime-stat prime-name . .'
+			'. awareness-masteries awareness-value awareness-skill';
+	}
+
+	.might {
+		grid-area: might;
+		display: grid;
+		border-bottom: .25rem solid black;
+		padding-top: .5rem;
+		padding-bottom: 1rem;
+		grid-template-areas:
+			'might-stat might-name . might-save'
+			'. athletics-masteries athletics-value athletics-skill'
+			'. intimidation-masteries intimidation-value intimidation-skill';
+	}
+
+	.agility {
+		grid-area: agility;
+		display: grid;
+		border-bottom: .25rem solid black;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		grid-template-areas:
+			'agility-stat agility-name . agility-save'
+			'. acrobatics-masteries acrobatics-value acrobatics-skill'
+			'. trickery-masteries trickery-value trickery-skill'
+			'. stealth-masteries stealth-value stealth-skill';
+	}
+
+	.charisma {
+		grid-area: charisma;
+		display: grid;
+		border-bottom: .25rem solid black;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+		grid-template-areas:
+			'charisma-stat charisma-name . charisma-save'
+			'. animal-masteries animal-value animal-skill'
+			'. influence-masteries influence-value influence-skill'
+			'. insight-masteries insight-value insight-skill';
+	}
+
+	.intelligence {
+		grid-area: intelligence;
+		display: grid;
+		padding-top: 1rem;
+		grid-template-areas:
+			'intelligence-stat intelligence-name . intelligence-save'
+			'. investigation-masteries investigation-value investigation-skill'
+			'. medicine-masteries medicine-value medicine-skill'
+			'. survival-masteries survival-value survival-skill'
+			'knowledge arcana-masteries arcana-value arcana-skill'
+			'knowledge history-masteries history-value history-skill'
+			'knowledge nature-masteries nature-value nature-skill'
+			'knowledge occultism-masteries occultism-value occultism-skill'
+			'knowledge religion-masteries religion-value religion-skill'
+			'knowledge skill8-masteries skill8-value skill8-skill'
+			'knowledge skill9-masteries skill9-value skill9-skill';
+	}
+
+	.physical {
+		grid-area: physical;
+		text-align: center;
+		padding-top: .5rem;
+	}
+
+	.mystical {
+		grid-area: mystical;
+		text-align: center;
+		padding-top: .5rem;
+	}
+
+	.knowledge {
+		grid-area: knowledge;
+		word-break: break-word;
+		width: 0;
+		font-weight: bold;
+		margin-top: 13px;
+	}
+
+	.border-top {
+		border-top: .25rem solid black;
+		margin-top: .5rem;
+		padding-top: .5rem;
+	}
+
+	.border-bottom {
+		border-bottom: .25rem solid black;
+		padding-bottom: .5rem;
+	}
 
 	span {
 		display: block;
@@ -38,28 +119,28 @@
 	}
 
 	// TODO: Do this better
-	.might-name::before {
-		top: 263px;
-		@include border-line;
-	}
+	// .might-name::before {
+	// 	top: 263px;
+	// 	@include border-line;
+	// }
 
-	.agility-name::before {
-		top: 388px;
-		@include border-line;
-	}
+	// .agility-name::before {
+	// 	top: 388px;
+	// 	@include border-line;
+	// }
 
-	.charisma-name::before {
-		top: 548px;
-		@include border-line;
-	}
+	// .charisma-name::before {
+	// 	top: 548px;
+	// 	@include border-line;
+	// }
 
-	.intelligence-name::before {
-		top: 707px;
-		@include border-line;
-	}
+	// .intelligence-name::before {
+	// 	top: 707px;
+	// 	@include border-line;
+	// }
 
-	.arcana-skill::before {
-		top: 865px;
-		@include border-line;
-	}
+	// .arcana-skill::before {
+	// 	top: 865px;
+	// 	@include border-line;
+	// }
 }
