@@ -27,8 +27,14 @@ button[type='roll'].words {
 	display: flex;
 }
 
+.sheetform {
+	display: flex;
+}
+
 .charsheet {
 	padding: 0 !important;
+	display: inline-block !important;
+	margin: 0 auto !important;
 }
 
 .center {

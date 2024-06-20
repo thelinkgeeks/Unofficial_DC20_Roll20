@@ -162,21 +162,21 @@
 						</div>
 
 						{{!-- Character Languages --}}
+						<datalist id="languages">
+							{{#each language-lists as |list|}}
+							{{#each list as |language|}}
+							<option label="{{@../key}}">{{titleize language}}</option>
+							{{/each}}
+							{{/each}}
+						</datalist>
+
 						<div class="languages">
 							<span class="center bold">Languages {{{{noop}}}}<button type="roll" class="words"
 									name="roll_languageCheck"
 									value="&{template:default} {{name=Language Check}} {{roll=[[1d20+@{mysticalCheck}]]}}"
 									style="width: 35px; height: 18px; margin-bottom: .5rem;">Check</button>{{{{/noop}}}}</span>
 							<fieldset class="repeating_language">
-								<select name="attr_languageName">
-									<option value="none" selected disabled>Choose</option>
-									{{#each language-lists as |list|}}
-									<option disabled style="background: grey; font-weight: bold; color: white;">{{@key}}</option>
-									{{#each list as |language|}}
-									<option>{{titleize language}}</option>
-									{{/each}}
-									{{/each}}
-								</select>
+								<input type="text" name="attr_languageName" list="languages">
 								{{#each language-masteries}}
 								<input type="checkbox" name="attr_languageFluency" title="{{capitalize this}}" value="{{add @index 1}}">
 								{{/each}}
@@ -215,7 +215,7 @@
 						<div class="defenses">
 							{{#each defenses}}
 							<div class="section flex">
-								<span class="bold">{{capitalize this}} Defense</span>
+								<span class="bold center">{{capitalize this}} Defense</span>
 								<input type="text" name="attr_{{this}}Defense" value="0" readonly>
 								<span class="bold">Heavy</span>
 								<input type="text" name="attr_{{this}}Heavy" value="0" readonly>
@@ -226,7 +226,7 @@
 								{{else}}
 								<span class="bold">MDR</span>
 								{{/if}}
-								<input type="number" name="attr_{{this}}DamageReduction" value="0">
+								<input type="text" name="attr_{{this}}DamageReduction" value="0" readonly>
 							</div>
 							{{/each}}
 						</div>
@@ -333,7 +333,7 @@
 							</div>
 							<fieldset class="repeating_resource">
 								<input type="text" name="attr_resourceName" placeholder="Name">
-								<input type="number" name="attr_resource" value="0" min="0" style="margin-right: 3.95rem;">
+								<input type="number" name="attr_resource" value="0" min="0" style="margin-right: 1.5rem;">
 								<input type="number" name="attr_resource_max" value="0">
 							</fieldset>
 						</div>
@@ -445,7 +445,7 @@ on("change:{{skill}}Mastery change:{{@../key}}", () => {
 });
 		{{else}}
 on("change:{{skill}}Mastery change:prime", () => {
-	getAttrs(["{{skill}}Mastery", "{{@../key}}"], values => {
+	getAttrs(["{{skill}}Mastery", "prime"], values => {
 		const stat = +values.prime || 0;
 		const mastery = +values.{{skill}}Mastery || 0;
 		const total = stat + mastery;

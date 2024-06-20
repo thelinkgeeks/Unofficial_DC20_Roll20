@@ -460,33 +460,30 @@
 							</fieldset>
 						</div>
 
+						<datalist id="languages">
+							<option label="Mortal">Common</option>
+							<option label="Mortal">Human</option>
+							<option label="Mortal">Dwarven</option>
+							<option label="Mortal">Elvish</option>
+							<option label="Mortal">Gnomish</option>
+							<option label="Mortal">Halfling</option>
+							<option label="Exotic">Draconic</option>
+							<option label="Exotic">Giant</option>
+							<option label="Exotic">Fey</option>
+							<option label="Exotic">Orcish</option>
+							<option label="Exotic">Elemental</option>
+							<option label="Divine">Celestial</option>
+							<option label="Divine">Fiend</option>
+							<option label="Outer">Deep Speech</option>
+						</datalist>
+
 						<div class="languages">
 							<span class="center bold">Languages <button type="roll" class="words"
 									name="roll_languageCheck"
 									value="&{template:default} {{name=Language Check}} {{roll=[[1d20+@{mysticalCheck}]]}}"
 									style="width: 35px; height: 18px; margin-bottom: .5rem;">Check</button></span>
 							<fieldset class="repeating_language">
-								<select name="attr_languageName">
-									<option value="none" selected disabled>Choose</option>
-									<option disabled style="background: grey; font-weight: bold; color: white;">Mortal</option>
-									<option>Common</option>
-									<option>Human</option>
-									<option>Dwarven</option>
-									<option>Elvish</option>
-									<option>Gnomish</option>
-									<option>Halfling</option>
-									<option disabled style="background: grey; font-weight: bold; color: white;">Exotic</option>
-									<option>Draconic</option>
-									<option>Giant</option>
-									<option>Fey</option>
-									<option>Orcish</option>
-									<option>Elemental</option>
-									<option disabled style="background: grey; font-weight: bold; color: white;">Divine</option>
-									<option>Celestial</option>
-									<option>Fiend</option>
-									<option disabled style="background: grey; font-weight: bold; color: white;">Outer</option>
-									<option>Deep Speech</option>
-								</select>
+								<input type="text" name="attr_languageName" list="languages">
 								<input type="checkbox" name="attr_languageFluency" title="Limited" value="1">
 								<input type="checkbox" name="attr_languageFluency" title="Fluent" value="2">
 							</fieldset>
@@ -527,24 +524,24 @@
 
 						<div class="defenses">
 							<div class="section flex">
-								<span class="bold">Physical Defense</span>
+								<span class="bold center">Physical Defense</span>
 								<input type="text" name="attr_physicalDefense" value="0" readonly>
 								<span class="bold">Heavy</span>
 								<input type="text" name="attr_physicalHeavy" value="0" readonly>
 								<span class="bold">Brutal</span>
 								<input type="text" name="attr_physicalBrutal" value="0" readonly>
 								<span class="bold">PDR</span>
-								<input type="number" name="attr_physicalDamageReduction" value="0">
+								<input type="text" name="attr_physicalDamageReduction" value="0" readonly>
 							</div>
 							<div class="section flex">
-								<span class="bold">Mystical Defense</span>
+								<span class="bold center">Mystical Defense</span>
 								<input type="text" name="attr_mysticalDefense" value="0" readonly>
 								<span class="bold">Heavy</span>
 								<input type="text" name="attr_mysticalHeavy" value="0" readonly>
 								<span class="bold">Brutal</span>
 								<input type="text" name="attr_mysticalBrutal" value="0" readonly>
 								<span class="bold">MDR</span>
-								<input type="number" name="attr_mysticalDamageReduction" value="0">
+								<input type="text" name="attr_mysticalDamageReduction" value="0" readonly>
 							</div>
 						</div>
 
@@ -571,7 +568,7 @@
 							<span class="center bold">Attacks</span>
 							<div class="flex">
 								<span class="bold">Name</span>
-								<span class="bold" style="margin-left: 40px;">Damage</span>
+								<span class="bold" style="margin-left: 29px;">Damage</span>
 								<span class="bold">Damage Type</span>
 								<span class="bold">Roll</span>
 							</div>
@@ -646,7 +643,7 @@
 							</div>
 							<fieldset class="repeating_resource">
 								<input type="text" name="attr_resourceName" placeholder="Name">
-								<input type="number" name="attr_resource" value="0" min="0" style="margin-right: 3.95rem;">
+								<input type="number" name="attr_resource" value="0" min="0" style="margin-right: 1.5rem;">
 								<input type="number" name="attr_resource_max" value="0">
 							</fieldset>
 						</div>
@@ -788,7 +785,7 @@ on("change:mightSave change:agilitySave change:charismaSave change:intelligenceS
 // SKILLS
 // When the stats or skill mastery is changed, set the skill modifier
 on("change:awarenessMastery change:prime", () => {
-	getAttrs(["awarenessMastery", ""], values => {
+	getAttrs(["awarenessMastery", "prime"], values => {
 		const stat = +values.prime || 0;
 		const mastery = +values.awarenessMastery || 0;
 		const total = stat + mastery;

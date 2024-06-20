@@ -1,8 +1,7 @@
 .stats {
 	display: grid;
-	max-width: $max-width;
+	max-width: 293.6px;
 	@include border;
-	// padding: 0;
 	margin-bottom: 1rem;
 	grid-template-areas:
 		"prime"
