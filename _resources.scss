@@ -4,7 +4,27 @@
 	margin-left: 1rem;
 	display: flex;
 	flex-direction: column;
-	// gap: 1rem;
+
+	[data-groupname="repeating_resource"] input[type='text'] {
+		width: 14ch !important;
+	}
+
+	.repcontainer>.repitem {
+		justify-content: space-between;
+	}
+
+	.flex {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	input[type='number'].grit {
+		margin-right: 1.5rem;
+	}
+
+	input[type='text'] {
+		margin-bottom: .5rem;
+	}
 
 	button {
 		width: 28px;

@@ -5,6 +5,13 @@
 	justify-content: space-around;
 	margin-left: 1rem;
 
+	.flex {
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+		align-items: center;
+	}
+
 	span {
 		display: block;
 	}

@@ -415,53 +415,53 @@
 			</div>
 
 			<div class="points">
-				<div class="section">
-					<span>Stamina Points</span>
+				<div class="section flex">
+					<span class="bold center">Stamina Points</span>
 					<input type="number" name="attr_staminaPoints" value="0">
-					<span>Max</span>
+					<span class="bold">Max</span>
 					<input type="text" name="attr_staminaPoints_max" value="0" readonly>
 				</div>
-				<div class="section">
-					<span>Mana Points</span>
+				<div class="section flex">
+					<span class="bold center">Mana Points</span>
 					<input type="number" name="attr_manaPoints" value="0">
-					<span>Max</span>
+					<span class="bold">Max</span>
 					<input type="text" name="attr_manaPoints_max" value="0" readonly>
 				</div>
-				<div class="section">
-					<span>Hit Points</span>
+				<div class="section flex">
+					<span class="bold center">Hit Points</span>
 					<input type="number" name="attr_hitPoints" value="0">
-					<span>Max</span>
+					<span class="bold">Max</span>
 					<input type="text" name="attr_hitPoints_max" value="0" readonly>
-					<span>Temp</span>
+					<span class="bold">Temp</span>
 					<input type="number" name="attr_tempHitPoints" value="0">
 				</div>
 			</div>
 
 			<div class="defenses">
-				<div class="section">
-					<span>Physical Defense</span>
+				<div class="section flex">
+					<span class="bold">Physical Defense</span>
 					<input type="text" name="attr_physicalDefense" value="0" readonly>
-					<span>Heavy</span>
+					<span class="bold">Heavy</span>
 					<input type="text" name="attr_physicalHeavy" value="0" readonly>
-					<span>Brutal</span>
+					<span class="bold">Brutal</span>
 					<input type="text" name="attr_physicalBrutal" value="0" readonly>
-					<span>PDR</span>
+					<span class="bold">PDR</span>
 					<input type="number" name="attr_physicalDamageReduction" value="0">
 				</div>
-				<div class="section">
-					<span>Mystical Defense</span>
+				<div class="section flex">
+					<span class="bold">Mystical Defense</span>
 					<input type="text" name="attr_mysticalDefense" value="0" readonly>
-					<span>Heavy</span>
+					<span class="bold">Heavy</span>
 					<input type="text" name="attr_mysticalHeavy" value="0" readonly>
-					<span>Brutal</span>
+					<span class="bold">Brutal</span>
 					<input type="text" name="attr_mysticalBrutal" value="0" readonly>
-					<span>MDR</span>
+					<span class="bold">MDR</span>
 					<input type="number" name="attr_mysticalDamageReduction" value="0">
 				</div>
 			</div>
 
 			<div class="combat">
-				<span>Combat</span>
+				<span class="center bold">Combat</span>
 				<div>
 					<span>Actions Points</span>
 					<input type="checkbox">
@@ -480,33 +480,35 @@
 			</div>
 
 			<div class="attacks">
-				<span>Attacks</span>
+				<span class="center bold">Attacks</span>
+				<div class="flex">
+					<span class="bold">Name</span>
+					<span class="bold" style="margin-left: 40px;">Damage</span>
+					<span class="bold">Damage Type</span>
+				</div>
 				<fieldset class="repeating_attack">
-					<span>Name</span>
 					<input type="text" name="attr_attackName" placeholder="Name">
-					<span>Damage</span>
 					<input type="number" name="attr_attackDamage" value="0" min="0">
-					<span>Damage Type</span>
 					<input type="text" name="attr_attackType" placeholder="Damage Type">
-					<span>Special</span>
-					<textarea></textarea>
 				</fieldset>
 			</div>
 
 			<div class="inventory">
-				<span>Inventory</span>
+				<span class="bold" style="margin-left: 74px;">Inventory</span>
+				<div class="flex">
+					<span class="bold">Name</span>
+					<span class="bold" style="margin-left: 77px;">Quantity</span>
+					<span class="bold" style="margin-left: 12px;">Weight</span>
+				</div>
 				<fieldset class="repeating_inventory">
-					<span>Name</span>
 					<input type="text" placeholder="Name">
-					<span>Quantity</span>
 					<input type="number" name="attr_inventoryQuantity" value="1" min="1">
-					<span>Weight</span>
 					<input type="number" name="attr_inventoryWeight" value="0" min="0">
 				</fieldset>
 			</div>
 
 			<div class="death">
-				<span>Death</span>
+				<span class="center bold">Death</span>
 				<div>
 					<span>Exhaustion</span>
 					<input type="hidden" name="attr_exhaustion" value="0">
@@ -522,33 +524,37 @@
 				</div>
 			</div>
 
-			<div class="move">
-				<span>Move Speed</span>
-				<input type="number" name="attr_move" value="0" min="0">
-				<span>Jump Distance</span>
-				<input type="text" name="attr_jump" value="1" min="1" readonly>
+			<div class="move flex">
+				<div class="flex">
+					<span class="bold" style="width: 47px;">Move Speed</span>
+					<input type="number" name="attr_move" value="0" min="0" style="margin-bottom: .5rem; margin-top: 6px;">
+				</div>
+				<div class="flex">
+					<span class="bold" style="width: 61px;">Jump Distance</span>
+					<input type="text" name="attr_jump" value="1" min="1" readonly style="margin-top: 6px;">
+				</div>
 			</div>
 
 			<div class="resources">
-				<span>Resources</span>
-				<div>
-					<span>Name</span>
-					<span>Total</span>
-					<span>Max</span>
+				<span class="center bold">Resources</span>
+				<div class="flex">
+					<span class="bold">Name</span>
+					<span class="bold">Total</span>
+					<span class="bold">Max</span>
 				</div>
-				<div>
+				<div class="flex">
 					<span>Rest Points</span>
-					<input type="number" name="attr_restPoints" value="0" min="0">
+					<input type="number" name="attr_restPoints" value="0" min="0" style="margin-right: 2rem;">
 					<input type="text" name="attr_restPoints_max" value="0" readonly>
 				</div>
-				<div>
+				<div class="flex">
 					<span>Grit Points</span>
-					<input type="number" name="attr_gritPoints" value="0" min="0">
+					<input type="number" name="attr_gritPoints" class="grit" value="0" min="0">
 					<input type="text" name="attr_gritPoints_max" value="0" readonly>
 				</div>
 				<fieldset class="repeating_resource">
 					<input type="text" name="attr_resourceName" placeholder="Name">
-					<input type="number" name="attr_resource" value="0" min="0">
+					<input type="number" name="attr_resource" value="0" min="0" style="margin-right: 3.95rem;">
 					<input type="number" name="attr_resource_max" value="0">
 				</fieldset>
 			</div>

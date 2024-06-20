@@ -2,6 +2,24 @@
 	@include border;
 	margin-bottom: 1rem;
 	margin-left: 1rem;
+	display: grid;
+
+	[data-groupname="repeating_attack"] input[type='text'] {
+		width: 12ch !important;
+	}
+
+	.repcontainer>.repitem {
+		justify-content: space-between;
+	}
+
+	.flex {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	input[type='text'] {
+		margin-bottom: .5rem;
+	}
 
 	button {
 		width: 28px;

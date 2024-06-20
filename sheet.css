@@ -8,7 +8,7 @@
 .sheet-pc {
   padding: 0;
   display: grid;
-  grid-template-areas: "header-pc header-pc header-pc header-pc header-pc header-pc header-pc header-pc" "header-pc header-pc header-pc header-pc header-pc header-pc header-pc header-pc" "stats stats stats points points points defenses defenses" "stats stats stats points points points defenses defenses" "stats stats stats combat combat combat death death" "stats stats stats combat combat combat death death" "stats stats stats combat combat combat death death" "stats stats stats combat combat combat move move" "stats stats stats combat combat combat resources resources" "stats stats stats attacks attacks attacks resources resources" "stats stats stats attacks attacks attacks resources resources" "stats stats stats attacks attacks attacks resources resources" "trades trades trades inventory inventory inventory features features" "trades trades trades inventory inventory inventory features features" "languages languages languages inventory inventory inventory features features" "languages languages languages inventory inventory inventory features features" "combat-masteries combat-masteries combat-masteries inventory inventory inventory features features" "combat-masteries combat-masteries combat-masteries inventory inventory inventory features features" "currency currency currency inventory inventory inventory features features" "currency currency currency inventory inventory inventory features features";
+  grid-template-areas: "header-pc header-pc header-pc header-pc header-pc header-pc header-pc header-pc" "header-pc header-pc header-pc header-pc header-pc header-pc header-pc header-pc" "stats stats stats points points points defenses defenses" "stats stats stats combat combat combat death death" "stats stats stats attacks attacks attacks move move" "stats stats stats attacks attacks attacks resources resources" "stats stats stats inventory inventory inventory resources resources" "stats stats stats inventory inventory inventory resources resources" "stats stats stats inventory inventory inventory features features" "stats stats stats inventory inventory inventory features features" "stats stats stats inventory inventory inventory features features" "stats stats stats inventory inventory inventory features features" "trades trades trades inventory inventory inventory features features" "trades trades trades inventory inventory inventory features features" "languages languages languages inventory inventory inventory features features" "languages languages languages inventory inventory inventory features features" "combat-masteries combat-masteries combat-masteries inventory inventory inventory features features" "combat-masteries combat-masteries combat-masteries inventory inventory inventory features features" "currency currency currency inventory inventory inventory features features" "currency currency currency inventory inventory inventory features features";
 }
 
 .info {
@@ -557,6 +557,12 @@
   justify-content: space-between;
   margin-left: 1rem;
 }
+.points .flex {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
 .points span {
   display: block;
 }
@@ -569,6 +575,12 @@
   display: flex;
   justify-content: space-around;
   margin-left: 1rem;
+}
+.defenses .flex {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 .defenses span {
   display: block;
@@ -591,6 +603,20 @@
   padding: 1rem;
   margin-bottom: 1rem;
   margin-left: 1rem;
+  display: grid;
+}
+.attacks [data-groupname=repeating_attack] input[type=text] {
+  width: 12ch !important;
+}
+.attacks .repcontainer > .repitem {
+  justify-content: space-between;
+}
+.attacks .flex {
+  display: flex;
+  justify-content: space-between;
+}
+.attacks input[type=text] {
+  margin-bottom: 0.5rem;
 }
 .attacks button {
   width: 28px;
@@ -603,6 +629,18 @@
   padding: 1rem;
   margin-bottom: 1rem;
   margin-left: 1rem;
+}
+.inventory [data-groupname=repeating_inventory] input[type=text] {
+  width: 14ch !important;
+}
+.inventory .repcontainer > .repitem {
+  justify-content: space-between;
+}
+.inventory .flex {
+  display: flex;
+}
+.inventory input[type=text] {
+  margin-bottom: 0.5rem;
 }
 .inventory button {
   width: 28px;
@@ -628,6 +666,11 @@
   margin-left: 1rem;
 }
 
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
 .resources {
   border: 0.25rem solid black;
   border-radius: 12px;
@@ -636,6 +679,22 @@
   margin-left: 1rem;
   display: flex;
   flex-direction: column;
+}
+.resources [data-groupname=repeating_resource] input[type=text] {
+  width: 14ch !important;
+}
+.resources .repcontainer > .repitem {
+  justify-content: space-between;
+}
+.resources .flex {
+  display: flex;
+  justify-content: space-between;
+}
+.resources input[type=number].grit {
+  margin-right: 1.5rem;
+}
+.resources input[type=text] {
+  margin-bottom: 0.5rem;
 }
 .resources button {
   width: 28px;
@@ -675,4 +734,12 @@ input[type=number] {
 
 .charsheet {
   padding: 0 !important;
+}
+
+.center {
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
 }

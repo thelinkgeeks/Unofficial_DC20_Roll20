@@ -3,6 +3,22 @@
 	margin-bottom: 1rem;
 	margin-left: 1rem;
 
+	[data-groupname="repeating_inventory"] input[type='text'] {
+		width: 14ch !important;
+	}
+
+	.repcontainer>.repitem {
+		justify-content: space-between;
+	}
+
+	.flex {
+		display: flex;
+	}
+
+	input[type='text'] {
+		margin-bottom: .5rem;
+	}
+
 	button {
 		width: 28px;
 		font-size: 11px;
