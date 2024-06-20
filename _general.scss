@@ -11,6 +11,18 @@ input[type='number'] {
 	height: 24px !important;
 }
 
+button[type='roll'].words {
+	font-size: 12px !important;
+
+	&::before {
+		content: "" !important;
+	}
+}
+
+.smaller {
+	height: 16px !important;
+}
+
 .repcontainer>.repitem {
 	display: flex;
 }

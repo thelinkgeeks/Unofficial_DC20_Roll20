@@ -34,11 +34,19 @@
 			{{#if @key}}
 			{{#if (eq @key "might")}}
 			<div class="physical">
-				<span class="bold border-bottom">Physical</span>
+				<span class="bold border-bottom">Physical {{{{noop}}}}<button type="roll" class="words"
+						name="roll_physicalCheck"
+						value="&{template:default} {{name=Physical Check}} {{roll=[[1d20+@{physicalCheck}]]}}">Check</button>{{{{/noop}}}}
+					{{{{noop}}}}<button type="roll" class="words" name="roll_physicalSave"
+						value="&{template:default} {{name=Physical Save}} {{roll=[[1d20+@{physicalSave}]]}}">Save</button>{{{{/noop}}}}</span>
 				{{/if}}
 				{{#if (eq @key "charisma")}}
 				<div class="mystical">
-					<span class="bold border-bottom">Mystical</span>
+					<span class="bold border-bottom">Mystical {{{{noop}}}}<button type="roll" class="words"
+							name="roll_mysticalCheck"
+							value="&{template:default} {{name=Mystical Check}} {{roll=[[1d20+@{mysticalCheck}]]}}">Check</button>{{{{/noop}}}}
+						{{{{noop}}}}<button type="roll" class="words" name="roll_mysticalSave"
+							value="&{template:default} {{name=Mystical Save}} {{roll=[[1d20+@{mysticalSave}]]}}">Save</button>{{{{/noop}}}}</span>
 					{{/if}}
 					<div class="{{@key}}">
 						<div class="{{@key}}-stat">
@@ -46,10 +54,13 @@
 							<input type="number" name="attr_{{@key}}" value="-2" min="-2" />
 						</div>
 						<div class="{{@key}}-name">
-							<span class="bold">{{capitalize @key}}</span>
+							<span class="bold">{{capitalize @key}} {{{{noop}}}}<button type="roll"
+									name="roll_{{{{/noop}}}}{{@key}}{{{{noop}}}}Check"
+									value="&{template:default} {{name={{{{/noop}}}}{{capitalize @key}}{{{{noop}}}} Check}} {{roll=[[1d20+@&#123;{{{{/noop}}}}{{@key}}{{{{noop}}}}}]]}}"></button>{{{{/noop}}}}</span>
 						</div>
 						<div class="{{@key}}-save">
-							<span class="bold">Save</span>
+							<span class="bold">Save {{{{noop}}}}<button type="roll" name="roll_{{{{/noop}}}}{{@key}}{{{{noop}}}}Save"
+									value="&{template:default} {{name={{{{/noop}}}}{{capitalize @key}}{{{{noop}}}} Save}} {{roll=[[1d20+@&#123;{{{{/noop}}}}{{@key}}{{{{noop}}}}Save}]]}}"></button>{{{{/noop}}}}</span>
 							<input type="text" name="attr_{{@key}}Save" value="-2" readonly>
 							<input type="checkbox" name="attr_{{@key}}SaveMastery" value="1" title="Save Mastery">
 						</div>
@@ -71,7 +82,9 @@
 							</div>
 							{{else}}
 							<div class="{{skill}}-skill">
-								<span class="bold">{{capitalize skill}}</span>
+								<span class="bold">{{capitalize skill}} {{{{noop}}}}<button type="roll" class="smaller"
+										name="roll_{{{{/noop}}}}{{skill}}{{{{noop}}}}Check"
+										value="&{template:default} {{name={{{{/noop}}}}{{capitalize skill}}{{{{noop}}}} Check}} {{roll=[[1d20+@&#123;{{{{/noop}}}}{{skill}}{{{{noop}}}}}]]}}"></button>{{{{/noop}}}}</span>
 							</div>
 							{{/if}}
 							{{#if (eq @skill "arcana")}}
@@ -81,7 +94,11 @@
 									{{/if}}
 									{{else}}
 									<div class="skill{{@index}}-skill">
-										<input type="text" name="attr_skill{{@index}}Name">
+										<input type="text" name="attr_skill{{@index}}Name"><span>{{#if (eq @index 8)}}{{{{noop}}}}<button
+												type="roll" class="smaller" name="roll_@{skill8Name}Check"
+												value="&{template:default} {{name=@{skill8Name} Check}} {{roll=[[1d20+@{skill8}]]}}"></button>{{{{/noop}}}}{{else}}{{{{noop}}}}<button
+												type="roll" class="smaller" name="roll_@{skill9Name}Check"
+												value="&{template:default} {{name=@{skill9Name} Check}} {{roll=[[1d20+@{skill9}]]}}"></button>{{{{/noop}}}}{{/if}}</span>
 									</div>
 									<div class="skill{{@index}}-masteries">
 										{{/if}}
@@ -139,12 +156,17 @@
 									<option value="{{this}}">{{truncate (uppercase this) 3}}</option>
 									{{/each}}
 								</select>
+								<span>{{{{noop}}}}<button type="roll" class="smaller" name="roll_@{skill8Name}Check"
+										value="&{template:default} {{name=@{skill8Name} Check}} {{roll=[[1d20+@{skill8}]]}}"></button>{{{{/noop}}}}</span>
 							</fieldset>
 						</div>
 
 						{{!-- Character Languages --}}
 						<div class="languages">
-							<span class="center bold">Languages</span>
+							<span class="center bold">Languages {{{{noop}}}}<button type="roll" class="words"
+									name="roll_languageCheck"
+									value="&{template:default} {{name=Language Check}} {{roll=[[1d20+@{mysticalCheck}]]}}"
+									style="width: 35px; height: 18px; margin-bottom: .5rem;">Check</button>{{{{/noop}}}}</span>
 							<fieldset class="repeating_language">
 								<select name="attr_languageName">
 									<option value="none" selected disabled>Choose</option>
@@ -180,7 +202,7 @@
 								<span class="bold center">{{capitalize this}} Points</span>
 								<input type="number" name="attr_{{this}}Points" value="0">
 								<span class="bold">Max</span>
-								<input type="text" name="attr_{{this}}Points_max" value="0" readonly>
+								<input type="number" name="attr_{{this}}Points_max" value="0" min="0">
 								{{#if (eq this "hit")}}
 								<span class="bold">Temp</span>
 								<input type="number" name="attr_tempHitPoints" value="0">
@@ -234,13 +256,16 @@
 							<span class="center bold">Attacks</span>
 							<div class="flex">
 								<span class="bold">Name</span>
-								<span class="bold" style="margin-left: 40px;">Damage</span>
+								<span class="bold" style="margin-left: 29px;">Damage</span>
 								<span class="bold">Damage Type</span>
+								<span class="bold">Roll</span>
 							</div>
 							<fieldset class="repeating_attack">
 								<input type="text" name="attr_attackName" placeholder="Name">
 								<input type="number" name="attr_attackDamage" value="0" min="0">
 								<input type="text" name="attr_attackType" placeholder="Damage Type">
+								{{{{noop}}}}<button type="roll" class="smaller" name="roll_attackCheck"
+									value="&{template:default} {{name=@{attackName} Attack}} {{roll=[[1d20+@{prime}]]}}"></button>{{{{/noop}}}}
 							</fieldset>
 						</div>
 
@@ -261,7 +286,8 @@
 
 						{{!-- Character Death --}}
 						<div class="death">
-							<span class="center bold">Death</span>
+							<span class="center bold">Death {{{{noop}}}}<button type="roll" class="smaller" name="roll_deathSave"
+									value="&{template:default} {{name=Death Save}} {{roll=[[1d20]]}}"></button>{{{{/noop}}}}</span>
 							<div>
 								<span>Exhaustion</span>
 								<input type="hidden" name="attr_exhaustion" value="0">
@@ -353,9 +379,13 @@ on("change:might change:agility change:charisma change:intelligence", () => {
 		const charisma = +values.charisma || 0;
 		const intelligence = +values.intelligence || 0;
 		const max = Math.max(might, agility, charisma, intelligence);
+		const physical = Math.max(might, agility);
+		const mystical = Math.max(charisma, intelligence);
 
 		setAttrs({
-			"prime": max
+			"prime": max,
+			"physicalCheck": physical,
+			"mysticalCheck": mystical
 		});
 	});
 });
@@ -380,6 +410,22 @@ on("change:{{stat}}SaveMastery change:{{stat}}", () => {
 	});
 });
 {{/each}}
+
+on("change:mightSave change:agilitySave change:charismaSave change:intelligenceSave", () => {
+	getAttrs(["mightSave", "agilitySave", "charismaSave", "intelligenceSave"], values => {
+		const might = +values.mightSave || 0;
+		const agility = +values.agilitySave || 0;
+		const charisma = +values.charismaSave || 0;
+		const intelligence = +values.intelligenceSave || 0;
+		const physical = Math.max(might, agility);
+		const mystical = Math.max(charisma, intelligence);
+
+		setAttrs({
+			"physicalSave": physical,
+			"mysticalSave": mystical
+		});
+	});
+});
 
 // SKILLS
 // When the stats or skill mastery is changed, set the skill modifier

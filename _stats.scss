@@ -66,7 +66,7 @@
 		display: grid;
 		padding-top: 1rem;
 		grid-template-areas:
-			'intelligence-stat intelligence-name . intelligence-save'
+			'intelligence-stat intelligence-name intelligence-name intelligence-save'
 			'. investigation-masteries investigation-value investigation-skill'
 			'. medicine-masteries medicine-value medicine-skill'
 			'. survival-masteries survival-value survival-skill'
@@ -110,6 +110,12 @@
 		padding-bottom: .5rem;
 	}
 
+	.skill8-skill,
+	.skill9-skill {
+		display: flex;
+		margin-left: 1rem;
+	}
+
 	span {
 		display: block;
 	}
@@ -117,30 +123,4 @@
 	input[type='text'] {
 		width: 10ch !important;
 	}
-
-	// TODO: Do this better
-	// .might-name::before {
-	// 	top: 263px;
-	// 	@include border-line;
-	// }
-
-	// .agility-name::before {
-	// 	top: 388px;
-	// 	@include border-line;
-	// }
-
-	// .charisma-name::before {
-	// 	top: 548px;
-	// 	@include border-line;
-	// }
-
-	// .intelligence-name::before {
-	// 	top: 707px;
-	// 	@include border-line;
-	// }
-
-	// .arcana-skill::before {
-	// 	top: 865px;
-	// 	@include border-line;
-	// }
 }

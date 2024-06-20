@@ -464,7 +464,7 @@
   grid-area: intelligence;
   display: grid;
   padding-top: 1rem;
-  grid-template-areas: "intelligence-stat intelligence-name . intelligence-save" ". investigation-masteries investigation-value investigation-skill" ". medicine-masteries medicine-value medicine-skill" ". survival-masteries survival-value survival-skill" "knowledge arcana-masteries arcana-value arcana-skill" "knowledge history-masteries history-value history-skill" "knowledge nature-masteries nature-value nature-skill" "knowledge occultism-masteries occultism-value occultism-skill" "knowledge religion-masteries religion-value religion-skill" "knowledge skill8-masteries skill8-value skill8-skill" "knowledge skill9-masteries skill9-value skill9-skill";
+  grid-template-areas: "intelligence-stat intelligence-name intelligence-name intelligence-save" ". investigation-masteries investigation-value investigation-skill" ". medicine-masteries medicine-value medicine-skill" ". survival-masteries survival-value survival-skill" "knowledge arcana-masteries arcana-value arcana-skill" "knowledge history-masteries history-value history-skill" "knowledge nature-masteries nature-value nature-skill" "knowledge occultism-masteries occultism-value occultism-skill" "knowledge religion-masteries religion-value religion-skill" "knowledge skill8-masteries skill8-value skill8-skill" "knowledge skill9-masteries skill9-value skill9-skill";
 }
 .stats .physical {
   grid-area: physical;
@@ -491,6 +491,11 @@
 .stats .border-bottom {
   border-bottom: 0.25rem solid black;
   padding-bottom: 0.5rem;
+}
+.stats .skill8-skill,
+.stats .skill9-skill {
+  display: flex;
+  margin-left: 1rem;
 }
 .stats span {
   display: block;
@@ -640,7 +645,7 @@
 }
 .attacks .flex {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .attacks input[type=text] {
   margin-bottom: 0.5rem;
@@ -762,6 +767,17 @@ input[type=text]:read-only {
 input[type=number] {
   width: 6ch !important;
   height: 24px !important;
+}
+
+button[type=roll].words {
+  font-size: 12px !important;
+}
+button[type=roll].words::before {
+  content: "" !important;
+}
+
+.smaller {
+  height: 16px !important;
 }
 
 .repcontainer > .repitem {
