@@ -78,7 +78,9 @@
 							{{#if (eq @skill "arcana")}}
 							<span class="knowledge">Knowledge</span>
 							<div class="{{skill}}-skill border-top">
-								<span class="bold">{{capitalize skill}}</span>
+								<span class="bold">{{capitalize skill}} {{{{noop}}}}<button type="roll" class="smaller"
+										name="roll_{{{{/noop}}}}{{skill}}{{{{noop}}}}Check"
+										value="&{template:default} {{name={{{{/noop}}}}{{capitalize skill}}{{{{noop}}}} Check}} {{roll=[[1d20+@&#123;{{{{/noop}}}}{{skill}}{{{{noop}}}}}]]}}"></button>{{{{/noop}}}}</span>
 							</div>
 							{{else}}
 							<div class="{{skill}}-skill">

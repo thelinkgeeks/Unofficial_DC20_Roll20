@@ -544,7 +544,7 @@
   display: flex;
   justify-content: space-between;
 }
-.languages select {
+.languages input {
   height: 24px !important;
 }
 .languages input[type=checkbox] {
@@ -964,7 +964,6 @@ button[type=roll].words::before {
 
 .charsheet {
   padding: 0 !important;
-  display: inline-block !important;
   margin: 0 auto !important;
 }
 
@@ -994,4 +993,12 @@ button[type=roll].words::before {
   display: flex;
   position: absolute;
   background-color: white;
+}
+
+body.sheet-darkmode {
+  color: white;
+}
+
+body.sheet-darkmode * {
+  border-color: white;
 }
