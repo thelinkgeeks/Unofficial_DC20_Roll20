@@ -523,14 +523,14 @@
 						</div>
 
 						<div class="defenses">
-							<div class="sheet-checkbox-cog">
-								<input type="checkbox" name="attr_options-defense-selection">
+							<div class="sheet-physicalDefense-cog">
+								<input type="checkbox" name="attr_options-physicalDefense">
 								<span class="sheet-toggle-icon"></span>
 							</div>
-							<input type="checkbox" name="attr_options-defense-selection" class="sheet-toggle" hidden>
+							<input type="checkbox" name="attr_options-physicalDefense" class="sheet-toggle physical" hidden>
 							<div class="sheet-toggle-checked">
 								<div class="sheet-form">
-									<div class="sheet-form-header bold">Edit Armor</div>
+									<div class="sheet-form-header bold">Edit PD</div>
 									<div class="sheet-form-body">
 										<div class="sheet-form-group">
 											<select name="attr_defenseType">
@@ -576,6 +576,28 @@
 													<label>Lack Armor Mastery:</label>
 													<input type="checkbox" name="attr_armorMastery" value="1">
 												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="sheet-mysticalDefense-cog">
+								<input type="checkbox" name="attr_options-mysticalDefense">
+								<span class="sheet-toggle-icon"></span>
+							</div>
+							<input type="checkbox" name="attr_options-mysticalDefense" class="sheet-toggle mystical" hidden>
+							<div class="sheet-toggle-checked">
+								<div class="sheet-form">
+									<div class="sheet-form-header bold">Edit MD</div>
+									<div class="sheet-form-body">
+										<div class="sheet-form-group">
+											<select name="attr_mysticalDefenseType">
+												<option selected>None</option>
+												<option>Patient Defense</option>
+											</select>
+											<div>
+												<label>MDR:</label>
+												<input type="number" name="attr_mdr" value="0" min="0" style="width: 5ch !important;">
 											</div>
 										</div>
 									</div>
@@ -1213,12 +1235,13 @@ on("change:agility change:prime change:armorBonus change:combatMastery change:ar
 });
 
 // When charisma, intelligence, or combat mastery is changed, set the mystical defenses
-on("change:charisma change:intelligence change:combatMastery", () => {
-	getAttrs(["charisma", "intelligence", "combatMastery"], values => {
+on("change:charisma change:intelligence change:combatMastery change:mysticalDefenseType", () => {
+	getAttrs(["charisma", "intelligence", "combatMastery", "mysticalDefenseType"], values => {
+		const mysticalDefenseType = values.mysticalDefenseType;
 		const charisma = +values.charisma || 0;
 		const intelligence = +values.intelligence || 0;
 		const cm = +values.combatMastery || 0;
-		const total = 8 + cm + charisma + intelligence;
+		const total = mysticalDefenseType === "Patient Defense" ? 8 + cm + charisma + intelligence + 2 : 8 + cm + charisma + intelligence;
 
 		setAttrs({
 			"mysticalDefense": total,

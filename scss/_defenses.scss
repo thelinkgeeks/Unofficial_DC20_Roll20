@@ -13,9 +13,57 @@
 		align-items: center;
 	}
 
-	.sheet-checkbox-cog {
+	.sheet-physicalDefense-cog {
 		position: absolute;
 		right: 122px;
+
+		span {
+			font-family: 'Pictos';
+			opacity: .25;
+			position: absolute;
+			top: 0;
+			color: black;
+
+			&::before {
+				content: 'y';
+			}
+		}
+
+		&:hover input~span,
+		&:hover input:checked~span {
+			opacity: 1;
+		}
+
+		input {
+			opacity: 0;
+			position: relative;
+			z-index: 1;
+
+			&:checked~span {
+				opacity: .5;
+				z-index: 99;
+			}
+
+			&:checked {
+				z-index: 100;
+			}
+
+			&:checked~span,
+			&:checked {
+				right: -66px;
+				top: -2px;
+				color: white;
+			}
+
+			&:checked~span::before {
+				content: '2';
+			}
+		}
+	}
+
+	.sheet-mysticalDefense-cog {
+		position: absolute;
+		right: 18px;
 		z-index: 99;
 
 		span {
@@ -46,7 +94,7 @@
 
 			&:checked~span,
 			&:checked {
-				right: -66px;
+				right: 43px;
 				top: -2px;
 				color: white;
 			}
