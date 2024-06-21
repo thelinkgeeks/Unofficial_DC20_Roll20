@@ -213,22 +213,89 @@
 
 						{{!-- Character Defenses --}}
 						<div class="defenses">
-							{{#each defenses}}
-							<div class="section flex">
-								<span class="bold center">{{capitalize this}} Defense</span>
-								<input type="text" name="attr_{{this}}Defense" value="0" readonly>
-								<span class="bold">Heavy</span>
-								<input type="text" name="attr_{{this}}Heavy" value="0" readonly>
-								<span class="bold">Brutal</span>
-								<input type="text" name="attr_{{this}}Brutal" value="0" readonly>
-								{{#if (eq this "physical")}}
-								<span class="bold">PDR</span>
-								{{else}}
-								<span class="bold">MDR</span>
-								{{/if}}
-								<input type="text" name="attr_{{this}}DamageReduction" value="0" readonly>
+							<div class="sheet-checkbox-cog">
+								<input type="checkbox" name="attr_options-defense-selection">
+								<span class="sheet-toggle-icon"></span>
 							</div>
-							{{/each}}
+							<input type="checkbox" name="attr_options-defense-selection" class="sheet-toggle" hidden>
+							<div class="sheet-toggle-checked">
+								<div class="sheet-form">
+									<div class="sheet-form-header bold">Edit Armor</div>
+									<div class="sheet-form-body">
+										<div class="sheet-form-group">
+											<select name="attr_defenseType">
+												<option selected>Unarmored</option>
+												<option>Armored</option>
+												<option>Berserker Defense</option>
+												<option>Patient Defense</option>
+											</select>
+											<input type="hidden" name="attr_defenseType">
+											<div class="sheet-toggle-armor">
+												<div>
+													<label>Armor Quality:</label>
+													<select name="attr_armorBonus">
+														{{#each armorQuality}}
+														<option value="{{this}}">{{@key}}</option>
+														{{/each}}
+													</select>
+												</div>
+												<div>
+													<label>Armor Type:</label>
+													<select name="attr_armorType">
+														{{#each armorType}}
+														<option>{{this}}</option>
+														{{/each}}
+													</select>
+												</div>
+												<div>
+													<label>Armor Modification:</label>
+													<input type="hidden" name="attr_armorType" class="sheet-toggle-armorType">
+													{{#each armorType}}
+													{{#if (eq this "Light")}}
+													<select name="attr_armorModification" class="lightArmor">
+														<option selected>None</option>
+														<option>Reinforced</option>
+														<option>Sturdy</option>
+														<option value="Light Both">Both</option>
+													</select>
+													{{else}}
+													<select name="attr_armorModification" class="heavyArmor">
+														<option selected>None</option>
+														<option>Reinforced</option>
+														<option>Dense</option>
+														<option value="Heavy Both">Both</option>
+													</select>
+													{{/if}}
+													{{/each}}
+												</div>
+												<div>
+													<label>Lack Armor Mastery:</label>
+													<input type="checkbox" name="attr_armorMastery" value="1">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="sheet-toggle-unchecked">
+								{{#each defenses}}
+								<div class="section flex">
+									<span class="bold center">{{capitalize this}} Defense</span>
+									<input type="text" name="attr_{{this}}Defense" value="0" readonly>
+									<span class="bold">Heavy</span>
+									<input type="text" name="attr_{{this}}Heavy" value="0" readonly>
+									<span class="bold">Brutal</span>
+									<input type="text" name="attr_{{this}}Brutal" value="0" readonly>
+									{{#if (eq this "physical")}}
+									<span class="bold">PDR</span>
+									<input type="text" name="attr_pdr" value="0" readonly>
+									{{else}}
+									<span class="bold">MDR</span>
+									<input type="text" name="attr_mdr" value="0" readonly>
+									{{/if}}
+								</div>
+								{{/each}}
+							</div>
 						</div>
 
 						{{!-- Character Combat Information --}}
@@ -306,6 +373,7 @@
 							<div class="flex">
 								<span class="bold" style="width: 47px;">Move Speed</span>
 								<input type="number" name="attr_move" value="0" min="0" style="margin-bottom: .5rem; margin-top: 6px;">
+								<input type="hidden" name="attr_move_max" value="0" min="0">
 							</div>
 							<div class="flex">
 								<span class="bold" style="width: 61px;">Jump Distance</span>
@@ -532,20 +600,87 @@ on("change:prime change:combatMastery", () => {
 	});
 });
 
-// DEFENSES
-// When agility, armor bonus, or combat mastery is changed, set the physical defenses
-on("change:agility change:armorBonus change:combatMastery", () => {
-	getAttrs(["agility", "armorBonus", "combatMastery"], values => {
-		const agility = +values.agility || 0;
-		const armorBonus = +values.armorBonus || 0;
-		const cm = +values.combatMastery || 0;
-		const total = 8 + cm + agility + armorBonus;
+// MOVE
+// When move is changed, set the move_max
+on("change:move", () => {
+	getAttrs(["move"], values => {
+		const move = +values.move || 0;
+		const total = move;
 
 		setAttrs({
-			"physicalDefense": total,
-			"physicalHeavy": total + 5,
-			"physicalBrutal": total + 10
+			"move_max": total
 		});
+	});
+});
+
+// DEFENSES
+// When agility, armor bonus, or combat mastery is changed, set the physical defenses
+on("change:agility change:prime change:armorBonus change:combatMastery change:armorMastery change:armorModification change:defenseType change:armorType", () => {
+	getAttrs(["agility", "might", "armorType", "armorBonus", "combatMastery", "armorMastery", "armorModification", "prime", "move", "move_max", "defenseType"], values => {
+		const defenseType = values.defenseType;
+		const agility = +values.agility || 0;
+		const might = +values.might || 0;
+		const move_max = +values.move_max || 0;
+
+		if (defenseType === "Unarmored") {
+			const cm = +values.combatMastery || 0;
+			const total = 8 + cm + agility;
+
+			setAttrs({
+				"physicalDefense": total,
+				"physicalHeavy": total + 5,
+				"physicalBrutal": total + 10,
+				"pdr": 0,
+				"move": move_max
+			});
+		} else if (defenseType === "Patient Defense") {
+			const cm = +values.combatMastery || 0;
+			const total = 8 + cm + agility + 2;
+
+			setAttrs({
+				"physicalDefense": total,
+				"physicalHeavy": total + 5,
+				"physicalBrutal": total + 10,
+				"pdr": 0,
+				"move": move_max
+			});
+		} else if (defenseType === "Berserker Defense") {
+			const cm = +values.combatMastery || 0;
+			const total = 8 + cm + Math.max(agility, might) + 2;
+
+			setAttrs({
+				"physicalDefense": total,
+				"physicalHeavy": total + 5,
+				"physicalBrutal": total + 10,
+				"pdr": 0,
+				"move": move_max
+			});
+		} else if (defenseType === "Armored") {
+			const armorMastery = +values.armorMastery || 0;
+			const armorType = values.armorType;
+			const armorModification = values.armorModification;
+			const reinforced = armorModification === "Reinforced" ? 1 : armorModification === "Light Both" || armorModification === "Heavy Both" ? 1 : 0;
+			const sturdy = armorModification === "Sturdy" ? 1 : armorModification === "Light Both" ? 1 : 0;
+			const dense = armorModification === "Dense" ? 1 : armorModification === "Heavy Both" ? 1 : 0;
+			const prime = +values.prime || 0;
+			const primeLimit = prime - 2 < 0 ? 0 : prime - 2;
+			const agilityTotal = reinforced ? agility > primeLimit ? primeLimit : agility : agility;
+			const armorBonus = +values.armorBonus || 0;
+			const armorBonusTotal = reinforced + sturdy + armorBonus;
+			const cm = armorMastery ? 0 : +values.combatMastery || 0;
+			const pdrTotal = armorType === "Heavy" ? 1 + dense : 0;
+			const move = +values.move || 0;
+			const moveTotal = move_max - dense < 0 ? 0 : move_max - dense;
+			const total = 8 + cm + agilityTotal + armorBonusTotal;
+
+			setAttrs({
+				"physicalDefense": total,
+				"physicalHeavy": total + 5,
+				"physicalBrutal": total + 10,
+				"pdr": pdrTotal,
+				"move": moveTotal
+			});
+		}
 	});
 });
 

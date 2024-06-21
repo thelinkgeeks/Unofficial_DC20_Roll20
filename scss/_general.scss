@@ -44,3 +44,17 @@ button[type='roll'].words {
 .bold {
 	font-weight: bold;
 }
+
+.sheet-toggle~.sheet-toggle-checked {
+	display: none;
+}
+
+.sheet-toggle~.sheet-toggle-unchecked {
+	display: flex;
+}
+
+.sheet-toggle:checked~.sheet-toggle-checked {
+	display: flex;
+	position: absolute;
+	background-color: white;
+}

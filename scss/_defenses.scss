@@ -2,14 +2,183 @@
 	@include border;
 	margin-bottom: 1rem;
 	display: flex;
-	justify-content: space-around;
 	margin-left: 1rem;
+	justify-content: space-around;
+	position: relative;
 
 	.flex {
 		display: flex;
 		justify-content: space-between;
 		flex-direction: column;
 		align-items: center;
+	}
+
+	.sheet-checkbox-cog {
+		position: absolute;
+		right: 122px;
+		z-index: 99;
+
+		span {
+			font-family: 'Pictos';
+			opacity: .25;
+			position: absolute;
+			top: 0;
+			color: black;
+
+			&::before {
+				content: 'y';
+			}
+		}
+
+		&:hover input~span,
+		&:hover input:checked~span {
+			opacity: 1;
+		}
+
+		input {
+			opacity: 0;
+			position: relative;
+			z-index: 1;
+
+			&:checked~span {
+				opacity: .5;
+			}
+
+			&:checked~span,
+			&:checked {
+				right: -66px;
+				top: -2px;
+				color: white;
+			}
+
+			&:checked~span::before {
+				content: '2';
+			}
+		}
+	}
+
+	.sheet-form {
+		border-radius: 6px;
+		border: 2px solid #7e2d40;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+
+		.sheet-form-header {
+			background: #7e2d40;
+			color: white;
+			font-size: 9px;
+			font-weight: bold;
+			line-height: 13px;
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+		.sheet-form-body {
+			background: white;
+			flex-grow: 1;
+			padding: 5px;
+		}
+
+		.sheet-toggle+.sheet-form-group,
+		.sheet-form-group+* {
+			margin-top: 4px;
+		}
+
+		.sheet-form-group {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.sheet-form-checkbox {
+			cursor: pointer;
+			display: flex;
+
+			&:hover {
+				background: #e5fffb;
+			}
+
+			input {
+				height: 16px;
+				width: auto;
+
+				+span {
+					margin-left: 5px;
+				}
+			}
+		}
+
+		>:last-child {
+			margin-bottom: 0;
+		}
+
+		input,
+		select,
+		textarea {
+			box-sizing: border-box;
+			color: black;
+			font-size: 11px;
+			height: 16px;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			min-width: 0;
+		}
+
+		input {
+			border-bottom: 1px solid #dddddd;
+			border-left: 0;
+			border-radius: 0;
+			border-right: 0;
+			border-top: 0;
+			text-overflow: ellipsis;
+		}
+
+		select {
+			cursor: pointer;
+		}
+
+		text-area {
+			min-height: 56px;
+			resize: vertical;
+		}
+
+		label {
+			color: rgba(126, 45, 64, 0.35);
+			font-size: inherit;
+			font-weight: bold;
+			line-height: 16px;
+			margin: 0;
+			padding: 0;
+			white-space: nowrap;
+			width: auto;
+			font-size: 9px;
+			text-transform: uppercase;
+		}
+	}
+
+	.sheet-toggle-armor {
+		display: none;
+	}
+
+	.sheet-toggle-checked .sheet-form-body input[value="Armored"]+.sheet-toggle-armor {
+		display: block;
+	}
+
+	.sheet-toggle-armorType[value="Heavy"]~.lightArmor {
+		display: none;
+	}
+
+	.sheet-toggle-armorType[value="Light"]~.lightArmor {
+		display: block;
+	}
+
+	.sheet-toggle-armorType[value="Light"]~.heavyArmor {
+		display: none;
+	}
+
+	.sheet-toggle-armorType[value="Heavy"]~.heavyArmor {
+		display: block;
 	}
 
 	span {

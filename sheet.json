@@ -58,5 +58,11 @@
 		"weaving",
 		"vehicles"
 	],
+	"armorQuality": {
+		"Novice": 1,
+		"Adept": 2,
+		"Expert": 3
+	},
+	"armorType": ["Light", "Heavy"],
 	"tabs": ["character", "npc", "charmancer"]
 }
