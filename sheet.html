@@ -661,7 +661,7 @@
 								<input type="number" name="attr_attackDamage" value="0" min="0">
 								<input type="text" name="attr_attackType" placeholder="Damage Type">
 								<button type="roll" class="smaller" name="roll_attackCheck"
-									value="&{template:default} {{name=@{attackName} Attack}} {{roll=[[1d20+@{prime}]]}}"></button>
+									value="&{template:default} {{name=@{attackName} Attack}} {{roll=[[1d20+@{prime}+@{combatMastery}]]}}"></button>
 							</fieldset>
 						</div>
 
