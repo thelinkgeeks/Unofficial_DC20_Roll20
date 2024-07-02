@@ -1,0 +1,14 @@
+mixin spanInput(options)
+	- name = options.name || ""
+	- style = options.class || name
+	- heading = options.heading || ""
+	- attr = options.attr || name
+	- title = `@{${attr}}`
+	- type = options.type || "text"
+	- placeholder = options.placeholder || false
+	- value = options.value || false
+	- min = options.min || false
+	- readonly = options.readonly || false
+	div(class=style)
+		span(class="bold")= heading
+		input(type=type name=`attr_${attr}` value=value min=min title= placeholder=placeholder readonly=readonly)

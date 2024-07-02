@@ -1,0 +1,42 @@
+.container {
+	// width: 857px;
+	// margin: 0 auto;
+	// padding: 0 1rem;
+	// display: block;
+
+	.pc {
+		display: grid;
+		grid-template-areas:
+			"header"
+			"sheet";
+		// 	grid-template-areas:
+		// 		"header header header header header header header header"
+		// 		"header header header header header header header header"
+		// 		"stats stats stats points points points defenses defenses"
+		// 		"stats stats stats combat combat combat death death"
+		// 		"stats stats stats attacks attacks attacks move move"
+		// 		"stats stats stats attacks attacks attacks resources resources"
+		// 		"stats stats stats inventory inventory inventory resources resources"
+		// 		"stats stats stats inventory inventory inventory resources resources"
+		// 		"stats stats stats inventory inventory inventory features features"
+		// 		"stats stats stats inventory inventory inventory features features"
+		// 		"stats stats stats inventory inventory inventory features features"
+		// 		"stats stats stats inventory inventory inventory features features"
+		// 		"trades trades trades inventory inventory inventory features features"
+		// 		"trades trades trades inventory inventory inventory features features"
+		// 		"languages languages languages inventory inventory inventory features features"
+		// 		"languages languages languages inventory inventory inventory features features"
+		// 		"combat-masteries combat-masteries combat-masteries inventory inventory inventory features features"
+		// 		"combat-masteries combat-masteries combat-masteries inventory inventory inventory features features"
+		// 		"currency currency currency inventory inventory inventory features features"
+		// 		"currency currency currency inventory inventory inventory features features";
+	}
+}
+
+@each $header in $headers {
+	.header {
+		.#{$header} {
+			grid-area: $header;
+		}
+	}
+}

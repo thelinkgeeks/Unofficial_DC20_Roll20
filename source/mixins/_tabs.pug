@@ -1,0 +1,10 @@
+mixin tabs(defaultTab, tabs)
+	input(type='hidden' class='tabsToggle' name='attr_tab' value=defaultTab)
+	.tabs
+		each tab in tabs
+			- act = `act_${tab}`
+			button(type='action' class='tab' name=act)= tab
+	block
+	each tab in tabs
+		div(class=tab)
+			- blocks[tab]()

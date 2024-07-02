@@ -1,0 +1,45 @@
+.header {
+	grid-area: header;
+	display: grid;
+	grid-template-areas:
+		"info cog";
+	grid-template-columns: 725px 25px;
+	justify-content: space-around;
+	width: 750px;
+	margin: 0 auto;
+	@include border;
+
+	.toggle {
+
+		.toggle-unchecked,
+		.toggle-checked {
+			grid-area: info;
+		}
+
+		&+.toggle-unchecked {
+			grid-template-areas:
+				"player class level"
+				"name ancestry cm";
+			justify-content: space-around;
+		}
+
+		&+.toggle-checked {
+			grid-template-areas:
+				"class subclass"
+				"ancestry background";
+			justify-content: space-around;
+		}
+	}
+
+	input[type="number"] {
+		margin: 0 auto;
+	}
+}
+
+@each $header in $headers {
+	.#{$header} {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+	}
+}

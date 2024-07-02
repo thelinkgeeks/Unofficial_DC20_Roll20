@@ -1,0 +1,136 @@
+textarea {
+	/* Prevents the textarea from expanding outside of its parent */
+	box-sizing: border-box;
+}
+
+.autoExpand {
+	/* hides overflow that is caused by the span */
+	overflow: hidden;
+	/* Allows the input's absolute positioning to be relative to this parent div */
+	position: relative;
+	/* Whatever feels good to you, prevents a new span from collapsing to 0. */
+	min-width: 50px;
+	/* Will fit the width to the contents without going outside itself or collapsing smaller than its content, though we will be using min-width in the case where there's no content. */
+	width: fit-content;
+	/* Prevent the span from defining the height of the input container which can't be multiline */
+	// height: 20px;
+
+	span {
+		visibility: hidden;
+		font-size: 1em;
+		/* Matching my input's padding so that the widths are correct */
+		padding: 0 8px;
+	}
+
+	input {
+		/* removes the input from the DOM flow, allowing the span to exist in the same space */
+		position: absolute;
+		/* Inputs match the width of the parent element as defined by the spans */
+		width: 100%;
+		font-size: 1em;
+	}
+}
+
+.cog {
+	position: relative;
+	width: max-content;
+	height: max-content;
+
+	input {
+		opacity: 0;
+		z-index: 1;
+		position: relative;
+
+		&:checked {
+			~span {
+				// color: white;
+
+				&::before {
+					content: "2";
+				}
+			}
+		}
+	}
+
+	span {
+		font-family: "Pictos";
+		opacity: 0.5;
+		position: absolute;
+		left: 0;
+		color: black;
+
+		&::before {
+			content: "y";
+		}
+	}
+
+	&:hover {
+
+		input~span,
+		input:checked~span {
+			opacity: 1;
+		}
+	}
+}
+
+.toggle {
+
+	&+.toggle-checked,
+	&:checked+.toggle-unchecked {
+		display: none;
+	}
+
+	&:checked+.toggle-checked,
+	&+.toggle-unchecked {
+		display: grid;
+	}
+}
+
+.radiocontainer {
+	display: flex;
+	gap: 10px;
+
+	.radiobox {
+		order: 1;
+		border: 1px solid black;
+		border-radius: 50% !important;
+		background: grey;
+		height: 1rem !important;
+		width: 1rem !important;
+		appearance: none;
+		-webkit-appearance: none;
+		z-index: 1;
+
+		&.reset {
+			order: 2;
+			background-color: black;
+		}
+
+		&:checked {
+			opacity: 0;
+			z-index: 0;
+			position: absolute;
+
+			~.radiobox {
+				order: 3;
+				background-color: transparent;
+			}
+		}
+	}
+}
+
+.bold {
+	font-weight: bold;
+}
+
+$tabs: character, configuration, journal;
+
+@each $tab in $tabs {
+	.#{$tab} {
+		display: none;
+	}
+
+	.tabsToggle[value="#{$tab}"]~.#{$tab} {
+		display: block;
+	}
+}

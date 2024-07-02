@@ -1,0 +1,4 @@
+mixin textarea(name)
+	- attr = `attr_${name}`;
+	- title = `@{${name}}`;
+	textarea(class!=attributes.class name=attr title=title)

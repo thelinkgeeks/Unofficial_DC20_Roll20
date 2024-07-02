@@ -1,0 +1,20 @@
+- const statsSkills= { "prime": {"prime": ["awareness"]}, "physical": {"might": ["athletics", "intimidation"], "agility": ["acrobatics", "trickery", "stealth"]}, "mystical": {"charisma": ["animal", "influence", "insight"], "intelligence": ["investigation", "medicine", "survival", "arcana", "history", "nature", "occultism", "religion"]} }
+
+each stats, group in statsSkills
+	if group === "prime"
+		each skills, stat in stats
+			- const statClass = group + "-stat"
+			- const statName = group + "-name"
+			div(class=stat)
+				div(class=statClass)
+					+input({name: stat, type: 'text', value: -2, readonly: true})
+				div(class=statName)
+					span.bold= stat.toUpperCase()
+				each skill in skills
+					span= skill
+	else
+		div(class=group)
+			each skills, stat in stats
+				div(class=stat)
+					each skill in skills
+						span= skill

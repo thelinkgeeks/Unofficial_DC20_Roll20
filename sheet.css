@@ -1,1004 +1,244 @@
-.container {
-  width: 857px;
-  margin: 0 auto;
-  padding: 0;
-  display: block;
-}
-
-.sheet-pc {
-  padding: 0;
-  display: grid;
-  grid-template-areas: "header-pc header-pc header-pc header-pc header-pc header-pc header-pc header-pc" "header-pc header-pc header-pc header-pc header-pc header-pc header-pc header-pc" "stats stats stats points points points defenses defenses" "stats stats stats combat combat combat death death" "stats stats stats attacks attacks attacks move move" "stats stats stats attacks attacks attacks resources resources" "stats stats stats inventory inventory inventory resources resources" "stats stats stats inventory inventory inventory resources resources" "stats stats stats inventory inventory inventory features features" "stats stats stats inventory inventory inventory features features" "stats stats stats inventory inventory inventory features features" "stats stats stats inventory inventory inventory features features" "trades trades trades inventory inventory inventory features features" "trades trades trades inventory inventory inventory features features" "languages languages languages inventory inventory inventory features features" "languages languages languages inventory inventory inventory features features" "combat-masteries combat-masteries combat-masteries inventory inventory inventory features features" "combat-masteries combat-masteries combat-masteries inventory inventory inventory features features" "currency currency currency inventory inventory inventory features features" "currency currency currency inventory inventory inventory features features";
-}
-
-.info {
-  grid-area: info;
-}
-
-.player {
-  grid-area: player;
-}
-
-.class {
-  grid-area: class;
-}
-
-.level {
-  grid-area: level;
-}
-
-.name {
-  grid-area: name;
-}
-
-.ancestry {
-  grid-area: ancestry;
-}
-
-.cm {
-  grid-area: cm;
-}
-
-.trades {
-  grid-area: trades;
-}
-
-.languages {
-  grid-area: languages;
-}
-
-.combat-masteries {
-  grid-area: combat-masteries;
-}
-
-.currency {
-  grid-area: currency;
-}
-
-.points {
-  grid-area: points;
-}
-
-.defenses {
-  grid-area: defenses;
-}
-
-.combat {
-  grid-area: combat;
-}
-
-.attacks {
-  grid-area: attacks;
-}
-
-.inventory {
-  grid-area: inventory;
-}
-
-.death {
-  grid-area: death;
-}
-
-.move {
-  grid-area: move;
-}
-
-.resources {
-  grid-area: resources;
-}
-
-.features {
-  grid-area: features;
-}
-
-.stats {
-  grid-area: stats;
-}
-
-.skills {
-  grid-area: skills;
-}
-
-.prime-stat {
-  grid-area: prime-stat;
-}
-
-.prime-name {
-  grid-area: prime-name;
-}
-
-.might-stat {
-  grid-area: might-stat;
-}
-
-.might-name {
-  grid-area: might-name;
-}
-
-.might-save {
-  grid-area: might-save;
-}
-
-.agility-stat {
-  grid-area: agility-stat;
-}
-
-.agility-name {
-  grid-area: agility-name;
-}
-
-.agility-save {
-  grid-area: agility-save;
-}
-
-.charisma-stat {
-  grid-area: charisma-stat;
-}
-
-.charisma-name {
-  grid-area: charisma-name;
-}
-
-.charisma-save {
-  grid-area: charisma-save;
-}
-
-.intelligence-stat {
-  grid-area: intelligence-stat;
-}
-
-.intelligence-name {
-  grid-area: intelligence-name;
-}
-
-.intelligence-save {
-  grid-area: intelligence-save;
-}
-
-.awareness-skill {
-  grid-area: awareness-skill;
-}
-
-.awareness-masteries {
-  grid-area: awareness-masteries;
-  min-width: 80px;
-}
-
-.awareness-value {
-  grid-area: awareness-value;
-}
-
-.athletics-skill {
-  grid-area: athletics-skill;
-}
-
-.athletics-masteries {
-  grid-area: athletics-masteries;
-  min-width: 80px;
-}
-
-.athletics-value {
-  grid-area: athletics-value;
-}
-
-.intimidation-skill {
-  grid-area: intimidation-skill;
-}
-
-.intimidation-masteries {
-  grid-area: intimidation-masteries;
-  min-width: 80px;
-}
-
-.intimidation-value {
-  grid-area: intimidation-value;
-}
-
-.acrobatics-skill {
-  grid-area: acrobatics-skill;
-}
-
-.acrobatics-masteries {
-  grid-area: acrobatics-masteries;
-  min-width: 80px;
-}
-
-.acrobatics-value {
-  grid-area: acrobatics-value;
-}
-
-.trickery-skill {
-  grid-area: trickery-skill;
-}
-
-.trickery-masteries {
-  grid-area: trickery-masteries;
-  min-width: 80px;
-}
-
-.trickery-value {
-  grid-area: trickery-value;
-}
-
-.stealth-skill {
-  grid-area: stealth-skill;
-}
-
-.stealth-masteries {
-  grid-area: stealth-masteries;
-  min-width: 80px;
-}
-
-.stealth-value {
-  grid-area: stealth-value;
-}
-
-.animal-skill {
-  grid-area: animal-skill;
-}
-
-.animal-masteries {
-  grid-area: animal-masteries;
-  min-width: 80px;
-}
-
-.animal-value {
-  grid-area: animal-value;
-}
-
-.influence-skill {
-  grid-area: influence-skill;
-}
-
-.influence-masteries {
-  grid-area: influence-masteries;
-  min-width: 80px;
-}
-
-.influence-value {
-  grid-area: influence-value;
-}
-
-.insight-skill {
-  grid-area: insight-skill;
-}
-
-.insight-masteries {
-  grid-area: insight-masteries;
-  min-width: 80px;
-}
-
-.insight-value {
-  grid-area: insight-value;
-}
-
-.investigation-skill {
-  grid-area: investigation-skill;
-}
-
-.investigation-masteries {
-  grid-area: investigation-masteries;
-  min-width: 80px;
-}
-
-.investigation-value {
-  grid-area: investigation-value;
-}
-
-.medicine-skill {
-  grid-area: medicine-skill;
-}
-
-.medicine-masteries {
-  grid-area: medicine-masteries;
-  min-width: 80px;
-}
-
-.medicine-value {
-  grid-area: medicine-value;
-}
-
-.survival-skill {
-  grid-area: survival-skill;
-}
-
-.survival-masteries {
-  grid-area: survival-masteries;
-  min-width: 80px;
-}
-
-.survival-value {
-  grid-area: survival-value;
-}
-
-.arcana-skill {
-  grid-area: arcana-skill;
-}
-
-.arcana-masteries {
-  grid-area: arcana-masteries;
-  min-width: 80px;
-}
-
-.arcana-value {
-  grid-area: arcana-value;
-}
-
-.history-skill {
-  grid-area: history-skill;
-}
-
-.history-masteries {
-  grid-area: history-masteries;
-  min-width: 80px;
-}
-
-.history-value {
-  grid-area: history-value;
-}
-
-.nature-skill {
-  grid-area: nature-skill;
-}
-
-.nature-masteries {
-  grid-area: nature-masteries;
-  min-width: 80px;
-}
-
-.nature-value {
-  grid-area: nature-value;
-}
-
-.occultism-skill {
-  grid-area: occultism-skill;
-}
-
-.occultism-masteries {
-  grid-area: occultism-masteries;
-  min-width: 80px;
-}
-
-.occultism-value {
-  grid-area: occultism-value;
-}
-
-.religion-skill {
-  grid-area: religion-skill;
-}
-
-.religion-masteries {
-  grid-area: religion-masteries;
-  min-width: 80px;
-}
-
-.religion-value {
-  grid-area: religion-value;
-}
-
-.skill8-skill {
-  grid-area: skill8-skill;
-}
-
-.skill8-masteries {
-  grid-area: skill8-masteries;
-  min-width: 80px;
-}
-
-.skill8-value {
-  grid-area: skill8-value;
-}
-
-.skill9-skill {
-  grid-area: skill9-skill;
-}
-
-.skill9-masteries {
-  grid-area: skill9-masteries;
-  min-width: 80px;
-}
-
-.skill9-value {
-  grid-area: skill9-value;
-}
-
-.header-pc {
-  grid-area: header-pc;
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
-  row-gap: 0.5rem;
-  justify-content: space-around;
-  display: grid;
-  grid-template-areas: "player player class class level" "name name ancestry ancestry cm";
-  border: 0.25rem solid black;
-  border-radius: 12px;
-  padding: 1rem;
-  width: 800px;
-  margin: 0 auto 1rem auto;
-}
-.header-pc span {
-  display: block;
-}
-
-.stats {
-  display: grid;
-  max-width: 293.6px;
-  border: 0.25rem solid black;
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  grid-template-areas: "prime" "physical" "might" "agility" "mystical" "charisma" "intelligence";
-}
-.stats .prime {
-  grid-area: prime;
-  display: grid;
-  border-bottom: 0.25rem solid black;
-  padding-bottom: 1rem;
-  grid-template-areas: "prime-stat prime-name . ." ". awareness-masteries awareness-value awareness-skill";
-}
-.stats .might {
-  grid-area: might;
-  display: grid;
-  border-bottom: 0.25rem solid black;
-  padding-top: 0.5rem;
-  padding-bottom: 1rem;
-  grid-template-areas: "might-stat might-name . might-save" ". athletics-masteries athletics-value athletics-skill" ". intimidation-masteries intimidation-value intimidation-skill";
-}
-.stats .agility {
-  grid-area: agility;
-  display: grid;
-  border-bottom: 0.25rem solid black;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  grid-template-areas: "agility-stat agility-name . agility-save" ". acrobatics-masteries acrobatics-value acrobatics-skill" ". trickery-masteries trickery-value trickery-skill" ". stealth-masteries stealth-value stealth-skill";
-}
-.stats .charisma {
-  grid-area: charisma;
-  display: grid;
-  border-bottom: 0.25rem solid black;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  grid-template-areas: "charisma-stat charisma-name . charisma-save" ". animal-masteries animal-value animal-skill" ". influence-masteries influence-value influence-skill" ". insight-masteries insight-value insight-skill";
-}
-.stats .intelligence {
-  grid-area: intelligence;
-  display: grid;
-  padding-top: 1rem;
-  grid-template-areas: "intelligence-stat intelligence-name intelligence-name intelligence-save" ". investigation-masteries investigation-value investigation-skill" ". medicine-masteries medicine-value medicine-skill" ". survival-masteries survival-value survival-skill" "knowledge arcana-masteries arcana-value arcana-skill" "knowledge history-masteries history-value history-skill" "knowledge nature-masteries nature-value nature-skill" "knowledge occultism-masteries occultism-value occultism-skill" "knowledge religion-masteries religion-value religion-skill" "knowledge skill8-masteries skill8-value skill8-skill" "knowledge skill9-masteries skill9-value skill9-skill";
-}
-.stats .physical {
-  grid-area: physical;
-  text-align: center;
-  padding-top: 0.5rem;
-}
-.stats .mystical {
-  grid-area: mystical;
-  text-align: center;
-  padding-top: 0.5rem;
-}
-.stats .knowledge {
-  grid-area: knowledge;
-  word-break: break-word;
-  width: 0;
-  font-weight: bold;
-  margin-top: 13px;
-}
-.stats .border-top {
-  border-top: 0.25rem solid black;
-  margin-top: 0.5rem;
-  padding-top: 0.5rem;
-}
-.stats .border-bottom {
-  border-bottom: 0.25rem solid black;
-  padding-bottom: 0.5rem;
-}
-.stats .skill8-skill,
-.stats .skill9-skill {
-  display: flex;
-  margin-left: 1rem;
-}
-.stats span {
-  display: block;
-}
-.stats input[type=text] {
-  width: 10ch !important;
-}
-
-.trades {
-  max-width: 293.6px;
-  border: 0.25rem solid black;
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-.trades .repitem {
-  display: flex;
-  gap: 0.2rem;
-}
-.trades select {
-  height: 24px !important;
-  font-size: 12px !important;
-}
-.trades select .stat {
-  max-width: 8ch !important;
-}
-.trades input[type=checkbox] {
-  margin: 0 auto 0.75rem auto;
-}
-.trades button {
-  font-size: 11px;
-}
-.trades .flex {
-  display: flex;
-}
-
-.languages {
-  max-width: 293.6px;
-  border: 0.25rem solid black;
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  display: grid;
-}
-.languages .repitem {
-  display: flex;
-  justify-content: space-between;
-}
-.languages input {
-  height: 24px !important;
-}
-.languages input[type=checkbox] {
-  margin: 0 0 0.75rem 0;
-}
-.languages button {
-  width: 28px;
-  font-size: 11px;
-}
-
-.combat-masteries {
-  max-width: 293.6px;
-  border: 0.25rem solid black;
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  display: grid;
-}
-.combat-masteries textarea {
-  width: 96%;
-}
-
-.currency {
-  max-width: 293.6px;
-  border: 0.25rem solid black;
-  border-radius: 12px;
-  padding: 1rem;
-  display: grid;
-}
-.currency textarea {
-  width: 96%;
-}
-
-.points {
-  border: 0.25rem solid black;
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: space-around;
-  margin-left: 1rem;
-}
-.points .flex {
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
-  align-items: center;
-}
-.points span {
-  display: block;
-}
-
-.defenses {
-  border: 0.25rem solid black;
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  display: flex;
-  margin-left: 1rem;
-  justify-content: space-around;
-  position: relative;
-}
-.defenses .flex {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
-}
-.defenses .sheet-physicalDefense-cog {
-  position: absolute;
-  right: 122px;
-}
-.defenses .sheet-physicalDefense-cog span {
-  font-family: "Pictos";
-  opacity: 0.25;
-  position: absolute;
-  top: 0;
-  color: black;
-}
-.defenses .sheet-physicalDefense-cog span::before {
-  content: "y";
-}
-.defenses .sheet-physicalDefense-cog:hover input ~ span, .defenses .sheet-physicalDefense-cog:hover input:checked ~ span {
-  opacity: 1;
-}
-.defenses .sheet-physicalDefense-cog input {
-  opacity: 0;
-  position: relative;
-  z-index: 1;
-}
-.defenses .sheet-physicalDefense-cog input:checked ~ span {
-  opacity: 0.5;
-  z-index: 99;
-}
-.defenses .sheet-physicalDefense-cog input:checked {
-  z-index: 100;
-}
-.defenses .sheet-physicalDefense-cog input:checked ~ span, .defenses .sheet-physicalDefense-cog input:checked {
-  right: -66px;
-  top: -2px;
-  color: white;
-}
-.defenses .sheet-physicalDefense-cog input:checked ~ span::before {
-  content: "2";
-}
-.defenses .sheet-mysticalDefense-cog {
-  position: absolute;
-  right: 18px;
-  z-index: 99;
-}
-.defenses .sheet-mysticalDefense-cog span {
-  font-family: "Pictos";
-  opacity: 0.25;
-  position: absolute;
-  top: 0;
-  color: black;
-}
-.defenses .sheet-mysticalDefense-cog span::before {
-  content: "y";
-}
-.defenses .sheet-mysticalDefense-cog:hover input ~ span, .defenses .sheet-mysticalDefense-cog:hover input:checked ~ span {
-  opacity: 1;
-}
-.defenses .sheet-mysticalDefense-cog input {
-  opacity: 0;
-  position: relative;
-  z-index: 1;
-}
-.defenses .sheet-mysticalDefense-cog input:checked ~ span {
-  opacity: 0.5;
-}
-.defenses .sheet-mysticalDefense-cog input:checked ~ span, .defenses .sheet-mysticalDefense-cog input:checked {
-  right: 43px;
-  top: -2px;
-  color: white;
-}
-.defenses .sheet-mysticalDefense-cog input:checked ~ span::before {
-  content: "2";
-}
-.defenses .sheet-form {
-  border-radius: 6px;
-  border: 2px solid #7e2d40;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-.defenses .sheet-form .sheet-form-header {
-  background: #7e2d40;
-  color: white;
-  font-size: 9px;
-  font-weight: bold;
-  line-height: 13px;
-  text-align: center;
-  text-transform: uppercase;
-}
-.defenses .sheet-form .sheet-form-body {
-  background: white;
-  flex-grow: 1;
-  padding: 5px;
-}
-.defenses .sheet-form .sheet-toggle + .sheet-form-group,
-.defenses .sheet-form .sheet-form-group + * {
-  margin-top: 4px;
-}
-.defenses .sheet-form .sheet-form-group {
-  display: flex;
-  flex-direction: column;
-}
-.defenses .sheet-form .sheet-form-checkbox {
-  cursor: pointer;
-  display: flex;
-}
-.defenses .sheet-form .sheet-form-checkbox:hover {
-  background: #e5fffb;
-}
-.defenses .sheet-form .sheet-form-checkbox input {
-  height: 16px;
-  width: auto;
-}
-.defenses .sheet-form .sheet-form-checkbox input + span {
-  margin-left: 5px;
-}
-.defenses .sheet-form > :last-child {
-  margin-bottom: 0;
-}
-.defenses .sheet-form input,
-.defenses .sheet-form select,
-.defenses .sheet-form textarea {
+textarea {
+  /* Prevents the textarea from expanding outside of its parent */
   box-sizing: border-box;
-  color: black;
-  font-size: 11px;
-  height: 16px;
-  margin: 0;
-  padding: 0;
+}
+
+.autoExpand {
+  /* hides overflow that is caused by the span */
+  overflow: hidden;
+  /* Allows the input's absolute positioning to be relative to this parent div */
+  position: relative;
+  /* Whatever feels good to you, prevents a new span from collapsing to 0. */
+  min-width: 50px;
+  /* Will fit the width to the contents without going outside itself or collapsing smaller than its content, though we will be using min-width in the case where there's no content. */
+  width: fit-content;
+  /* Prevent the span from defining the height of the input container which can't be multiline */
+}
+.autoExpand span {
+  visibility: hidden;
+  font-size: 1em;
+  /* Matching my input's padding so that the widths are correct */
+  padding: 0 8px;
+}
+.autoExpand input {
+  /* removes the input from the DOM flow, allowing the span to exist in the same space */
+  position: absolute;
+  /* Inputs match the width of the parent element as defined by the spans */
   width: 100%;
-  min-width: 0;
-}
-.defenses .sheet-form input {
-  border-bottom: 1px solid #dddddd;
-  border-left: 0;
-  border-radius: 0;
-  border-right: 0;
-  border-top: 0;
-  text-overflow: ellipsis;
-}
-.defenses .sheet-form select {
-  cursor: pointer;
-}
-.defenses .sheet-form text-area {
-  min-height: 56px;
-  resize: vertical;
-}
-.defenses .sheet-form label {
-  color: rgba(126, 45, 64, 0.35);
-  font-size: inherit;
-  font-weight: bold;
-  line-height: 16px;
-  margin: 0;
-  padding: 0;
-  white-space: nowrap;
-  width: auto;
-  font-size: 9px;
-  text-transform: uppercase;
-}
-.defenses .sheet-toggle-armor {
-  display: none;
-}
-.defenses .sheet-toggle-checked .sheet-form-body input[value=Armored] + .sheet-toggle-armor {
-  display: block;
-}
-.defenses .sheet-toggle-armorType[value=Heavy] ~ .lightArmor {
-  display: none;
-}
-.defenses .sheet-toggle-armorType[value=Light] ~ .lightArmor {
-  display: block;
-}
-.defenses .sheet-toggle-armorType[value=Light] ~ .heavyArmor {
-  display: none;
-}
-.defenses .sheet-toggle-armorType[value=Heavy] ~ .heavyArmor {
-  display: block;
-}
-.defenses span {
-  display: block;
+  font-size: 1em;
 }
 
-.combat {
-  border: 0.25rem solid black;
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
+.cog {
+  position: relative;
+  width: max-content;
+  height: max-content;
+}
+.cog input {
+  opacity: 0;
+  z-index: 1;
+  position: relative;
+}
+.cog input:checked ~ span::before {
+  content: "2";
+}
+.cog span {
+  font-family: "Pictos";
+  opacity: 0.5;
+  position: absolute;
+  left: 0;
+  color: black;
+}
+.cog span::before {
+  content: "y";
+}
+.cog:hover input ~ span,
+.cog:hover input:checked ~ span {
+  opacity: 1;
 }
 
-.attacks {
-  border: 0.25rem solid black;
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
+.toggle + .toggle-checked, .toggle:checked + .toggle-unchecked {
+  display: none;
+}
+.toggle:checked + .toggle-checked, .toggle + .toggle-unchecked {
   display: grid;
 }
-.attacks [data-groupname=repeating_attack] input[type=text] {
-  width: 12ch !important;
-}
-.attacks .repcontainer > .repitem {
-  justify-content: space-between;
-}
-.attacks .flex {
+
+.radiocontainer {
   display: flex;
-  justify-content: space-evenly;
+  gap: 10px;
 }
-.attacks input[type=text] {
-  margin-bottom: 0.5rem;
+.radiocontainer .radiobox {
+  order: 1;
+  border: 1px solid black;
+  border-radius: 50% !important;
+  background: grey;
+  height: 1rem !important;
+  width: 1rem !important;
+  appearance: none;
+  -webkit-appearance: none;
+  z-index: 1;
 }
-.attacks button {
-  width: 28px;
-  font-size: 11px;
+.radiocontainer .radiobox.reset {
+  order: 2;
+  background-color: black;
 }
-
-.inventory {
-  border: 0.25rem solid black;
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
+.radiocontainer .radiobox:checked {
+  opacity: 0;
+  z-index: 0;
+  position: absolute;
 }
-.inventory [data-groupname=repeating_inventory] input[type=text] {
-  width: 14ch !important;
-}
-.inventory .repcontainer > .repitem {
-  justify-content: space-between;
-}
-.inventory .flex {
-  display: flex;
-}
-.inventory input[type=text] {
-  margin-bottom: 0.5rem;
-}
-.inventory button {
-  width: 28px;
-  font-size: 11px;
-}
-
-.death {
-  border: 0.25rem solid black;
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-}
-
-.move {
-  border: 0.25rem solid black;
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-}
-
-.flex {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.resources {
-  border: 0.25rem solid black;
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  display: flex;
-  flex-direction: column;
-}
-.resources [data-groupname=repeating_resource] input[type=text] {
-  width: 10ch !important;
-}
-.resources .repcontainer > .repitem {
-  justify-content: space-between;
-}
-.resources .flex {
-  display: flex;
-  justify-content: space-between;
-}
-.resources input[type=number].grit {
-  margin-right: 1.5rem;
-}
-.resources input[type=text] {
-  margin-bottom: 0.5rem;
-}
-.resources button {
-  width: 28px;
-  font-size: 11px;
-}
-
-.features {
-  border: 0.25rem solid black;
-  border-radius: 12px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-}
-.features .flex {
-  flex-direction: column;
-  margin: 0 auto;
-}
-.features textarea {
-  width: 96%;
-}
-.features button {
-  width: 28px;
-  font-size: 11px;
-}
-
-input[type=text] {
-  height: 24px !important;
-}
-input[type=text]:-moz-read-only {
-  width: 4ch !important;
-}
-input[type=text]:read-only {
-  width: 4ch !important;
-}
-
-input[type=number] {
-  width: 6ch !important;
-  height: 24px !important;
-}
-
-button[type=roll].words {
-  font-size: 12px !important;
-}
-button[type=roll].words::before {
-  content: "" !important;
-}
-
-.smaller {
-  height: 16px !important;
-}
-
-.repcontainer > .repitem {
-  display: flex;
-}
-
-.sheetform {
-  display: flex;
-}
-
-.charsheet {
-  padding: 0 !important;
-  margin: 0 auto !important;
-}
-
-.center {
-  text-align: center;
+.radiocontainer .radiobox:checked ~ .radiobox {
+  order: 3;
+  background-color: transparent;
 }
 
 .bold {
   font-weight: bold;
 }
 
-.sheet-toggle + .sheet-toggle-checked {
+.character {
   display: none;
 }
 
-.sheet-toggle ~ .sheet-toggle-unchecked {
+.tabsToggle[value=character] ~ .character {
+  display: block;
+}
+
+.configuration {
+  display: none;
+}
+
+.tabsToggle[value=configuration] ~ .configuration {
+  display: block;
+}
+
+.journal {
+  display: none;
+}
+
+.tabsToggle[value=journal] ~ .journal {
+  display: block;
+}
+
+.container .pc {
+  display: grid;
+  grid-template-areas: "header" "sheet";
+}
+
+.header .player {
+  grid-area: player;
+}
+
+.header .class {
+  grid-area: class;
+}
+
+.header .subclass {
+  grid-area: subclass;
+}
+
+.header .level {
+  grid-area: level;
+}
+
+.header .name {
+  grid-area: name;
+}
+
+.header .ancestry {
+  grid-area: ancestry;
+}
+
+.header .background {
+  grid-area: background;
+}
+
+.header .cm {
+  grid-area: cm;
+}
+
+.header .cog {
+  grid-area: cog;
+}
+
+.header {
+  grid-area: header;
+  display: grid;
+  grid-template-areas: "info cog";
+  grid-template-columns: 725px 25px;
+  justify-content: space-around;
+  width: 750px;
+  margin: 0 auto;
+  border: 0.25rem solid black;
+  border-radius: 12px;
+  padding: 1rem;
+}
+.header .toggle .toggle-unchecked,
+.header .toggle .toggle-checked {
+  grid-area: info;
+}
+.header .toggle + .toggle-unchecked {
+  grid-template-areas: "player class level" "name ancestry cm";
+  justify-content: space-around;
+}
+.header .toggle + .toggle-checked {
+  grid-template-areas: "class subclass" "ancestry background";
+  justify-content: space-around;
+}
+.header input[type=number] {
+  margin: 0 auto;
+}
+
+.player {
   display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
-.sheet-toggle.physical:checked + .sheet-toggle-checked {
+.class {
   display: flex;
-  position: absolute;
-  background-color: white;
+  flex-direction: column;
+  text-align: center;
 }
 
-.sheet-toggle.mystical:checked + .sheet-toggle-checked {
+.subclass {
   display: flex;
-  position: absolute;
-  background-color: white;
+  flex-direction: column;
+  text-align: center;
 }
 
-body.sheet-darkmode {
-  color: white;
+.level {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
-body.sheet-darkmode * {
-  border-color: white;
+.name {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.ancestry {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.background {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.cm {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.cog {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }

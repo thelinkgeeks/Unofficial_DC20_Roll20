@@ -1,0 +1,14 @@
+mixin input(options)
+	- scaled = options.scaled || false;
+	- readonly = options.readonly || false;
+	- value = options.value || false;
+	- hidden = options.hidden || false;
+	- name = `attr_${options.name}`;
+	- title = `@{${options.name}}`;
+	- kind = scaled ? "text" : options.type;
+	if scaled
+		.autoExpand
+			input(class!=attributes.class type=kind name=name title=title value=value readonly=readonly hidden=hidden)
+			span(class!=attributes.class name=name title=title readonly=readonly hidden=hidden)
+	else
+		input(class!=attributes.class type=kind name=name title=title value=value readonly=readonly hidden=hidden)

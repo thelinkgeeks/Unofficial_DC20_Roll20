@@ -1,0 +1,15 @@
+mixin select(name, items)
+	- attr = `attr_${name}`;
+	- title = `@{${name}}`;
+	select(class!=attributes.class name=attr title=title)
+		each list, group in items
+			- disabled = group === "Choose" ? false : true
+			- style = disabled ? "background:gray; font-weight:bold; color:white;" : ""
+			option(disabled=disabled style=style)= group
+			each item in list
+				+option(item.name, item.value)
+
+mixin option(name, value)
+	- text = name;
+	- value = value !== undefined ? value : text;
+	option(value=value)= text

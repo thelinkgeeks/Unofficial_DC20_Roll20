@@ -1,4 +1,4 @@
-Version: 0.1
+Version: 0.2
 
 I have created a functioning character sheet within Roll20 for the DC20 Sample Rules that are on the Kickstarter. It is pretty bare bones, but does have some auto calculations and configured rolls.
 

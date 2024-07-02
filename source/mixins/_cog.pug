@@ -1,0 +1,12 @@
+mixin cog(name)
+	- optionsAttr = `attr_options-${name}`;
+	.cog
+		input(type='checkbox' name=optionsAttr)
+		span.toggle-icon
+	block
+	input(type='checkbox' name=optionsAttr hidden=true).toggle
+	.toggle-checked
+		- blocks.checked()
+	input(type='checkbox' name=optionsAttr hidden=true).toggle
+	.toggle-unchecked
+		- blocks.unchecked()

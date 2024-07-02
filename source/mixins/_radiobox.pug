@@ -1,0 +1,9 @@
+mixin radiobox({options})
+	- attr = `attr_${options.name}`;
+	- title = `@{${attr}}`;
+	- value = options.value || false;
+	- total = options.total || 1;
+	.radiocontainer
+		input(class='radiobox reset' type='radio' name=attr title=title value=value)
+		each i in Array(total)
+			input(class='radiobox' type='radio' name=attr title=title value=value)

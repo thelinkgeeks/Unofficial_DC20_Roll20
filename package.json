@@ -1,0 +1,11 @@
+{
+	"name": "dc20",
+	"version": "0.0.1",
+	"description": "Version: 0.2",
+	"main": "sheet.html",
+	"scripts": {
+		"dev": "pug -w ./source -o ../ -P"
+	},
+	"author": "Stephen McCallister",
+	"license": "ISC"
+}
