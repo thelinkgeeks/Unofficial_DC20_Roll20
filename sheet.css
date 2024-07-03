@@ -96,6 +96,14 @@ textarea {
   font-weight: bold;
 }
 
+button[type=roll].words {
+  font-size: 12px !important;
+}
+
+button[type=roll].words::before {
+  content: "" !important;
+}
+
 .character {
   display: none;
 }

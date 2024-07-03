@@ -1,0 +1,13 @@
+mixin button(options)
+	- name = options.name || '';
+	- uppercaseName = name.charAt(0).toUpperCase() + name.slice(1);
+	- type = options.type || 'roll';
+	- roll = options.roll || '';
+	- words = options.words || false;
+	- title = options.title || uppercaseName + ' ' + roll;
+	- rName = `roll_${name}${roll}`;
+	- rValue = `&{template:default} {{name=${uppercaseName} ${roll}}} {{roll=[[1d20+@{${name}${roll}}]]}}`;
+	if words
+		button(class!=attributes.class type=type name=rName title=title value=rValue).words= roll
+	else
+		button(class!=attributes.class type=type name=rName title=title value=rValue)
