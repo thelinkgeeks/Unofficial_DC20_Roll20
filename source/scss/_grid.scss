@@ -1,35 +1,45 @@
-.container {
-	// width: 857px;
-	// margin: 0 auto;
-	// padding: 0 1rem;
-	// display: block;
+.pc {
+	display: grid;
+	grid-template-areas:
+		"header"
+		"sheet";
 
-	.pc {
+	.sheet {
 		display: grid;
-		grid-template-areas:
-			"header"
-			"sheet";
-		// 	grid-template-areas:
-		// 		"header header header header header header header header"
-		// 		"header header header header header header header header"
-		// 		"stats stats stats points points points defenses defenses"
-		// 		"stats stats stats combat combat combat death death"
-		// 		"stats stats stats attacks attacks attacks move move"
-		// 		"stats stats stats attacks attacks attacks resources resources"
-		// 		"stats stats stats inventory inventory inventory resources resources"
-		// 		"stats stats stats inventory inventory inventory resources resources"
-		// 		"stats stats stats inventory inventory inventory features features"
-		// 		"stats stats stats inventory inventory inventory features features"
-		// 		"stats stats stats inventory inventory inventory features features"
-		// 		"stats stats stats inventory inventory inventory features features"
-		// 		"trades trades trades inventory inventory inventory features features"
-		// 		"trades trades trades inventory inventory inventory features features"
-		// 		"languages languages languages inventory inventory inventory features features"
-		// 		"languages languages languages inventory inventory inventory features features"
-		// 		"combat-masteries combat-masteries combat-masteries inventory inventory inventory features features"
-		// 		"combat-masteries combat-masteries combat-masteries inventory inventory inventory features features"
-		// 		"currency currency currency inventory inventory inventory features features"
-		// 		"currency currency currency inventory inventory inventory features features";
+		grid-template-areas: "column1 column2 column3";
+		grid-template-columns: 2fr 1fr 1fr;
+
+		.column1,
+		.column2,
+		.column3 {
+			display: grid;
+		}
+
+		.column1 {
+			grid-template-areas:
+				"stats"
+				"trades"
+				"languages"
+				"combat-masteries"
+				"currency";
+		}
+
+		.column2 {
+			grid-template-areas:
+				"points"
+				"combat"
+				"attacks"
+				"inventory";
+		}
+
+		.column3 {
+			grid-template-areas:
+				"defenses"
+				"death"
+				"move"
+				"resources"
+				"features";
+		}
 	}
 }
 
@@ -38,5 +48,42 @@
 		.#{$header} {
 			grid-area: $header;
 		}
+	}
+}
+
+@each $section in $sections {
+	.#{$section} {
+		grid-area: $section;
+	}
+}
+
+@each $stat in $stats {
+	.#{$stat}-stat {
+		grid-area: $stat + '-stat';
+	}
+
+	.#{$stat}-name {
+		grid-area: $stat + '-name';
+	}
+
+	.#{$stat}-save {
+		grid-area: $stat + '-save';
+	}
+}
+
+@each $skill in $skills {
+	.#{$skill}-skill {
+		grid-area: $skill + '-skill';
+		margin-bottom: .25rem;
+	}
+
+	.#{$skill}-masteries {
+		grid-area: $skill + '-masteries';
+		display: flex;
+		align-items: center;
+	}
+
+	.#{$skill}-value {
+		grid-area: $skill + '-value';
 	}
 }

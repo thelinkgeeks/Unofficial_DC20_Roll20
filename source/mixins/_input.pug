@@ -1,14 +1,17 @@
 mixin input(options)
-	- scaled = options.scaled || false;
 	- readonly = options.readonly || false;
+	- scaled = options.scaled || false;
 	- value = options.value || false;
 	- hidden = options.hidden || false;
+	- min = options.min || false;
+	- max = options.max || false;
+	- placeholder = options.placeholder || false;
 	- name = `attr_${options.name}`;
 	- title = `@{${options.name}}`;
 	- kind = scaled ? "text" : options.type;
 	if scaled
 		.autoExpand
-			input(class!=attributes.class type=kind name=name title=title value=value readonly=readonly hidden=hidden)
+			input(class!=attributes.class type=kind name=name title=title value=value placeholder=placeholder readonly=readonly hidden=hidden)
 			span(class!=attributes.class name=name title=title readonly=readonly hidden=hidden)
 	else
-		input(class!=attributes.class type=kind name=name title=title value=value readonly=readonly hidden=hidden)
+		input(class!=attributes.class type=kind name=name title=title value=value min=min max=max placeholder=placeholder readonly=readonly hidden=hidden)

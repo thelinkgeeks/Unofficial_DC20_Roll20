@@ -1,14 +1,21 @@
 mixin spanInput(options)
-	- name = options.name || ""
-	- style = options.class || name
-	- heading = options.heading || ""
-	- attr = options.attr || name
-	- title = `@{${attr}}`
-	- type = options.type || "text"
+	- scaled = options.scaled || false
 	- placeholder = options.placeholder || false
 	- value = options.value || false
 	- min = options.min || false
+	- max = options.max || false
 	- readonly = options.readonly || false
+	- attr = options.attr || options.name
+	- name = `attr_${attr}`;
+	- style = options.style || options.name
+	- title = `@{${attr}}`;
+	- heading = options.heading || ""
+	- kind = options.type || "text"
 	div(class=style)
 		span(class="bold")= heading
-		input(type=type name=`attr_${attr}` value=value min=min title= placeholder=placeholder readonly=readonly)
+		if scaled
+			.autoExpand
+				input(class!=attributes.class type=kind name=name title=title value=value placeholder=placeholder readonly=readonly hidden=hidden)
+				span(class!=attributes.class name=name title=title readonly=readonly hidden=hidden)
+		else
+			input(class!=attributes.class type=kind name=name title=title value=value min=min max=max placeholder=placeholder readonly=readonly scaled=scaled)

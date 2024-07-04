@@ -1,81 +1,82 @@
 
-<div class="container">
-  <div class="pc">
-    <div class="header">
-      <div class="cog">
-        <input type="checkbox" name="attr_options-header"/><span class="toggle-icon"></span>
-      </div>
-      <input class="toggle" type="checkbox" name="attr_options-header" hidden="hidden"/>
-      <div class="toggle-checked">
-      <div class="class"><span class="bold">Class</span>
-        <input type="text" name="attr_class" title="Class"/>
-      </div>
-      <div class="subclass"><span class="bold">Subclass</span>
-        <input type="text" name="attr_subclass" title="Subclass"/>
-      </div>
-      <div class="ancestry"><span class="bold">Ancestry</span>
-        <input type="text" name="attr_ancestry" title="Ancestry"/>
-      </div>
-      <div class="background"><span class="bold">Background</span>
-        <input type="text" name="attr_background" title="Background"/>
-      </div>
-      </div>
-      <input class="toggle" type="checkbox" name="attr_options-header" hidden="hidden"/>
-      <div class="toggle-unchecked">
-      <div class="player"><span class="bold">Player Name</span>
-        <input type="text" name="attr_player" title="Enter Your Name"/>
-      </div>
-      <div class="name"><span class="bold">Character Name</span>
-        <input type="text" name="attr_character_name" title="Enter Your Character's Name"/>
-      </div>
-      <div class="class"><span class="bold">Class &amp; Subclass</span>
-        <input type="text" name="attr_class-subclass" title="Class - Subclass" readonly="readonly"/>
-      </div>
-      <div class="ancestry"><span class="bold">Ancestry &amp; Background</span>
-        <input type="text" name="attr_ancestry-background" title="Ancestry - Background" readonly="readonly"/>
-      </div>
-      <div class="level"><span class="bold">Level</span>
-        <input type="number" name="attr_level" value="1" min="1"/>
-      </div>
-      <div class="cm"><span class="bold">Combat Mastery</span>
-        <input type="number" name="attr_cm" value="1" readonly="readonly"/>
-      </div>
-      </div>
+<div class="pc">
+  <div class="header">
+    <div class="cog">
+      <input type="checkbox" name="attr_options-header"/><span class="toggle-icon"></span>
     </div>
-    <div class="stats">
-      <div class="prime">
-        <div class="prime-stat">
-          <input type="text" name="attr_prime" title="@{prime}" value="-2" readonly="readonly"/>
-        </div>
-        <div class="prime-name"><span class="bold">Prime</span></div>
-        <div class="awareness-skill"><span class="bold">Awareness
-            <button type="roll" name="roll_awarenessCheck" title="Awareness Check" value="&amp;{template:default} {{name=Awareness Check}} {{roll=[[1d20+@{awarenessCheck}]]}}"></button></span></div>
-        <div class="awareness-masteries">
-          <div class="radiocontainer">
-            <input class="radiobox reset" type="radio" name="attr_awarenessMastery" title="@{attr_awarenessMastery}" value="0" checked="checked"/>
-            <input class="radiobox" type="radio" name="attr_awarenessMastery" title="@{attr_awarenessMastery}" value="2"/>
-            <input class="radiobox" type="radio" name="attr_awarenessMastery" title="@{attr_awarenessMastery}" value="4"/>
-            <input class="radiobox" type="radio" name="attr_awarenessMastery" title="@{attr_awarenessMastery}" value="6"/>
-            <input class="radiobox" type="radio" name="attr_awarenessMastery" title="@{attr_awarenessMastery}" value="8"/>
-            <input class="radiobox" type="radio" name="attr_awarenessMastery" title="@{attr_awarenessMastery}" value="10"/>
+    <input class="toggle" type="checkbox" name="attr_options-header" hidden="hidden"/>
+    <div class="toggle-checked">
+    <div class="class"><span class="bold">Class</span>
+      <input type="text" name="attr_class" title="@{class}" placeholder="Class"/>
+    </div>
+    <div class="subclass"><span class="bold">Subclass</span>
+      <input type="text" name="attr_subclass" title="@{subclass}" placeholder="Subclass"/>
+    </div>
+    <div class="ancestry"><span class="bold">Ancestry</span>
+      <input type="text" name="attr_ancestry" title="@{ancestry}" placeholder="Ancestry"/>
+    </div>
+    <div class="background"><span class="bold">Background</span>
+      <input type="text" name="attr_background" title="@{background}" placeholder="Background"/>
+    </div>
+    </div>
+    <input class="toggle" type="checkbox" name="attr_options-header" hidden="hidden"/>
+    <div class="toggle-unchecked">
+    <div class="player"><span class="bold">Player Name</span>
+      <input type="text" name="attr_player" title="@{player}" placeholder="Enter Your Name"/>
+    </div>
+    <div class="character"><span class="bold">Character Name</span>
+      <input type="text" name="attr_character_name" title="@{character_name}" placeholder="Enter Your Character's Name"/>
+    </div>
+    <div class="class"><span class="bold">Class &amp; Subclass</span>
+      <input type="text" name="attr_class-subclass" title="@{class-subclass}" placeholder="Class - Subclass" readonly="readonly"/>
+    </div>
+    <div class="ancestry"><span class="bold">Ancestry &amp; Background</span>
+      <input type="text" name="attr_ancestry-background" title="@{ancestry-background}" placeholder="Ancestry - Background" readonly="readonly"/>
+    </div>
+    <div class="level"><span class="bold">Level</span>
+      <input type="number" name="attr_level" title="@{level}" value="1" min="1" max="20"/>
+    </div>
+    <div class="combatMastery"><span class="bold">Combat Mastery</span>
+      <input type="number" name="attr_combatMastery" title="@{combatMastery}" value="1" readonly="readonly"/>
+    </div>
+    </div>
+  </div>
+  <div class="sheet">
+    <div class="column1">
+      <div class="stats">
+        <div class="prime">
+          <div class="prime-stat">
+            <input class="number" type="text" name="attr_prime" title="@{prime}" value="-2" readonly="readonly"/>
+          </div>
+          <div class="prime-name"><span class="bold">Prime</span></div>
+          <div class="awareness-skill"><span class="bold">Awareness
+              <button type="roll" name="roll_awarenessCheck" title="Awareness Check" value="&amp;{template:default} {{name=Awareness Check}} {{roll=[[1d20+@{awarenessCheck}]]}}"></button></span></div>
+          <div class="awareness-masteries">
+            <div class="radiocontainer">
+              <input class="radiobox reset" type="radio" name="attr_awarenessMastery" title="@{attr_awarenessMastery}" value="0" checked="checked"/>
+              <input class="radiobox" type="radio" name="attr_awarenessMastery" title="@{attr_awarenessMastery}" value="2"/>
+              <input class="radiobox" type="radio" name="attr_awarenessMastery" title="@{attr_awarenessMastery}" value="4"/>
+              <input class="radiobox" type="radio" name="attr_awarenessMastery" title="@{attr_awarenessMastery}" value="6"/>
+              <input class="radiobox" type="radio" name="attr_awarenessMastery" title="@{attr_awarenessMastery}" value="8"/>
+              <input class="radiobox" type="radio" name="attr_awarenessMastery" title="@{attr_awarenessMastery}" value="10"/>
+            </div>
+          </div>
+          <div class="awareness-value">
+            <input class="number" type="text" name="attr_awareness" title="@{awareness}" value="-2" readonly="readonly"/>
           </div>
         </div>
-        <div class="awareness-value">
-          <input type="text" name="attr_awareness" title="@{awareness}" value="-2" readonly="readonly"/>
-        </div>
-      </div>
-      <div class="physical"><span class="bold border-bottom">Physical
-          <button class="words" type="roll" name="roll_physicalCheck" title="Physical Check" value="&amp;{template:default} {{name=Physical Check}} {{roll=[[1d20+@{physicalCheck}]]}}">Check</button>
-          <button class="words" type="roll" name="roll_physicalSave" title="Physical Save" value="&amp;{template:default} {{name=Physical Save}} {{roll=[[1d20+@{physicalSave}]]}}">Save</button>
+        <div class="physical"><span class="bold border-bottom">Physical
+            <button class="words" type="roll" name="roll_physicalCheck" title="Physical Check" value="&amp;{template:default} {{name=Physical Check}} {{roll=[[1d20+@{physicalCheck}]]}}">Check</button>
+            <button class="words" type="roll" name="roll_physicalSave" title="Physical Save" value="&amp;{template:default} {{name=Physical Save}} {{roll=[[1d20+@{physicalSave}]]}}">Save</button></span>
           <div class="might">
             <div class="might-stat"><span class="bold">MIG</span>
-              <input type="number" name="attr_might" title="@{might}" value="-2"/>
+              <input class="number" type="number" name="attr_might" title="@{might}" value="-2" min="-2"/>
             </div>
             <div class="might-name"><span class="bold">Might
                 <button type="roll" name="roll_mightCheck" title="Might Check" value="&amp;{template:default} {{name=Might Check}} {{roll=[[1d20+@{mightCheck}]]}}"></button></span></div>
             <div class="might-save"><span class="bold">Save
-                <button type="roll" name="roll_mightSave" title="Might Save" value="&amp;{template:default} {{name=Might Save}} {{roll=[[1d20+@{mightSave}]]}}"></button></span>
-              <input type="text" name="attr_mightSave" title="@{mightSave}" value="-2" readonly="readonly"/>
+                <button class="save" type="roll" name="roll_mightSave" title="Might Save" value="&amp;{template:default} {{name=Might Save}} {{roll=[[1d20+@{mightSave}]]}}"></button></span>
+              <input class="number" type="text" name="attr_mightSave" title="@{mightSave}" value="-2" readonly="readonly"/>
               <input type="checkbox" name="attr_mightSaveMastery" title="@{mightSaveMastery}" value="1"/>
             </div>
             <div class="athletics-skill"><span class="bold">Athletics
@@ -91,7 +92,7 @@
               </div>
             </div>
             <div class="athletics-value">
-              <input type="text" name="attr_athletics" title="@{athletics}" value="-2" readonly="readonly"/>
+              <input class="number" type="text" name="attr_athletics" title="@{athletics}" value="-2" readonly="readonly"/>
             </div>
             <div class="intimidation-skill"><span class="bold">Intimidation
                 <button type="roll" name="roll_intimidationCheck" title="Intimidation Check" value="&amp;{template:default} {{name=Intimidation Check}} {{roll=[[1d20+@{intimidationCheck}]]}}"></button></span></div>
@@ -106,18 +107,18 @@
               </div>
             </div>
             <div class="intimidation-value">
-              <input type="text" name="attr_intimidation" title="@{intimidation}" value="-2" readonly="readonly"/>
+              <input class="number" type="text" name="attr_intimidation" title="@{intimidation}" value="-2" readonly="readonly"/>
             </div>
           </div>
           <div class="agility">
             <div class="agility-stat"><span class="bold">AGI</span>
-              <input type="number" name="attr_agility" title="@{agility}" value="-2"/>
+              <input class="number" type="number" name="attr_agility" title="@{agility}" value="-2" min="-2"/>
             </div>
             <div class="agility-name"><span class="bold">Agility
                 <button type="roll" name="roll_agilityCheck" title="Agility Check" value="&amp;{template:default} {{name=Agility Check}} {{roll=[[1d20+@{agilityCheck}]]}}"></button></span></div>
             <div class="agility-save"><span class="bold">Save
-                <button type="roll" name="roll_agilitySave" title="Agility Save" value="&amp;{template:default} {{name=Agility Save}} {{roll=[[1d20+@{agilitySave}]]}}"></button></span>
-              <input type="text" name="attr_agilitySave" title="@{agilitySave}" value="-2" readonly="readonly"/>
+                <button class="save" type="roll" name="roll_agilitySave" title="Agility Save" value="&amp;{template:default} {{name=Agility Save}} {{roll=[[1d20+@{agilitySave}]]}}"></button></span>
+              <input class="number" type="text" name="attr_agilitySave" title="@{agilitySave}" value="-2" readonly="readonly"/>
               <input type="checkbox" name="attr_agilitySaveMastery" title="@{agilitySaveMastery}" value="1"/>
             </div>
             <div class="acrobatics-skill"><span class="bold">Acrobatics
@@ -133,7 +134,7 @@
               </div>
             </div>
             <div class="acrobatics-value">
-              <input type="text" name="attr_acrobatics" title="@{acrobatics}" value="-2" readonly="readonly"/>
+              <input class="number" type="text" name="attr_acrobatics" title="@{acrobatics}" value="-2" readonly="readonly"/>
             </div>
             <div class="trickery-skill"><span class="bold">Trickery
                 <button type="roll" name="roll_trickeryCheck" title="Trickery Check" value="&amp;{template:default} {{name=Trickery Check}} {{roll=[[1d20+@{trickeryCheck}]]}}"></button></span></div>
@@ -148,7 +149,7 @@
               </div>
             </div>
             <div class="trickery-value">
-              <input type="text" name="attr_trickery" title="@{trickery}" value="-2" readonly="readonly"/>
+              <input class="number" type="text" name="attr_trickery" title="@{trickery}" value="-2" readonly="readonly"/>
             </div>
             <div class="stealth-skill"><span class="bold">Stealth
                 <button type="roll" name="roll_stealthCheck" title="Stealth Check" value="&amp;{template:default} {{name=Stealth Check}} {{roll=[[1d20+@{stealthCheck}]]}}"></button></span></div>
@@ -163,22 +164,22 @@
               </div>
             </div>
             <div class="stealth-value">
-              <input type="text" name="attr_stealth" title="@{stealth}" value="-2" readonly="readonly"/>
+              <input class="number" type="text" name="attr_stealth" title="@{stealth}" value="-2" readonly="readonly"/>
             </div>
-          </div></span>
-      </div>
-      <div class="mystical"><span class="bold border-bottom">Mystical
-          <button class="words" type="roll" name="roll_mysticalCheck" title="Mystical Check" value="&amp;{template:default} {{name=Mystical Check}} {{roll=[[1d20+@{mysticalCheck}]]}}">Check</button>
-          <button class="words" type="roll" name="roll_mysticalSave" title="Mystical Save" value="&amp;{template:default} {{name=Mystical Save}} {{roll=[[1d20+@{mysticalSave}]]}}">Save</button>
+          </div>
+        </div>
+        <div class="mystical"><span class="bold border-bottom">Mystical
+            <button class="words" type="roll" name="roll_mysticalCheck" title="Mystical Check" value="&amp;{template:default} {{name=Mystical Check}} {{roll=[[1d20+@{mysticalCheck}]]}}">Check</button>
+            <button class="words" type="roll" name="roll_mysticalSave" title="Mystical Save" value="&amp;{template:default} {{name=Mystical Save}} {{roll=[[1d20+@{mysticalSave}]]}}">Save</button></span>
           <div class="charisma">
             <div class="charisma-stat"><span class="bold">CHA</span>
-              <input type="number" name="attr_charisma" title="@{charisma}" value="-2"/>
+              <input class="number" type="number" name="attr_charisma" title="@{charisma}" value="-2" min="-2"/>
             </div>
             <div class="charisma-name"><span class="bold">Charisma
                 <button type="roll" name="roll_charismaCheck" title="Charisma Check" value="&amp;{template:default} {{name=Charisma Check}} {{roll=[[1d20+@{charismaCheck}]]}}"></button></span></div>
             <div class="charisma-save"><span class="bold">Save
-                <button type="roll" name="roll_charismaSave" title="Charisma Save" value="&amp;{template:default} {{name=Charisma Save}} {{roll=[[1d20+@{charismaSave}]]}}"></button></span>
-              <input type="text" name="attr_charismaSave" title="@{charismaSave}" value="-2" readonly="readonly"/>
+                <button class="save" type="roll" name="roll_charismaSave" title="Charisma Save" value="&amp;{template:default} {{name=Charisma Save}} {{roll=[[1d20+@{charismaSave}]]}}"></button></span>
+              <input class="number" type="text" name="attr_charismaSave" title="@{charismaSave}" value="-2" readonly="readonly"/>
               <input type="checkbox" name="attr_charismaSaveMastery" title="@{charismaSaveMastery}" value="1"/>
             </div>
             <div class="animal-skill"><span class="bold">Animal
@@ -194,7 +195,7 @@
               </div>
             </div>
             <div class="animal-value">
-              <input type="text" name="attr_animal" title="@{animal}" value="-2" readonly="readonly"/>
+              <input class="number" type="text" name="attr_animal" title="@{animal}" value="-2" readonly="readonly"/>
             </div>
             <div class="influence-skill"><span class="bold">Influence
                 <button type="roll" name="roll_influenceCheck" title="Influence Check" value="&amp;{template:default} {{name=Influence Check}} {{roll=[[1d20+@{influenceCheck}]]}}"></button></span></div>
@@ -209,7 +210,7 @@
               </div>
             </div>
             <div class="influence-value">
-              <input type="text" name="attr_influence" title="@{influence}" value="-2" readonly="readonly"/>
+              <input class="number" type="text" name="attr_influence" title="@{influence}" value="-2" readonly="readonly"/>
             </div>
             <div class="insight-skill"><span class="bold">Insight
                 <button type="roll" name="roll_insightCheck" title="Insight Check" value="&amp;{template:default} {{name=Insight Check}} {{roll=[[1d20+@{insightCheck}]]}}"></button></span></div>
@@ -224,18 +225,18 @@
               </div>
             </div>
             <div class="insight-value">
-              <input type="text" name="attr_insight" title="@{insight}" value="-2" readonly="readonly"/>
+              <input class="number" type="text" name="attr_insight" title="@{insight}" value="-2" readonly="readonly"/>
             </div>
           </div>
           <div class="intelligence">
             <div class="intelligence-stat"><span class="bold">INT</span>
-              <input type="number" name="attr_intelligence" title="@{intelligence}" value="-2"/>
+              <input class="number" type="number" name="attr_intelligence" title="@{intelligence}" value="-2" min="-2"/>
             </div>
             <div class="intelligence-name"><span class="bold">Intelligence
                 <button type="roll" name="roll_intelligenceCheck" title="Intelligence Check" value="&amp;{template:default} {{name=Intelligence Check}} {{roll=[[1d20+@{intelligenceCheck}]]}}"></button></span></div>
             <div class="intelligence-save"><span class="bold">Save
-                <button type="roll" name="roll_intelligenceSave" title="Intelligence Save" value="&amp;{template:default} {{name=Intelligence Save}} {{roll=[[1d20+@{intelligenceSave}]]}}"></button></span>
-              <input type="text" name="attr_intelligenceSave" title="@{intelligenceSave}" value="-2" readonly="readonly"/>
+                <button class="save" type="roll" name="roll_intelligenceSave" title="Intelligence Save" value="&amp;{template:default} {{name=Intelligence Save}} {{roll=[[1d20+@{intelligenceSave}]]}}"></button></span>
+              <input class="number" type="text" name="attr_intelligenceSave" title="@{intelligenceSave}" value="-2" readonly="readonly"/>
               <input type="checkbox" name="attr_intelligenceSaveMastery" title="@{intelligenceSaveMastery}" value="1"/>
             </div>
             <div class="investigation-skill"><span class="bold">Investigation
@@ -251,7 +252,7 @@
               </div>
             </div>
             <div class="investigation-value">
-              <input type="text" name="attr_investigation" title="@{investigation}" value="-2" readonly="readonly"/>
+              <input class="number" type="text" name="attr_investigation" title="@{investigation}" value="-2" readonly="readonly"/>
             </div>
             <div class="medicine-skill"><span class="bold">Medicine
                 <button type="roll" name="roll_medicineCheck" title="Medicine Check" value="&amp;{template:default} {{name=Medicine Check}} {{roll=[[1d20+@{medicineCheck}]]}}"></button></span></div>
@@ -266,7 +267,7 @@
               </div>
             </div>
             <div class="medicine-value">
-              <input type="text" name="attr_medicine" title="@{medicine}" value="-2" readonly="readonly"/>
+              <input class="number" type="text" name="attr_medicine" title="@{medicine}" value="-2" readonly="readonly"/>
             </div>
             <div class="survival-skill"><span class="bold">Survival
                 <button type="roll" name="roll_survivalCheck" title="Survival Check" value="&amp;{template:default} {{name=Survival Check}} {{roll=[[1d20+@{survivalCheck}]]}}"></button></span></div>
@@ -281,11 +282,11 @@
               </div>
             </div>
             <div class="survival-value">
-              <input type="text" name="attr_survival" title="@{survival}" value="-2" readonly="readonly"/>
-            </div>
-            <div class="arcana-skill"><span class="bold">Arcana
+              <input class="number" type="text" name="attr_survival" title="@{survival}" value="-2" readonly="readonly"/>
+            </div><span class="knowledge">Knowledge</span>
+            <div class="arcana-skill border-top"><span class="bold">Arcana
                 <button type="roll" name="roll_arcanaCheck" title="Arcana Check" value="&amp;{template:default} {{name=Arcana Check}} {{roll=[[1d20+@{arcanaCheck}]]}}"></button></span></div>
-            <div class="arcana-masteries">
+            <div class="arcana-masteries border-top">
               <div class="radiocontainer">
                 <input class="radiobox reset" type="radio" name="attr_arcanaMastery" title="@{attr_arcanaMastery}" value="0" checked="checked"/>
                 <input class="radiobox" type="radio" name="attr_arcanaMastery" title="@{attr_arcanaMastery}" value="2"/>
@@ -295,8 +296,8 @@
                 <input class="radiobox" type="radio" name="attr_arcanaMastery" title="@{attr_arcanaMastery}" value="10"/>
               </div>
             </div>
-            <div class="arcana-value">
-              <input type="text" name="attr_arcana" title="@{arcana}" value="-2" readonly="readonly"/>
+            <div class="arcana-value border-top">
+              <input class="number" type="text" name="attr_arcana" title="@{arcana}" value="-2" readonly="readonly"/>
             </div>
             <div class="history-skill"><span class="bold">History
                 <button type="roll" name="roll_historyCheck" title="History Check" value="&amp;{template:default} {{name=History Check}} {{roll=[[1d20+@{historyCheck}]]}}"></button></span></div>
@@ -311,7 +312,7 @@
               </div>
             </div>
             <div class="history-value">
-              <input type="text" name="attr_history" title="@{history}" value="-2" readonly="readonly"/>
+              <input class="number" type="text" name="attr_history" title="@{history}" value="-2" readonly="readonly"/>
             </div>
             <div class="nature-skill"><span class="bold">Nature
                 <button type="roll" name="roll_natureCheck" title="Nature Check" value="&amp;{template:default} {{name=Nature Check}} {{roll=[[1d20+@{natureCheck}]]}}"></button></span></div>
@@ -326,7 +327,7 @@
               </div>
             </div>
             <div class="nature-value">
-              <input type="text" name="attr_nature" title="@{nature}" value="-2" readonly="readonly"/>
+              <input class="number" type="text" name="attr_nature" title="@{nature}" value="-2" readonly="readonly"/>
             </div>
             <div class="occultism-skill"><span class="bold">Occultism
                 <button type="roll" name="roll_occultismCheck" title="Occultism Check" value="&amp;{template:default} {{name=Occultism Check}} {{roll=[[1d20+@{occultismCheck}]]}}"></button></span></div>
@@ -341,7 +342,7 @@
               </div>
             </div>
             <div class="occultism-value">
-              <input type="text" name="attr_occultism" title="@{occultism}" value="-2" readonly="readonly"/>
+              <input class="number" type="text" name="attr_occultism" title="@{occultism}" value="-2" readonly="readonly"/>
             </div>
             <div class="religion-skill"><span class="bold">Religion
                 <button type="roll" name="roll_religionCheck" title="Religion Check" value="&amp;{template:default} {{name=Religion Check}} {{roll=[[1d20+@{religionCheck}]]}}"></button></span></div>
@@ -356,11 +357,14 @@
               </div>
             </div>
             <div class="religion-value">
-              <input type="text" name="attr_religion" title="@{religion}" value="-2" readonly="readonly"/>
+              <input class="number" type="text" name="attr_religion" title="@{religion}" value="-2" readonly="readonly"/>
             </div>
-          </div></span>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="column2"></div>
+    <div class="column3"></div>
   </div>
 </div>
 <script type="text/worker">
@@ -402,5 +406,61 @@ on('change:ancestry change:background', function () {
 });
   
   // source = stats.js
+// When the level is changed, set the combat mastery
+// When the level or might is changed, set the hit points
+on('change:might change:level', () => {
+	getAttrs(['level', 'might'], (values) => {
+		const level = +values.level || 0;
+		const mastery = Math.ceil(level / 2);
+
+		const might = +values.might || 0;
+		const total = 6 + level + might;
+
+		setAttrs({
+			combatMastery: mastery,
+			hitPoints_max: total,
+		});
+	});
+});
+
+// When the stats are changed, set the prime stat, physical check, and mystical check
+on('change:might change:agility change:charisma change:intelligence', () => {
+	getAttrs(['might', 'agility', 'charisma', 'intelligence'], (values) => {
+		const might = +values.might || 0;
+		const agility = +values.agility || 0;
+		const charisma = +values.charisma || 0;
+		const intelligence = +values.intelligence || 0;
+		const max = Math.max(might, agility, charisma, intelligence);
+		const physical = Math.max(might, agility);
+		const mystical = Math.max(charisma, intelligence);
+
+		setAttrs({
+			prime: max,
+			physicalCheck: physical,
+			mysticalCheck: mystical,
+		});
+	});
+});
+
+// When the stats or save mastery is changed, set the save modifier
+const stats = ['might', 'agility', 'charisma', 'intelligence'];
+stats.forEach((stat) => {
+	on(`change:${stat}SaveMastery change:${stat}`, () => {
+		getAttrs([`${stat}`, 'combatMastery', `${stat}SaveMastery`], (values) => {
+			const st = +values[stat] || 0;
+			const cm = +values.combatMastery || 0;
+			const sm = +values[`${stat}SaveMastery`] || 0;
+			let total = st;
+
+			if (sm == 1) {
+				total = st + cm;
+			}
+
+			setAttrs({
+				[`${stat}Save`]: total,
+			});
+		});
+	});
+});
 
 </script>

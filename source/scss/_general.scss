@@ -5,15 +5,21 @@ textarea {
 
 .autoExpand {
 	/* hides overflow that is caused by the span */
-	overflow: hidden;
+	// overflow: hidden;
+
 	/* Allows the input's absolute positioning to be relative to this parent div */
 	position: relative;
+
 	/* Whatever feels good to you, prevents a new span from collapsing to 0. */
 	min-width: 50px;
+
 	/* Will fit the width to the contents without going outside itself or collapsing smaller than its content, though we will be using min-width in the case where there's no content. */
 	width: fit-content;
+
 	/* Prevent the span from defining the height of the input container which can't be multiline */
 	// height: 20px;
+
+	margin: 0 auto;
 
 	span {
 		visibility: hidden;
@@ -88,7 +94,7 @@ textarea {
 
 .radiocontainer {
 	display: flex;
-	gap: 10px;
+	gap: 5px;
 
 	.radiobox {
 		order: 1;
@@ -125,10 +131,34 @@ textarea {
 
 button[type=roll].words {
 	font-size: 12px !important;
+
+	&::before {
+		content: "" !important;
+	}
 }
 
-button[type=roll].words::before {
-	content: "" !important;
+.border-top {
+	border-top: .25rem solid black;
+	margin-top: .5rem;
+	padding-top: .5rem;
+}
+
+.border-bottom {
+	border-bottom: .25rem solid black;
+	padding-bottom: .5rem;
+}
+
+input {
+	width: 100%;
+}
+
+.number {
+	width: 3.75rem !important;
+	height: 2.25rem !important;
+}
+
+.save {
+	margin-bottom: .25rem !important;
 }
 
 $tabs: character, configuration, journal;

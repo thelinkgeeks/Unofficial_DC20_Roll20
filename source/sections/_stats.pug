@@ -6,7 +6,7 @@ each stats, group in statsSkills
 			- const uppercaseStat = stat.charAt(0).toUpperCase() + stat.slice(1)
 			div(class=stat)
 				div(class=stat + '-stat')
-					+input({name: stat, type: 'text', value: -2, readonly: true})
+					+input({name: stat, type: 'text', value: -2, readonly: true})(class='number')
 				div(class=stat + '-name')
 					span.bold= uppercaseStat
 				each skill in skills
@@ -17,34 +17,45 @@ each stats, group in statsSkills
 					div(class=skill + '-masteries')
 						+radiobox({name: skill + 'Mastery', value: 2, total: 5})
 					div(class=skill + '-value')
-						+input({name: skill, type: 'text', value: -2, readonly: true})
+						+input({name: skill, type: 'text', value: -2, readonly: true})(class='number')
 	else
 		div(class=group)
 			- const uppercaseGroup = group.charAt(0).toUpperCase() + group.slice(1)
 			span.bold.border-bottom= uppercaseGroup
 				+button({name: group, roll: 'Check', words: true})
 				+button({name: group, roll: 'Save', words: true})
-				each skills, stat in stats
-					- const uppercaseStatShort = stat.slice(0, 3).toUpperCase()
-					- const uppercaseStat = stat.charAt(0).toUpperCase() + stat.slice(1)
-					div(class=stat)
-						div(class=stat + '-stat')
-							span.bold= uppercaseStatShort
-							+input({name: stat, type: 'number', value: -2, min: -2})
-						div(class=stat + '-name')
-							span.bold= uppercaseStat
-								+button({name: stat, roll: 'Check'})
-						div(class=stat + '-save')
-							span.bold= 'Save'
-								+button({name: stat, roll: 'Save'})
-							+input({name: stat + 'Save', type: 'text', value: -2, readonly: true})
-							+input({name: stat + 'SaveMastery', type: 'checkbox', value: 1})
-						each skill in skills
-							- const uppercaseSkill = skill.charAt(0).toUpperCase() + skill.slice(1)
+			each skills, stat in stats
+				- const uppercaseStatShort = stat.slice(0, 3).toUpperCase()
+				- const uppercaseStat = stat.charAt(0).toUpperCase() + stat.slice(1)
+				div(class=stat)
+					div(class=stat + '-stat')
+						span.bold= uppercaseStatShort
+						+input({name: stat, type: 'number', value: -2, min: -2})(class='number')
+					div(class=stat + '-name')
+						span.bold= uppercaseStat
+							+button({name: stat, roll: 'Check'})
+					div(class=stat + '-save')
+						span.bold= 'Save'
+							+button({name: stat, roll: 'Save'})(class='save')
+						+input({name: stat + 'Save', type: 'text', value: -2, readonly: true})(class='number')
+						+input({name: stat + 'SaveMastery', type: 'checkbox', value: 1})
+					each skill in skills
+						if skill === "arcana"
+							span.knowledge Knowledge
+						- const uppercaseSkill = skill.charAt(0).toUpperCase() + skill.slice(1)
+						if skill === "arcana"
+							div(class=skill + '-skill').border-top
+								span.bold= uppercaseSkill
+									+button({name: skill, roll: 'Check'})
+							div(class=skill + '-masteries').border-top
+								+radiobox({name: skill + 'Mastery', value: 2, total: 5})
+							div(class=skill + '-value').border-top
+								+input({name: skill, type: 'text', value: -2, readonly: true})(class='number')
+						else
 							div(class=skill + '-skill')
 								span.bold= uppercaseSkill
 									+button({name: skill, roll: 'Check'})
 							div(class=skill + '-masteries')
 								+radiobox({name: skill + 'Mastery', value: 2, total: 5})
 							div(class=skill + '-value')
-								+input({name: skill, type: 'text', value: -2, readonly: true})
+								+input({name: skill, type: 'text', value: -2, readonly: true})(class='number')

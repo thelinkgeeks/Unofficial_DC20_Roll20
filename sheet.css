@@ -5,7 +5,6 @@ textarea {
 
 .autoExpand {
   /* hides overflow that is caused by the span */
-  overflow: hidden;
   /* Allows the input's absolute positioning to be relative to this parent div */
   position: relative;
   /* Whatever feels good to you, prevents a new span from collapsing to 0. */
@@ -13,6 +12,7 @@ textarea {
   /* Will fit the width to the contents without going outside itself or collapsing smaller than its content, though we will be using min-width in the case where there's no content. */
   width: fit-content;
   /* Prevent the span from defining the height of the input container which can't be multiline */
+  margin: 0 auto;
 }
 .autoExpand span {
   visibility: hidden;
@@ -65,7 +65,7 @@ textarea {
 
 .radiocontainer {
   display: flex;
-  gap: 10px;
+  gap: 5px;
 }
 .radiocontainer .radiobox {
   order: 1;
@@ -99,9 +99,32 @@ textarea {
 button[type=roll].words {
   font-size: 12px !important;
 }
-
 button[type=roll].words::before {
   content: "" !important;
+}
+
+.border-top {
+  border-top: 0.25rem solid black;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.border-bottom {
+  border-bottom: 0.25rem solid black;
+  padding-bottom: 0.5rem;
+}
+
+input {
+  width: 100%;
+}
+
+.number {
+  width: 3.75rem !important;
+  height: 2.25rem !important;
+}
+
+.save {
+  margin-bottom: 0.25rem !important;
 }
 
 .character {
@@ -128,9 +151,28 @@ button[type=roll].words::before {
   display: block;
 }
 
-.container .pc {
+.pc {
   display: grid;
   grid-template-areas: "header" "sheet";
+}
+.pc .sheet {
+  display: grid;
+  grid-template-areas: "column1 column2 column3";
+  grid-template-columns: 2fr 1fr 1fr;
+}
+.pc .sheet .column1,
+.pc .sheet .column2,
+.pc .sheet .column3 {
+  display: grid;
+}
+.pc .sheet .column1 {
+  grid-template-areas: "stats" "trades" "languages" "combat-masteries" "currency";
+}
+.pc .sheet .column2 {
+  grid-template-areas: "points" "combat" "attacks" "inventory";
+}
+.pc .sheet .column3 {
+  grid-template-areas: "defenses" "death" "move" "resources" "features";
 }
 
 .header .player {
@@ -149,8 +191,8 @@ button[type=roll].words::before {
   grid-area: level;
 }
 
-.header .name {
-  grid-area: name;
+.header .character {
+  grid-area: character;
 }
 
 .header .ancestry {
@@ -161,37 +203,373 @@ button[type=roll].words::before {
   grid-area: background;
 }
 
-.header .cm {
-  grid-area: cm;
+.header .combatMastery {
+  grid-area: combatMastery;
 }
 
 .header .cog {
   grid-area: cog;
 }
 
+.sheet {
+  grid-area: sheet;
+}
+
+.column1 {
+  grid-area: column1;
+}
+
+.column2 {
+  grid-area: column2;
+}
+
+.column3 {
+  grid-area: column3;
+}
+
 .header {
   grid-area: header;
+}
+
+.stats {
+  grid-area: stats;
+}
+
+.prime-stat {
+  grid-area: prime-stat;
+}
+
+.prime-name {
+  grid-area: prime-name;
+}
+
+.prime-save {
+  grid-area: prime-save;
+}
+
+.might-stat {
+  grid-area: might-stat;
+}
+
+.might-name {
+  grid-area: might-name;
+}
+
+.might-save {
+  grid-area: might-save;
+}
+
+.agility-stat {
+  grid-area: agility-stat;
+}
+
+.agility-name {
+  grid-area: agility-name;
+}
+
+.agility-save {
+  grid-area: agility-save;
+}
+
+.charisma-stat {
+  grid-area: charisma-stat;
+}
+
+.charisma-name {
+  grid-area: charisma-name;
+}
+
+.charisma-save {
+  grid-area: charisma-save;
+}
+
+.intelligence-stat {
+  grid-area: intelligence-stat;
+}
+
+.intelligence-name {
+  grid-area: intelligence-name;
+}
+
+.intelligence-save {
+  grid-area: intelligence-save;
+}
+
+.awareness-skill {
+  grid-area: awareness-skill;
+  margin-bottom: 0.25rem;
+}
+
+.awareness-masteries {
+  grid-area: awareness-masteries;
+  display: flex;
+  align-items: center;
+}
+
+.awareness-value {
+  grid-area: awareness-value;
+}
+
+.athletics-skill {
+  grid-area: athletics-skill;
+  margin-bottom: 0.25rem;
+}
+
+.athletics-masteries {
+  grid-area: athletics-masteries;
+  display: flex;
+  align-items: center;
+}
+
+.athletics-value {
+  grid-area: athletics-value;
+}
+
+.intimidation-skill {
+  grid-area: intimidation-skill;
+  margin-bottom: 0.25rem;
+}
+
+.intimidation-masteries {
+  grid-area: intimidation-masteries;
+  display: flex;
+  align-items: center;
+}
+
+.intimidation-value {
+  grid-area: intimidation-value;
+}
+
+.acrobatics-skill {
+  grid-area: acrobatics-skill;
+  margin-bottom: 0.25rem;
+}
+
+.acrobatics-masteries {
+  grid-area: acrobatics-masteries;
+  display: flex;
+  align-items: center;
+}
+
+.acrobatics-value {
+  grid-area: acrobatics-value;
+}
+
+.trickery-skill {
+  grid-area: trickery-skill;
+  margin-bottom: 0.25rem;
+}
+
+.trickery-masteries {
+  grid-area: trickery-masteries;
+  display: flex;
+  align-items: center;
+}
+
+.trickery-value {
+  grid-area: trickery-value;
+}
+
+.stealth-skill {
+  grid-area: stealth-skill;
+  margin-bottom: 0.25rem;
+}
+
+.stealth-masteries {
+  grid-area: stealth-masteries;
+  display: flex;
+  align-items: center;
+}
+
+.stealth-value {
+  grid-area: stealth-value;
+}
+
+.animal-skill {
+  grid-area: animal-skill;
+  margin-bottom: 0.25rem;
+}
+
+.animal-masteries {
+  grid-area: animal-masteries;
+  display: flex;
+  align-items: center;
+}
+
+.animal-value {
+  grid-area: animal-value;
+}
+
+.influence-skill {
+  grid-area: influence-skill;
+  margin-bottom: 0.25rem;
+}
+
+.influence-masteries {
+  grid-area: influence-masteries;
+  display: flex;
+  align-items: center;
+}
+
+.influence-value {
+  grid-area: influence-value;
+}
+
+.insight-skill {
+  grid-area: insight-skill;
+  margin-bottom: 0.25rem;
+}
+
+.insight-masteries {
+  grid-area: insight-masteries;
+  display: flex;
+  align-items: center;
+}
+
+.insight-value {
+  grid-area: insight-value;
+}
+
+.investigation-skill {
+  grid-area: investigation-skill;
+  margin-bottom: 0.25rem;
+}
+
+.investigation-masteries {
+  grid-area: investigation-masteries;
+  display: flex;
+  align-items: center;
+}
+
+.investigation-value {
+  grid-area: investigation-value;
+}
+
+.medicine-skill {
+  grid-area: medicine-skill;
+  margin-bottom: 0.25rem;
+}
+
+.medicine-masteries {
+  grid-area: medicine-masteries;
+  display: flex;
+  align-items: center;
+}
+
+.medicine-value {
+  grid-area: medicine-value;
+}
+
+.survival-skill {
+  grid-area: survival-skill;
+  margin-bottom: 0.25rem;
+}
+
+.survival-masteries {
+  grid-area: survival-masteries;
+  display: flex;
+  align-items: center;
+}
+
+.survival-value {
+  grid-area: survival-value;
+}
+
+.arcana-skill {
+  grid-area: arcana-skill;
+  margin-bottom: 0.25rem;
+}
+
+.arcana-masteries {
+  grid-area: arcana-masteries;
+  display: flex;
+  align-items: center;
+}
+
+.arcana-value {
+  grid-area: arcana-value;
+}
+
+.history-skill {
+  grid-area: history-skill;
+  margin-bottom: 0.25rem;
+}
+
+.history-masteries {
+  grid-area: history-masteries;
+  display: flex;
+  align-items: center;
+}
+
+.history-value {
+  grid-area: history-value;
+}
+
+.nature-skill {
+  grid-area: nature-skill;
+  margin-bottom: 0.25rem;
+}
+
+.nature-masteries {
+  grid-area: nature-masteries;
+  display: flex;
+  align-items: center;
+}
+
+.nature-value {
+  grid-area: nature-value;
+}
+
+.occultism-skill {
+  grid-area: occultism-skill;
+  margin-bottom: 0.25rem;
+}
+
+.occultism-masteries {
+  grid-area: occultism-masteries;
+  display: flex;
+  align-items: center;
+}
+
+.occultism-value {
+  grid-area: occultism-value;
+}
+
+.religion-skill {
+  grid-area: religion-skill;
+  margin-bottom: 0.25rem;
+}
+
+.religion-masteries {
+  grid-area: religion-masteries;
+  display: flex;
+  align-items: center;
+}
+
+.religion-value {
+  grid-area: religion-value;
+}
+
+.header {
   display: grid;
   grid-template-areas: "info cog";
-  grid-template-columns: 725px 25px;
-  justify-content: space-around;
-  width: 750px;
-  margin: 0 auto;
+  grid-template-columns: 1fr auto;
+  margin: 0 auto 1rem auto;
+  min-width: 600px;
   border: 0.25rem solid black;
   border-radius: 12px;
   padding: 1rem;
 }
-.header .toggle .toggle-unchecked,
-.header .toggle .toggle-checked {
+.header .toggle + .toggle-unchecked, .header .toggle + .toggle-checked {
   grid-area: info;
+  row-gap: 1rem;
+  column-gap: 2rem;
 }
 .header .toggle + .toggle-unchecked {
-  grid-template-areas: "player class level" "name ancestry cm";
-  justify-content: space-around;
+  grid-template-areas: "player class level" "character ancestry combatMastery";
 }
 .header .toggle + .toggle-checked {
   grid-template-areas: "class subclass" "ancestry background";
-  justify-content: space-around;
 }
 .header input[type=number] {
   margin: 0 auto;
@@ -221,7 +599,7 @@ button[type=roll].words::before {
   text-align: center;
 }
 
-.name {
+.character {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -239,7 +617,7 @@ button[type=roll].words::before {
   text-align: center;
 }
 
-.cm {
+.combatMastery {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -249,4 +627,74 @@ button[type=roll].words::before {
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+
+.stats {
+  display: grid;
+  border: 0.25rem solid black;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  grid-template-areas: "prime" "physical" "might" "agility" "mystical" "charisma" "intelligence";
+}
+.stats .prime {
+  grid-area: prime;
+  display: grid;
+  border-bottom: 0.25rem solid black;
+  padding-bottom: 1rem;
+  grid-template-areas: "prime-stat prime-name . ." ". awareness-masteries awareness-value awareness-skill";
+}
+.stats .prime .prime-stat {
+  display: flex;
+  justify-content: center;
+}
+.stats .might {
+  grid-area: might;
+  display: grid;
+  border-bottom: 0.25rem solid black;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+  grid-template-areas: "might-stat might-name . might-save" ". athletics-masteries athletics-value athletics-skill" ". intimidation-masteries intimidation-value intimidation-skill";
+}
+.stats .agility {
+  grid-area: agility;
+  display: grid;
+  border-bottom: 0.25rem solid black;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  grid-template-areas: "agility-stat agility-name . agility-save" ". acrobatics-masteries acrobatics-value acrobatics-skill" ". trickery-masteries trickery-value trickery-skill" ". stealth-masteries stealth-value stealth-skill";
+}
+.stats .charisma {
+  grid-area: charisma;
+  display: grid;
+  border-bottom: 0.25rem solid black;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  grid-template-areas: "charisma-stat charisma-name . charisma-save" ". animal-masteries animal-value animal-skill" ". influence-masteries influence-value influence-skill" ". insight-masteries insight-value insight-skill";
+}
+.stats .intelligence {
+  grid-area: intelligence;
+  display: grid;
+  padding-top: 1rem;
+  grid-template-areas: "intelligence-stat intelligence-name intelligence-name intelligence-save" ". investigation-masteries investigation-value investigation-skill" ". medicine-masteries medicine-value medicine-skill" ". survival-masteries survival-value survival-skill" "knowledge arcana-masteries arcana-value arcana-skill" "knowledge history-masteries history-value history-skill" "knowledge nature-masteries nature-value nature-skill" "knowledge occultism-masteries occultism-value occultism-skill" "knowledge religion-masteries religion-value religion-skill" "knowledge skill8-masteries skill8-value skill8-skill" "knowledge skill9-masteries skill9-value skill9-skill";
+}
+.stats .physical {
+  grid-area: physical;
+  text-align: center;
+  padding-top: 0.5rem;
+}
+.stats .mystical {
+  grid-area: mystical;
+  text-align: center;
+  padding-top: 0.5rem;
+}
+.stats .knowledge {
+  grid-area: knowledge;
+  word-break: break-word;
+  width: 0;
+  font-weight: bold;
+  margin-top: 1.5rem;
+}
+.stats span {
+  display: block;
 }
