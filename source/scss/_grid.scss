@@ -7,7 +7,7 @@
 	.sheet {
 		display: grid;
 		grid-template-areas: "column1 column2 column3";
-		grid-template-columns: 2fr 1fr 1fr;
+		grid-template-columns: 1.5fr 1fr 1fr;
 
 		.column1,
 		.column2,
@@ -16,6 +16,8 @@
 		}
 
 		.column1 {
+			min-width: 290px;
+			max-width: 335px;
 			grid-template-areas:
 				"stats"
 				"trades"
@@ -59,31 +61,31 @@
 
 @each $stat in $stats {
 	.#{$stat}-stat {
-		grid-area: $stat + '-stat';
+		grid-area: $stat + "-stat";
 	}
 
 	.#{$stat}-name {
-		grid-area: $stat + '-name';
+		grid-area: $stat + "-name";
 	}
 
 	.#{$stat}-save {
-		grid-area: $stat + '-save';
+		grid-area: $stat + "-save";
 	}
 }
 
 @each $skill in $skills {
 	.#{$skill}-skill {
-		grid-area: $skill + '-skill';
-		margin-bottom: .25rem;
+		grid-area: $skill + "-skill";
+		margin-bottom: 0.25rem;
 	}
 
 	.#{$skill}-masteries {
-		grid-area: $skill + '-masteries';
+		grid-area: $skill + "-masteries";
 		display: flex;
 		align-items: center;
 	}
 
 	.#{$skill}-value {
-		grid-area: $skill + '-value';
+		grid-area: $skill + "-value";
 	}
 }

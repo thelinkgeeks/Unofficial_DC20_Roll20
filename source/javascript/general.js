@@ -1,4 +1,4 @@
-// source = general.js
+// GENERAL
 const buttonlist = ['character', 'journal', 'configuration'];
 
 buttonlist.forEach((button) => {

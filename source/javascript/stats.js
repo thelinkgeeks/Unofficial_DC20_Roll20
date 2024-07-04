@@ -1,4 +1,6 @@
-// source = stats.js
+// STATS
+
+// COMBAT MASTERY and HIT POINTS
 // When the level is changed, set the combat mastery
 // When the level or might is changed, set the hit points
 on('change:might change:level', () => {
@@ -35,6 +37,8 @@ on('change:might change:agility change:charisma change:intelligence', () => {
 	});
 });
 
+// SAVES
+
 // When the stats or save mastery is changed, set the save modifier
 const stats = ['might', 'agility', 'charisma', 'intelligence'];
 stats.forEach((stat) => {
@@ -55,3 +59,63 @@ stats.forEach((stat) => {
 		});
 	});
 });
+
+// When the saves are changed, set the physical and mystical saves
+on(
+	'change:mightSave change:agilitySave change:charismaSave change:intelligenceSave',
+	() => {
+		getAttrs(
+			['mightSave', 'agilitySave', 'charismaSave', 'intelligenceSave'],
+			(values) => {
+				const might = +values.mightSave || 0;
+				const agility = +values.agilitySave || 0;
+				const charisma = +values.charismaSave || 0;
+				const intelligence = +values.intelligenceSave || 0;
+				const physical = Math.max(might, agility);
+				const mystical = Math.max(charisma, intelligence);
+
+				setAttrs({
+					physicalSave: physical,
+					mysticalSave: mystical,
+				});
+			}
+		);
+	}
+);
+
+// SKILLS
+
+// When the stats or skill mastery is changed, set the skill modifier
+const skillsList = {
+	prime: ['awareness'],
+	might: ['athletics', 'intimidation'],
+	agility: ['acrobatics', 'trickery', 'stealth'],
+	charisma: ['animal', 'influence', 'insight'],
+	intelligence: [
+		'investigation',
+		'medicine',
+		'survival',
+		'arcana',
+		'history',
+		'nature',
+		'occultism',
+		'religion',
+	],
+};
+Object.keys(skillsList).forEach((key) => {
+	skillsList[key].forEach((skill) => {
+		on(`change:${skill}Mastery change:${key}`, () => {
+			getAttrs([`${skill}Mastery`, `${key}`], (values) => {
+				const stat = +values[`${key}`] || 0;
+				const mastery = +values[`${skill}Mastery`] || 0;
+				const total = stat + mastery;
+
+				setAttrs({
+					[`${skill}`]: total,
+				});
+			});
+		});
+	});
+});
+
+// When custom skill mastery or intelligence is changed, set the custom skill modifiers

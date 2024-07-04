@@ -6,7 +6,7 @@ mixin button(options)
 	- words = options.words || false;
 	- title = options.title || uppercaseName + ' ' + roll;
 	- rName = `roll_${name}${roll}`;
-	- rValue = `&{template:default} {{name=${uppercaseName} ${roll}}} {{roll=[[1d20+@{${name}${roll}}]]}}`;
+	- rValue = `&{template:default} {{name=${uppercaseName} ${roll}}} {{roll=[[1d20+@{${words ? name + roll : name}}]]}}`;
 	if words
 		button(class!=attributes.class type=type name=rName title=title value=rValue).words= roll
 	else

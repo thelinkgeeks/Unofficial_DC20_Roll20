@@ -1,4 +1,4 @@
-// source = ancestry.js
+// ANCESTRY
 on('change:ancestry change:background', function () {
 	getAttrs(['ancestry', 'background'], function (v) {
 		const ancestry = v.ancestry;

@@ -1,7 +1,7 @@
 mixin radiobox(options)
 	- name = options.name || '';
 	- attr = `attr_${name}`;
-	- title = `@{${attr}}`;
+	- title = `@{${name}}`;
 	- value = options.value || false;
 	- total = options.total || 1;
 	.radiocontainer

@@ -158,7 +158,7 @@ input {
 .pc .sheet {
   display: grid;
   grid-template-areas: "column1 column2 column3";
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr 1fr;
 }
 .pc .sheet .column1,
 .pc .sheet .column2,
@@ -166,6 +166,8 @@ input {
   display: grid;
 }
 .pc .sheet .column1 {
+  min-width: 290px;
+  max-width: 335px;
   grid-template-areas: "stats" "trades" "languages" "combat-masteries" "currency";
 }
 .pc .sheet .column2 {

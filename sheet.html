@@ -50,15 +50,15 @@
           </div>
           <div class="prime-name"><span class="bold">Prime</span></div>
           <div class="awareness-skill"><span class="bold">Awareness
-              <button type="roll" name="roll_awarenessCheck" title="Awareness Check" value="&amp;{template:default} {{name=Awareness Check}} {{roll=[[1d20+@{awarenessCheck}]]}}"></button></span></div>
+              <button type="roll" name="roll_awarenessCheck" title="Awareness Check" value="&amp;{template:default} {{name=Awareness Check}} {{roll=[[1d20+@{awareness}]]}}"></button></span></div>
           <div class="awareness-masteries">
             <div class="radiocontainer">
-              <input class="radiobox reset" type="radio" name="attr_awarenessMastery" title="@{attr_awarenessMastery}" value="0" checked="checked"/>
-              <input class="radiobox" type="radio" name="attr_awarenessMastery" title="@{attr_awarenessMastery}" value="2"/>
-              <input class="radiobox" type="radio" name="attr_awarenessMastery" title="@{attr_awarenessMastery}" value="4"/>
-              <input class="radiobox" type="radio" name="attr_awarenessMastery" title="@{attr_awarenessMastery}" value="6"/>
-              <input class="radiobox" type="radio" name="attr_awarenessMastery" title="@{attr_awarenessMastery}" value="8"/>
-              <input class="radiobox" type="radio" name="attr_awarenessMastery" title="@{attr_awarenessMastery}" value="10"/>
+              <input class="radiobox reset" type="radio" name="attr_awarenessMastery" title="@{awarenessMastery}" value="0" checked="checked"/>
+              <input class="radiobox" type="radio" name="attr_awarenessMastery" title="@{awarenessMastery}" value="2"/>
+              <input class="radiobox" type="radio" name="attr_awarenessMastery" title="@{awarenessMastery}" value="4"/>
+              <input class="radiobox" type="radio" name="attr_awarenessMastery" title="@{awarenessMastery}" value="6"/>
+              <input class="radiobox" type="radio" name="attr_awarenessMastery" title="@{awarenessMastery}" value="8"/>
+              <input class="radiobox" type="radio" name="attr_awarenessMastery" title="@{awarenessMastery}" value="10"/>
             </div>
           </div>
           <div class="awareness-value">
@@ -73,37 +73,37 @@
               <input class="number" type="number" name="attr_might" title="@{might}" value="-2" min="-2"/>
             </div>
             <div class="might-name"><span class="bold">Might
-                <button type="roll" name="roll_mightCheck" title="Might Check" value="&amp;{template:default} {{name=Might Check}} {{roll=[[1d20+@{mightCheck}]]}}"></button></span></div>
+                <button type="roll" name="roll_mightCheck" title="Might Check" value="&amp;{template:default} {{name=Might Check}} {{roll=[[1d20+@{might}]]}}"></button></span></div>
             <div class="might-save"><span class="bold">Save
-                <button class="save" type="roll" name="roll_mightSave" title="Might Save" value="&amp;{template:default} {{name=Might Save}} {{roll=[[1d20+@{mightSave}]]}}"></button></span>
+                <button class="save" type="roll" name="roll_mightSave" title="Might Save" value="&amp;{template:default} {{name=Might Save}} {{roll=[[1d20+@{might}]]}}"></button></span>
               <input class="number" type="text" name="attr_mightSave" title="@{mightSave}" value="-2" readonly="readonly"/>
               <input type="checkbox" name="attr_mightSaveMastery" title="@{mightSaveMastery}" value="1"/>
             </div>
             <div class="athletics-skill"><span class="bold">Athletics
-                <button type="roll" name="roll_athleticsCheck" title="Athletics Check" value="&amp;{template:default} {{name=Athletics Check}} {{roll=[[1d20+@{athleticsCheck}]]}}"></button></span></div>
+                <button type="roll" name="roll_athleticsCheck" title="Athletics Check" value="&amp;{template:default} {{name=Athletics Check}} {{roll=[[1d20+@{athletics}]]}}"></button></span></div>
             <div class="athletics-masteries">
               <div class="radiocontainer">
-                <input class="radiobox reset" type="radio" name="attr_athleticsMastery" title="@{attr_athleticsMastery}" value="0" checked="checked"/>
-                <input class="radiobox" type="radio" name="attr_athleticsMastery" title="@{attr_athleticsMastery}" value="2"/>
-                <input class="radiobox" type="radio" name="attr_athleticsMastery" title="@{attr_athleticsMastery}" value="4"/>
-                <input class="radiobox" type="radio" name="attr_athleticsMastery" title="@{attr_athleticsMastery}" value="6"/>
-                <input class="radiobox" type="radio" name="attr_athleticsMastery" title="@{attr_athleticsMastery}" value="8"/>
-                <input class="radiobox" type="radio" name="attr_athleticsMastery" title="@{attr_athleticsMastery}" value="10"/>
+                <input class="radiobox reset" type="radio" name="attr_athleticsMastery" title="@{athleticsMastery}" value="0" checked="checked"/>
+                <input class="radiobox" type="radio" name="attr_athleticsMastery" title="@{athleticsMastery}" value="2"/>
+                <input class="radiobox" type="radio" name="attr_athleticsMastery" title="@{athleticsMastery}" value="4"/>
+                <input class="radiobox" type="radio" name="attr_athleticsMastery" title="@{athleticsMastery}" value="6"/>
+                <input class="radiobox" type="radio" name="attr_athleticsMastery" title="@{athleticsMastery}" value="8"/>
+                <input class="radiobox" type="radio" name="attr_athleticsMastery" title="@{athleticsMastery}" value="10"/>
               </div>
             </div>
             <div class="athletics-value">
               <input class="number" type="text" name="attr_athletics" title="@{athletics}" value="-2" readonly="readonly"/>
             </div>
             <div class="intimidation-skill"><span class="bold">Intimidation
-                <button type="roll" name="roll_intimidationCheck" title="Intimidation Check" value="&amp;{template:default} {{name=Intimidation Check}} {{roll=[[1d20+@{intimidationCheck}]]}}"></button></span></div>
+                <button type="roll" name="roll_intimidationCheck" title="Intimidation Check" value="&amp;{template:default} {{name=Intimidation Check}} {{roll=[[1d20+@{intimidation}]]}}"></button></span></div>
             <div class="intimidation-masteries">
               <div class="radiocontainer">
-                <input class="radiobox reset" type="radio" name="attr_intimidationMastery" title="@{attr_intimidationMastery}" value="0" checked="checked"/>
-                <input class="radiobox" type="radio" name="attr_intimidationMastery" title="@{attr_intimidationMastery}" value="2"/>
-                <input class="radiobox" type="radio" name="attr_intimidationMastery" title="@{attr_intimidationMastery}" value="4"/>
-                <input class="radiobox" type="radio" name="attr_intimidationMastery" title="@{attr_intimidationMastery}" value="6"/>
-                <input class="radiobox" type="radio" name="attr_intimidationMastery" title="@{attr_intimidationMastery}" value="8"/>
-                <input class="radiobox" type="radio" name="attr_intimidationMastery" title="@{attr_intimidationMastery}" value="10"/>
+                <input class="radiobox reset" type="radio" name="attr_intimidationMastery" title="@{intimidationMastery}" value="0" checked="checked"/>
+                <input class="radiobox" type="radio" name="attr_intimidationMastery" title="@{intimidationMastery}" value="2"/>
+                <input class="radiobox" type="radio" name="attr_intimidationMastery" title="@{intimidationMastery}" value="4"/>
+                <input class="radiobox" type="radio" name="attr_intimidationMastery" title="@{intimidationMastery}" value="6"/>
+                <input class="radiobox" type="radio" name="attr_intimidationMastery" title="@{intimidationMastery}" value="8"/>
+                <input class="radiobox" type="radio" name="attr_intimidationMastery" title="@{intimidationMastery}" value="10"/>
               </div>
             </div>
             <div class="intimidation-value">
@@ -115,52 +115,52 @@
               <input class="number" type="number" name="attr_agility" title="@{agility}" value="-2" min="-2"/>
             </div>
             <div class="agility-name"><span class="bold">Agility
-                <button type="roll" name="roll_agilityCheck" title="Agility Check" value="&amp;{template:default} {{name=Agility Check}} {{roll=[[1d20+@{agilityCheck}]]}}"></button></span></div>
+                <button type="roll" name="roll_agilityCheck" title="Agility Check" value="&amp;{template:default} {{name=Agility Check}} {{roll=[[1d20+@{agility}]]}}"></button></span></div>
             <div class="agility-save"><span class="bold">Save
-                <button class="save" type="roll" name="roll_agilitySave" title="Agility Save" value="&amp;{template:default} {{name=Agility Save}} {{roll=[[1d20+@{agilitySave}]]}}"></button></span>
+                <button class="save" type="roll" name="roll_agilitySave" title="Agility Save" value="&amp;{template:default} {{name=Agility Save}} {{roll=[[1d20+@{agility}]]}}"></button></span>
               <input class="number" type="text" name="attr_agilitySave" title="@{agilitySave}" value="-2" readonly="readonly"/>
               <input type="checkbox" name="attr_agilitySaveMastery" title="@{agilitySaveMastery}" value="1"/>
             </div>
             <div class="acrobatics-skill"><span class="bold">Acrobatics
-                <button type="roll" name="roll_acrobaticsCheck" title="Acrobatics Check" value="&amp;{template:default} {{name=Acrobatics Check}} {{roll=[[1d20+@{acrobaticsCheck}]]}}"></button></span></div>
+                <button type="roll" name="roll_acrobaticsCheck" title="Acrobatics Check" value="&amp;{template:default} {{name=Acrobatics Check}} {{roll=[[1d20+@{acrobatics}]]}}"></button></span></div>
             <div class="acrobatics-masteries">
               <div class="radiocontainer">
-                <input class="radiobox reset" type="radio" name="attr_acrobaticsMastery" title="@{attr_acrobaticsMastery}" value="0" checked="checked"/>
-                <input class="radiobox" type="radio" name="attr_acrobaticsMastery" title="@{attr_acrobaticsMastery}" value="2"/>
-                <input class="radiobox" type="radio" name="attr_acrobaticsMastery" title="@{attr_acrobaticsMastery}" value="4"/>
-                <input class="radiobox" type="radio" name="attr_acrobaticsMastery" title="@{attr_acrobaticsMastery}" value="6"/>
-                <input class="radiobox" type="radio" name="attr_acrobaticsMastery" title="@{attr_acrobaticsMastery}" value="8"/>
-                <input class="radiobox" type="radio" name="attr_acrobaticsMastery" title="@{attr_acrobaticsMastery}" value="10"/>
+                <input class="radiobox reset" type="radio" name="attr_acrobaticsMastery" title="@{acrobaticsMastery}" value="0" checked="checked"/>
+                <input class="radiobox" type="radio" name="attr_acrobaticsMastery" title="@{acrobaticsMastery}" value="2"/>
+                <input class="radiobox" type="radio" name="attr_acrobaticsMastery" title="@{acrobaticsMastery}" value="4"/>
+                <input class="radiobox" type="radio" name="attr_acrobaticsMastery" title="@{acrobaticsMastery}" value="6"/>
+                <input class="radiobox" type="radio" name="attr_acrobaticsMastery" title="@{acrobaticsMastery}" value="8"/>
+                <input class="radiobox" type="radio" name="attr_acrobaticsMastery" title="@{acrobaticsMastery}" value="10"/>
               </div>
             </div>
             <div class="acrobatics-value">
               <input class="number" type="text" name="attr_acrobatics" title="@{acrobatics}" value="-2" readonly="readonly"/>
             </div>
             <div class="trickery-skill"><span class="bold">Trickery
-                <button type="roll" name="roll_trickeryCheck" title="Trickery Check" value="&amp;{template:default} {{name=Trickery Check}} {{roll=[[1d20+@{trickeryCheck}]]}}"></button></span></div>
+                <button type="roll" name="roll_trickeryCheck" title="Trickery Check" value="&amp;{template:default} {{name=Trickery Check}} {{roll=[[1d20+@{trickery}]]}}"></button></span></div>
             <div class="trickery-masteries">
               <div class="radiocontainer">
-                <input class="radiobox reset" type="radio" name="attr_trickeryMastery" title="@{attr_trickeryMastery}" value="0" checked="checked"/>
-                <input class="radiobox" type="radio" name="attr_trickeryMastery" title="@{attr_trickeryMastery}" value="2"/>
-                <input class="radiobox" type="radio" name="attr_trickeryMastery" title="@{attr_trickeryMastery}" value="4"/>
-                <input class="radiobox" type="radio" name="attr_trickeryMastery" title="@{attr_trickeryMastery}" value="6"/>
-                <input class="radiobox" type="radio" name="attr_trickeryMastery" title="@{attr_trickeryMastery}" value="8"/>
-                <input class="radiobox" type="radio" name="attr_trickeryMastery" title="@{attr_trickeryMastery}" value="10"/>
+                <input class="radiobox reset" type="radio" name="attr_trickeryMastery" title="@{trickeryMastery}" value="0" checked="checked"/>
+                <input class="radiobox" type="radio" name="attr_trickeryMastery" title="@{trickeryMastery}" value="2"/>
+                <input class="radiobox" type="radio" name="attr_trickeryMastery" title="@{trickeryMastery}" value="4"/>
+                <input class="radiobox" type="radio" name="attr_trickeryMastery" title="@{trickeryMastery}" value="6"/>
+                <input class="radiobox" type="radio" name="attr_trickeryMastery" title="@{trickeryMastery}" value="8"/>
+                <input class="radiobox" type="radio" name="attr_trickeryMastery" title="@{trickeryMastery}" value="10"/>
               </div>
             </div>
             <div class="trickery-value">
               <input class="number" type="text" name="attr_trickery" title="@{trickery}" value="-2" readonly="readonly"/>
             </div>
             <div class="stealth-skill"><span class="bold">Stealth
-                <button type="roll" name="roll_stealthCheck" title="Stealth Check" value="&amp;{template:default} {{name=Stealth Check}} {{roll=[[1d20+@{stealthCheck}]]}}"></button></span></div>
+                <button type="roll" name="roll_stealthCheck" title="Stealth Check" value="&amp;{template:default} {{name=Stealth Check}} {{roll=[[1d20+@{stealth}]]}}"></button></span></div>
             <div class="stealth-masteries">
               <div class="radiocontainer">
-                <input class="radiobox reset" type="radio" name="attr_stealthMastery" title="@{attr_stealthMastery}" value="0" checked="checked"/>
-                <input class="radiobox" type="radio" name="attr_stealthMastery" title="@{attr_stealthMastery}" value="2"/>
-                <input class="radiobox" type="radio" name="attr_stealthMastery" title="@{attr_stealthMastery}" value="4"/>
-                <input class="radiobox" type="radio" name="attr_stealthMastery" title="@{attr_stealthMastery}" value="6"/>
-                <input class="radiobox" type="radio" name="attr_stealthMastery" title="@{attr_stealthMastery}" value="8"/>
-                <input class="radiobox" type="radio" name="attr_stealthMastery" title="@{attr_stealthMastery}" value="10"/>
+                <input class="radiobox reset" type="radio" name="attr_stealthMastery" title="@{stealthMastery}" value="0" checked="checked"/>
+                <input class="radiobox" type="radio" name="attr_stealthMastery" title="@{stealthMastery}" value="2"/>
+                <input class="radiobox" type="radio" name="attr_stealthMastery" title="@{stealthMastery}" value="4"/>
+                <input class="radiobox" type="radio" name="attr_stealthMastery" title="@{stealthMastery}" value="6"/>
+                <input class="radiobox" type="radio" name="attr_stealthMastery" title="@{stealthMastery}" value="8"/>
+                <input class="radiobox" type="radio" name="attr_stealthMastery" title="@{stealthMastery}" value="10"/>
               </div>
             </div>
             <div class="stealth-value">
@@ -176,52 +176,52 @@
               <input class="number" type="number" name="attr_charisma" title="@{charisma}" value="-2" min="-2"/>
             </div>
             <div class="charisma-name"><span class="bold">Charisma
-                <button type="roll" name="roll_charismaCheck" title="Charisma Check" value="&amp;{template:default} {{name=Charisma Check}} {{roll=[[1d20+@{charismaCheck}]]}}"></button></span></div>
+                <button type="roll" name="roll_charismaCheck" title="Charisma Check" value="&amp;{template:default} {{name=Charisma Check}} {{roll=[[1d20+@{charisma}]]}}"></button></span></div>
             <div class="charisma-save"><span class="bold">Save
-                <button class="save" type="roll" name="roll_charismaSave" title="Charisma Save" value="&amp;{template:default} {{name=Charisma Save}} {{roll=[[1d20+@{charismaSave}]]}}"></button></span>
+                <button class="save" type="roll" name="roll_charismaSave" title="Charisma Save" value="&amp;{template:default} {{name=Charisma Save}} {{roll=[[1d20+@{charisma}]]}}"></button></span>
               <input class="number" type="text" name="attr_charismaSave" title="@{charismaSave}" value="-2" readonly="readonly"/>
               <input type="checkbox" name="attr_charismaSaveMastery" title="@{charismaSaveMastery}" value="1"/>
             </div>
             <div class="animal-skill"><span class="bold">Animal
-                <button type="roll" name="roll_animalCheck" title="Animal Check" value="&amp;{template:default} {{name=Animal Check}} {{roll=[[1d20+@{animalCheck}]]}}"></button></span></div>
+                <button type="roll" name="roll_animalCheck" title="Animal Check" value="&amp;{template:default} {{name=Animal Check}} {{roll=[[1d20+@{animal}]]}}"></button></span></div>
             <div class="animal-masteries">
               <div class="radiocontainer">
-                <input class="radiobox reset" type="radio" name="attr_animalMastery" title="@{attr_animalMastery}" value="0" checked="checked"/>
-                <input class="radiobox" type="radio" name="attr_animalMastery" title="@{attr_animalMastery}" value="2"/>
-                <input class="radiobox" type="radio" name="attr_animalMastery" title="@{attr_animalMastery}" value="4"/>
-                <input class="radiobox" type="radio" name="attr_animalMastery" title="@{attr_animalMastery}" value="6"/>
-                <input class="radiobox" type="radio" name="attr_animalMastery" title="@{attr_animalMastery}" value="8"/>
-                <input class="radiobox" type="radio" name="attr_animalMastery" title="@{attr_animalMastery}" value="10"/>
+                <input class="radiobox reset" type="radio" name="attr_animalMastery" title="@{animalMastery}" value="0" checked="checked"/>
+                <input class="radiobox" type="radio" name="attr_animalMastery" title="@{animalMastery}" value="2"/>
+                <input class="radiobox" type="radio" name="attr_animalMastery" title="@{animalMastery}" value="4"/>
+                <input class="radiobox" type="radio" name="attr_animalMastery" title="@{animalMastery}" value="6"/>
+                <input class="radiobox" type="radio" name="attr_animalMastery" title="@{animalMastery}" value="8"/>
+                <input class="radiobox" type="radio" name="attr_animalMastery" title="@{animalMastery}" value="10"/>
               </div>
             </div>
             <div class="animal-value">
               <input class="number" type="text" name="attr_animal" title="@{animal}" value="-2" readonly="readonly"/>
             </div>
             <div class="influence-skill"><span class="bold">Influence
-                <button type="roll" name="roll_influenceCheck" title="Influence Check" value="&amp;{template:default} {{name=Influence Check}} {{roll=[[1d20+@{influenceCheck}]]}}"></button></span></div>
+                <button type="roll" name="roll_influenceCheck" title="Influence Check" value="&amp;{template:default} {{name=Influence Check}} {{roll=[[1d20+@{influence}]]}}"></button></span></div>
             <div class="influence-masteries">
               <div class="radiocontainer">
-                <input class="radiobox reset" type="radio" name="attr_influenceMastery" title="@{attr_influenceMastery}" value="0" checked="checked"/>
-                <input class="radiobox" type="radio" name="attr_influenceMastery" title="@{attr_influenceMastery}" value="2"/>
-                <input class="radiobox" type="radio" name="attr_influenceMastery" title="@{attr_influenceMastery}" value="4"/>
-                <input class="radiobox" type="radio" name="attr_influenceMastery" title="@{attr_influenceMastery}" value="6"/>
-                <input class="radiobox" type="radio" name="attr_influenceMastery" title="@{attr_influenceMastery}" value="8"/>
-                <input class="radiobox" type="radio" name="attr_influenceMastery" title="@{attr_influenceMastery}" value="10"/>
+                <input class="radiobox reset" type="radio" name="attr_influenceMastery" title="@{influenceMastery}" value="0" checked="checked"/>
+                <input class="radiobox" type="radio" name="attr_influenceMastery" title="@{influenceMastery}" value="2"/>
+                <input class="radiobox" type="radio" name="attr_influenceMastery" title="@{influenceMastery}" value="4"/>
+                <input class="radiobox" type="radio" name="attr_influenceMastery" title="@{influenceMastery}" value="6"/>
+                <input class="radiobox" type="radio" name="attr_influenceMastery" title="@{influenceMastery}" value="8"/>
+                <input class="radiobox" type="radio" name="attr_influenceMastery" title="@{influenceMastery}" value="10"/>
               </div>
             </div>
             <div class="influence-value">
               <input class="number" type="text" name="attr_influence" title="@{influence}" value="-2" readonly="readonly"/>
             </div>
             <div class="insight-skill"><span class="bold">Insight
-                <button type="roll" name="roll_insightCheck" title="Insight Check" value="&amp;{template:default} {{name=Insight Check}} {{roll=[[1d20+@{insightCheck}]]}}"></button></span></div>
+                <button type="roll" name="roll_insightCheck" title="Insight Check" value="&amp;{template:default} {{name=Insight Check}} {{roll=[[1d20+@{insight}]]}}"></button></span></div>
             <div class="insight-masteries">
               <div class="radiocontainer">
-                <input class="radiobox reset" type="radio" name="attr_insightMastery" title="@{attr_insightMastery}" value="0" checked="checked"/>
-                <input class="radiobox" type="radio" name="attr_insightMastery" title="@{attr_insightMastery}" value="2"/>
-                <input class="radiobox" type="radio" name="attr_insightMastery" title="@{attr_insightMastery}" value="4"/>
-                <input class="radiobox" type="radio" name="attr_insightMastery" title="@{attr_insightMastery}" value="6"/>
-                <input class="radiobox" type="radio" name="attr_insightMastery" title="@{attr_insightMastery}" value="8"/>
-                <input class="radiobox" type="radio" name="attr_insightMastery" title="@{attr_insightMastery}" value="10"/>
+                <input class="radiobox reset" type="radio" name="attr_insightMastery" title="@{insightMastery}" value="0" checked="checked"/>
+                <input class="radiobox" type="radio" name="attr_insightMastery" title="@{insightMastery}" value="2"/>
+                <input class="radiobox" type="radio" name="attr_insightMastery" title="@{insightMastery}" value="4"/>
+                <input class="radiobox" type="radio" name="attr_insightMastery" title="@{insightMastery}" value="6"/>
+                <input class="radiobox" type="radio" name="attr_insightMastery" title="@{insightMastery}" value="8"/>
+                <input class="radiobox" type="radio" name="attr_insightMastery" title="@{insightMastery}" value="10"/>
               </div>
             </div>
             <div class="insight-value">
@@ -233,127 +233,127 @@
               <input class="number" type="number" name="attr_intelligence" title="@{intelligence}" value="-2" min="-2"/>
             </div>
             <div class="intelligence-name"><span class="bold">Intelligence
-                <button type="roll" name="roll_intelligenceCheck" title="Intelligence Check" value="&amp;{template:default} {{name=Intelligence Check}} {{roll=[[1d20+@{intelligenceCheck}]]}}"></button></span></div>
+                <button type="roll" name="roll_intelligenceCheck" title="Intelligence Check" value="&amp;{template:default} {{name=Intelligence Check}} {{roll=[[1d20+@{intelligence}]]}}"></button></span></div>
             <div class="intelligence-save"><span class="bold">Save
-                <button class="save" type="roll" name="roll_intelligenceSave" title="Intelligence Save" value="&amp;{template:default} {{name=Intelligence Save}} {{roll=[[1d20+@{intelligenceSave}]]}}"></button></span>
+                <button class="save" type="roll" name="roll_intelligenceSave" title="Intelligence Save" value="&amp;{template:default} {{name=Intelligence Save}} {{roll=[[1d20+@{intelligence}]]}}"></button></span>
               <input class="number" type="text" name="attr_intelligenceSave" title="@{intelligenceSave}" value="-2" readonly="readonly"/>
               <input type="checkbox" name="attr_intelligenceSaveMastery" title="@{intelligenceSaveMastery}" value="1"/>
             </div>
             <div class="investigation-skill"><span class="bold">Investigation
-                <button type="roll" name="roll_investigationCheck" title="Investigation Check" value="&amp;{template:default} {{name=Investigation Check}} {{roll=[[1d20+@{investigationCheck}]]}}"></button></span></div>
+                <button type="roll" name="roll_investigationCheck" title="Investigation Check" value="&amp;{template:default} {{name=Investigation Check}} {{roll=[[1d20+@{investigation}]]}}"></button></span></div>
             <div class="investigation-masteries">
               <div class="radiocontainer">
-                <input class="radiobox reset" type="radio" name="attr_investigationMastery" title="@{attr_investigationMastery}" value="0" checked="checked"/>
-                <input class="radiobox" type="radio" name="attr_investigationMastery" title="@{attr_investigationMastery}" value="2"/>
-                <input class="radiobox" type="radio" name="attr_investigationMastery" title="@{attr_investigationMastery}" value="4"/>
-                <input class="radiobox" type="radio" name="attr_investigationMastery" title="@{attr_investigationMastery}" value="6"/>
-                <input class="radiobox" type="radio" name="attr_investigationMastery" title="@{attr_investigationMastery}" value="8"/>
-                <input class="radiobox" type="radio" name="attr_investigationMastery" title="@{attr_investigationMastery}" value="10"/>
+                <input class="radiobox reset" type="radio" name="attr_investigationMastery" title="@{investigationMastery}" value="0" checked="checked"/>
+                <input class="radiobox" type="radio" name="attr_investigationMastery" title="@{investigationMastery}" value="2"/>
+                <input class="radiobox" type="radio" name="attr_investigationMastery" title="@{investigationMastery}" value="4"/>
+                <input class="radiobox" type="radio" name="attr_investigationMastery" title="@{investigationMastery}" value="6"/>
+                <input class="radiobox" type="radio" name="attr_investigationMastery" title="@{investigationMastery}" value="8"/>
+                <input class="radiobox" type="radio" name="attr_investigationMastery" title="@{investigationMastery}" value="10"/>
               </div>
             </div>
             <div class="investigation-value">
               <input class="number" type="text" name="attr_investigation" title="@{investigation}" value="-2" readonly="readonly"/>
             </div>
             <div class="medicine-skill"><span class="bold">Medicine
-                <button type="roll" name="roll_medicineCheck" title="Medicine Check" value="&amp;{template:default} {{name=Medicine Check}} {{roll=[[1d20+@{medicineCheck}]]}}"></button></span></div>
+                <button type="roll" name="roll_medicineCheck" title="Medicine Check" value="&amp;{template:default} {{name=Medicine Check}} {{roll=[[1d20+@{medicine}]]}}"></button></span></div>
             <div class="medicine-masteries">
               <div class="radiocontainer">
-                <input class="radiobox reset" type="radio" name="attr_medicineMastery" title="@{attr_medicineMastery}" value="0" checked="checked"/>
-                <input class="radiobox" type="radio" name="attr_medicineMastery" title="@{attr_medicineMastery}" value="2"/>
-                <input class="radiobox" type="radio" name="attr_medicineMastery" title="@{attr_medicineMastery}" value="4"/>
-                <input class="radiobox" type="radio" name="attr_medicineMastery" title="@{attr_medicineMastery}" value="6"/>
-                <input class="radiobox" type="radio" name="attr_medicineMastery" title="@{attr_medicineMastery}" value="8"/>
-                <input class="radiobox" type="radio" name="attr_medicineMastery" title="@{attr_medicineMastery}" value="10"/>
+                <input class="radiobox reset" type="radio" name="attr_medicineMastery" title="@{medicineMastery}" value="0" checked="checked"/>
+                <input class="radiobox" type="radio" name="attr_medicineMastery" title="@{medicineMastery}" value="2"/>
+                <input class="radiobox" type="radio" name="attr_medicineMastery" title="@{medicineMastery}" value="4"/>
+                <input class="radiobox" type="radio" name="attr_medicineMastery" title="@{medicineMastery}" value="6"/>
+                <input class="radiobox" type="radio" name="attr_medicineMastery" title="@{medicineMastery}" value="8"/>
+                <input class="radiobox" type="radio" name="attr_medicineMastery" title="@{medicineMastery}" value="10"/>
               </div>
             </div>
             <div class="medicine-value">
               <input class="number" type="text" name="attr_medicine" title="@{medicine}" value="-2" readonly="readonly"/>
             </div>
             <div class="survival-skill"><span class="bold">Survival
-                <button type="roll" name="roll_survivalCheck" title="Survival Check" value="&amp;{template:default} {{name=Survival Check}} {{roll=[[1d20+@{survivalCheck}]]}}"></button></span></div>
+                <button type="roll" name="roll_survivalCheck" title="Survival Check" value="&amp;{template:default} {{name=Survival Check}} {{roll=[[1d20+@{survival}]]}}"></button></span></div>
             <div class="survival-masteries">
               <div class="radiocontainer">
-                <input class="radiobox reset" type="radio" name="attr_survivalMastery" title="@{attr_survivalMastery}" value="0" checked="checked"/>
-                <input class="radiobox" type="radio" name="attr_survivalMastery" title="@{attr_survivalMastery}" value="2"/>
-                <input class="radiobox" type="radio" name="attr_survivalMastery" title="@{attr_survivalMastery}" value="4"/>
-                <input class="radiobox" type="radio" name="attr_survivalMastery" title="@{attr_survivalMastery}" value="6"/>
-                <input class="radiobox" type="radio" name="attr_survivalMastery" title="@{attr_survivalMastery}" value="8"/>
-                <input class="radiobox" type="radio" name="attr_survivalMastery" title="@{attr_survivalMastery}" value="10"/>
+                <input class="radiobox reset" type="radio" name="attr_survivalMastery" title="@{survivalMastery}" value="0" checked="checked"/>
+                <input class="radiobox" type="radio" name="attr_survivalMastery" title="@{survivalMastery}" value="2"/>
+                <input class="radiobox" type="radio" name="attr_survivalMastery" title="@{survivalMastery}" value="4"/>
+                <input class="radiobox" type="radio" name="attr_survivalMastery" title="@{survivalMastery}" value="6"/>
+                <input class="radiobox" type="radio" name="attr_survivalMastery" title="@{survivalMastery}" value="8"/>
+                <input class="radiobox" type="radio" name="attr_survivalMastery" title="@{survivalMastery}" value="10"/>
               </div>
             </div>
             <div class="survival-value">
               <input class="number" type="text" name="attr_survival" title="@{survival}" value="-2" readonly="readonly"/>
             </div><span class="knowledge">Knowledge</span>
             <div class="arcana-skill border-top"><span class="bold">Arcana
-                <button type="roll" name="roll_arcanaCheck" title="Arcana Check" value="&amp;{template:default} {{name=Arcana Check}} {{roll=[[1d20+@{arcanaCheck}]]}}"></button></span></div>
+                <button type="roll" name="roll_arcanaCheck" title="Arcana Check" value="&amp;{template:default} {{name=Arcana Check}} {{roll=[[1d20+@{arcana}]]}}"></button></span></div>
             <div class="arcana-masteries border-top">
               <div class="radiocontainer">
-                <input class="radiobox reset" type="radio" name="attr_arcanaMastery" title="@{attr_arcanaMastery}" value="0" checked="checked"/>
-                <input class="radiobox" type="radio" name="attr_arcanaMastery" title="@{attr_arcanaMastery}" value="2"/>
-                <input class="radiobox" type="radio" name="attr_arcanaMastery" title="@{attr_arcanaMastery}" value="4"/>
-                <input class="radiobox" type="radio" name="attr_arcanaMastery" title="@{attr_arcanaMastery}" value="6"/>
-                <input class="radiobox" type="radio" name="attr_arcanaMastery" title="@{attr_arcanaMastery}" value="8"/>
-                <input class="radiobox" type="radio" name="attr_arcanaMastery" title="@{attr_arcanaMastery}" value="10"/>
+                <input class="radiobox reset" type="radio" name="attr_arcanaMastery" title="@{arcanaMastery}" value="0" checked="checked"/>
+                <input class="radiobox" type="radio" name="attr_arcanaMastery" title="@{arcanaMastery}" value="2"/>
+                <input class="radiobox" type="radio" name="attr_arcanaMastery" title="@{arcanaMastery}" value="4"/>
+                <input class="radiobox" type="radio" name="attr_arcanaMastery" title="@{arcanaMastery}" value="6"/>
+                <input class="radiobox" type="radio" name="attr_arcanaMastery" title="@{arcanaMastery}" value="8"/>
+                <input class="radiobox" type="radio" name="attr_arcanaMastery" title="@{arcanaMastery}" value="10"/>
               </div>
             </div>
             <div class="arcana-value border-top">
               <input class="number" type="text" name="attr_arcana" title="@{arcana}" value="-2" readonly="readonly"/>
             </div>
             <div class="history-skill"><span class="bold">History
-                <button type="roll" name="roll_historyCheck" title="History Check" value="&amp;{template:default} {{name=History Check}} {{roll=[[1d20+@{historyCheck}]]}}"></button></span></div>
+                <button type="roll" name="roll_historyCheck" title="History Check" value="&amp;{template:default} {{name=History Check}} {{roll=[[1d20+@{history}]]}}"></button></span></div>
             <div class="history-masteries">
               <div class="radiocontainer">
-                <input class="radiobox reset" type="radio" name="attr_historyMastery" title="@{attr_historyMastery}" value="0" checked="checked"/>
-                <input class="radiobox" type="radio" name="attr_historyMastery" title="@{attr_historyMastery}" value="2"/>
-                <input class="radiobox" type="radio" name="attr_historyMastery" title="@{attr_historyMastery}" value="4"/>
-                <input class="radiobox" type="radio" name="attr_historyMastery" title="@{attr_historyMastery}" value="6"/>
-                <input class="radiobox" type="radio" name="attr_historyMastery" title="@{attr_historyMastery}" value="8"/>
-                <input class="radiobox" type="radio" name="attr_historyMastery" title="@{attr_historyMastery}" value="10"/>
+                <input class="radiobox reset" type="radio" name="attr_historyMastery" title="@{historyMastery}" value="0" checked="checked"/>
+                <input class="radiobox" type="radio" name="attr_historyMastery" title="@{historyMastery}" value="2"/>
+                <input class="radiobox" type="radio" name="attr_historyMastery" title="@{historyMastery}" value="4"/>
+                <input class="radiobox" type="radio" name="attr_historyMastery" title="@{historyMastery}" value="6"/>
+                <input class="radiobox" type="radio" name="attr_historyMastery" title="@{historyMastery}" value="8"/>
+                <input class="radiobox" type="radio" name="attr_historyMastery" title="@{historyMastery}" value="10"/>
               </div>
             </div>
             <div class="history-value">
               <input class="number" type="text" name="attr_history" title="@{history}" value="-2" readonly="readonly"/>
             </div>
             <div class="nature-skill"><span class="bold">Nature
-                <button type="roll" name="roll_natureCheck" title="Nature Check" value="&amp;{template:default} {{name=Nature Check}} {{roll=[[1d20+@{natureCheck}]]}}"></button></span></div>
+                <button type="roll" name="roll_natureCheck" title="Nature Check" value="&amp;{template:default} {{name=Nature Check}} {{roll=[[1d20+@{nature}]]}}"></button></span></div>
             <div class="nature-masteries">
               <div class="radiocontainer">
-                <input class="radiobox reset" type="radio" name="attr_natureMastery" title="@{attr_natureMastery}" value="0" checked="checked"/>
-                <input class="radiobox" type="radio" name="attr_natureMastery" title="@{attr_natureMastery}" value="2"/>
-                <input class="radiobox" type="radio" name="attr_natureMastery" title="@{attr_natureMastery}" value="4"/>
-                <input class="radiobox" type="radio" name="attr_natureMastery" title="@{attr_natureMastery}" value="6"/>
-                <input class="radiobox" type="radio" name="attr_natureMastery" title="@{attr_natureMastery}" value="8"/>
-                <input class="radiobox" type="radio" name="attr_natureMastery" title="@{attr_natureMastery}" value="10"/>
+                <input class="radiobox reset" type="radio" name="attr_natureMastery" title="@{natureMastery}" value="0" checked="checked"/>
+                <input class="radiobox" type="radio" name="attr_natureMastery" title="@{natureMastery}" value="2"/>
+                <input class="radiobox" type="radio" name="attr_natureMastery" title="@{natureMastery}" value="4"/>
+                <input class="radiobox" type="radio" name="attr_natureMastery" title="@{natureMastery}" value="6"/>
+                <input class="radiobox" type="radio" name="attr_natureMastery" title="@{natureMastery}" value="8"/>
+                <input class="radiobox" type="radio" name="attr_natureMastery" title="@{natureMastery}" value="10"/>
               </div>
             </div>
             <div class="nature-value">
               <input class="number" type="text" name="attr_nature" title="@{nature}" value="-2" readonly="readonly"/>
             </div>
             <div class="occultism-skill"><span class="bold">Occultism
-                <button type="roll" name="roll_occultismCheck" title="Occultism Check" value="&amp;{template:default} {{name=Occultism Check}} {{roll=[[1d20+@{occultismCheck}]]}}"></button></span></div>
+                <button type="roll" name="roll_occultismCheck" title="Occultism Check" value="&amp;{template:default} {{name=Occultism Check}} {{roll=[[1d20+@{occultism}]]}}"></button></span></div>
             <div class="occultism-masteries">
               <div class="radiocontainer">
-                <input class="radiobox reset" type="radio" name="attr_occultismMastery" title="@{attr_occultismMastery}" value="0" checked="checked"/>
-                <input class="radiobox" type="radio" name="attr_occultismMastery" title="@{attr_occultismMastery}" value="2"/>
-                <input class="radiobox" type="radio" name="attr_occultismMastery" title="@{attr_occultismMastery}" value="4"/>
-                <input class="radiobox" type="radio" name="attr_occultismMastery" title="@{attr_occultismMastery}" value="6"/>
-                <input class="radiobox" type="radio" name="attr_occultismMastery" title="@{attr_occultismMastery}" value="8"/>
-                <input class="radiobox" type="radio" name="attr_occultismMastery" title="@{attr_occultismMastery}" value="10"/>
+                <input class="radiobox reset" type="radio" name="attr_occultismMastery" title="@{occultismMastery}" value="0" checked="checked"/>
+                <input class="radiobox" type="radio" name="attr_occultismMastery" title="@{occultismMastery}" value="2"/>
+                <input class="radiobox" type="radio" name="attr_occultismMastery" title="@{occultismMastery}" value="4"/>
+                <input class="radiobox" type="radio" name="attr_occultismMastery" title="@{occultismMastery}" value="6"/>
+                <input class="radiobox" type="radio" name="attr_occultismMastery" title="@{occultismMastery}" value="8"/>
+                <input class="radiobox" type="radio" name="attr_occultismMastery" title="@{occultismMastery}" value="10"/>
               </div>
             </div>
             <div class="occultism-value">
               <input class="number" type="text" name="attr_occultism" title="@{occultism}" value="-2" readonly="readonly"/>
             </div>
             <div class="religion-skill"><span class="bold">Religion
-                <button type="roll" name="roll_religionCheck" title="Religion Check" value="&amp;{template:default} {{name=Religion Check}} {{roll=[[1d20+@{religionCheck}]]}}"></button></span></div>
+                <button type="roll" name="roll_religionCheck" title="Religion Check" value="&amp;{template:default} {{name=Religion Check}} {{roll=[[1d20+@{religion}]]}}"></button></span></div>
             <div class="religion-masteries">
               <div class="radiocontainer">
-                <input class="radiobox reset" type="radio" name="attr_religionMastery" title="@{attr_religionMastery}" value="0" checked="checked"/>
-                <input class="radiobox" type="radio" name="attr_religionMastery" title="@{attr_religionMastery}" value="2"/>
-                <input class="radiobox" type="radio" name="attr_religionMastery" title="@{attr_religionMastery}" value="4"/>
-                <input class="radiobox" type="radio" name="attr_religionMastery" title="@{attr_religionMastery}" value="6"/>
-                <input class="radiobox" type="radio" name="attr_religionMastery" title="@{attr_religionMastery}" value="8"/>
-                <input class="radiobox" type="radio" name="attr_religionMastery" title="@{attr_religionMastery}" value="10"/>
+                <input class="radiobox reset" type="radio" name="attr_religionMastery" title="@{religionMastery}" value="0" checked="checked"/>
+                <input class="radiobox" type="radio" name="attr_religionMastery" title="@{religionMastery}" value="2"/>
+                <input class="radiobox" type="radio" name="attr_religionMastery" title="@{religionMastery}" value="4"/>
+                <input class="radiobox" type="radio" name="attr_religionMastery" title="@{religionMastery}" value="6"/>
+                <input class="radiobox" type="radio" name="attr_religionMastery" title="@{religionMastery}" value="8"/>
+                <input class="radiobox" type="radio" name="attr_religionMastery" title="@{religionMastery}" value="10"/>
               </div>
             </div>
             <div class="religion-value">
@@ -368,7 +368,7 @@
   </div>
 </div>
 <script type="text/worker">
-  // source = general.js
+  // GENERAL
 const buttonlist = ['character', 'journal', 'configuration'];
 
 buttonlist.forEach((button) => {
@@ -379,7 +379,7 @@ buttonlist.forEach((button) => {
 	});
 });
   
-  // source = class.js
+  // CLASS
 on('change:class change:subclass', function () {
 	getAttrs(['class', 'subclass'], function (v) {
 		const characterClass = v.class;
@@ -392,7 +392,7 @@ on('change:class change:subclass', function () {
 	});
 });
   
-  // source = ancestry.js
+  // ANCESTRY
 on('change:ancestry change:background', function () {
 	getAttrs(['ancestry', 'background'], function (v) {
 		const ancestry = v.ancestry;
@@ -405,7 +405,9 @@ on('change:ancestry change:background', function () {
 	});
 });
   
-  // source = stats.js
+  // STATS
+
+// COMBAT MASTERY and HIT POINTS
 // When the level is changed, set the combat mastery
 // When the level or might is changed, set the hit points
 on('change:might change:level', () => {
@@ -442,6 +444,8 @@ on('change:might change:agility change:charisma change:intelligence', () => {
 	});
 });
 
+// SAVES
+
 // When the stats or save mastery is changed, set the save modifier
 const stats = ['might', 'agility', 'charisma', 'intelligence'];
 stats.forEach((stat) => {
@@ -462,5 +466,65 @@ stats.forEach((stat) => {
 		});
 	});
 });
+
+// When the saves are changed, set the physical and mystical saves
+on(
+	'change:mightSave change:agilitySave change:charismaSave change:intelligenceSave',
+	() => {
+		getAttrs(
+			['mightSave', 'agilitySave', 'charismaSave', 'intelligenceSave'],
+			(values) => {
+				const might = +values.mightSave || 0;
+				const agility = +values.agilitySave || 0;
+				const charisma = +values.charismaSave || 0;
+				const intelligence = +values.intelligenceSave || 0;
+				const physical = Math.max(might, agility);
+				const mystical = Math.max(charisma, intelligence);
+
+				setAttrs({
+					physicalSave: physical,
+					mysticalSave: mystical,
+				});
+			}
+		);
+	}
+);
+
+// SKILLS
+
+// When the stats or skill mastery is changed, set the skill modifier
+const skillsList = {
+	prime: ['awareness'],
+	might: ['athletics', 'intimidation'],
+	agility: ['acrobatics', 'trickery', 'stealth'],
+	charisma: ['animal', 'influence', 'insight'],
+	intelligence: [
+		'investigation',
+		'medicine',
+		'survival',
+		'arcana',
+		'history',
+		'nature',
+		'occultism',
+		'religion',
+	],
+};
+Object.keys(skillsList).forEach((key) => {
+	skillsList[key].forEach((skill) => {
+		on(`change:${skill}Mastery change:${key}`, () => {
+			getAttrs([`${skill}Mastery`, `${key}`], (values) => {
+				const stat = +values[`${key}`] || 0;
+				const mastery = +values[`${skill}Mastery`] || 0;
+				const total = stat + mastery;
+
+				setAttrs({
+					[`${skill}`]: total,
+				});
+			});
+		});
+	});
+});
+
+// When custom skill mastery or intelligence is changed, set the custom skill modifiers
 
 </script>

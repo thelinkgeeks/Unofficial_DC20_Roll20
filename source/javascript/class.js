@@ -1,4 +1,4 @@
-// source = class.js
+// CLASS
 on('change:class change:subclass', function () {
 	getAttrs(['class', 'subclass'], function (v) {
 		const characterClass = v.class;
