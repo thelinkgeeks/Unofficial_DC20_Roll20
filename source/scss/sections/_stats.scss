@@ -15,11 +15,11 @@
 	.prime {
 		grid-area: prime;
 		display: grid;
-		border-bottom: .25rem solid black;
+		border-bottom: 0.25rem solid black;
 		padding-bottom: 1rem;
 		grid-template-areas:
-			'prime-stat prime-name . .'
-			'. awareness-masteries awareness-value awareness-skill';
+			"prime-stat prime-name . ."
+			". awareness-masteries awareness-value awareness-skill";
 
 		.prime-stat {
 			display: flex;
@@ -30,39 +30,39 @@
 	.might {
 		grid-area: might;
 		display: grid;
-		border-bottom: .25rem solid black;
-		padding-top: .5rem;
+		border-bottom: 0.25rem solid black;
+		padding-top: 0.5rem;
 		padding-bottom: 1rem;
 		grid-template-areas:
-			'might-stat might-name . might-save'
-			'. athletics-masteries athletics-value athletics-skill'
-			'. intimidation-masteries intimidation-value intimidation-skill';
+			"might-stat might-name . might-save"
+			". athletics-masteries athletics-value athletics-skill"
+			". intimidation-masteries intimidation-value intimidation-skill";
 	}
 
 	.agility {
 		grid-area: agility;
 		display: grid;
-		border-bottom: .25rem solid black;
+		border-bottom: 0.25rem solid black;
 		padding-top: 1rem;
 		padding-bottom: 1rem;
 		grid-template-areas:
-			'agility-stat agility-name . agility-save'
-			'. acrobatics-masteries acrobatics-value acrobatics-skill'
-			'. trickery-masteries trickery-value trickery-skill'
-			'. stealth-masteries stealth-value stealth-skill';
+			"agility-stat agility-name . agility-save"
+			". acrobatics-masteries acrobatics-value acrobatics-skill"
+			". trickery-masteries trickery-value trickery-skill"
+			". stealth-masteries stealth-value stealth-skill";
 	}
 
 	.charisma {
 		grid-area: charisma;
 		display: grid;
-		border-bottom: .25rem solid black;
+		border-bottom: 0.25rem solid black;
 		padding-top: 1rem;
 		padding-bottom: 1rem;
 		grid-template-areas:
-			'charisma-stat charisma-name . charisma-save'
-			'. animal-masteries animal-value animal-skill'
-			'. influence-masteries influence-value influence-skill'
-			'. insight-masteries insight-value insight-skill';
+			"charisma-stat charisma-name . charisma-save"
+			". animal-masteries animal-value animal-skill"
+			". influence-masteries influence-value influence-skill"
+			". insight-masteries insight-value insight-skill";
 	}
 
 	.intelligence {
@@ -70,29 +70,29 @@
 		display: grid;
 		padding-top: 1rem;
 		grid-template-areas:
-			'intelligence-stat intelligence-name intelligence-name intelligence-save'
-			'. investigation-masteries investigation-value investigation-skill'
-			'. medicine-masteries medicine-value medicine-skill'
-			'. survival-masteries survival-value survival-skill'
-			'knowledge arcana-masteries arcana-value arcana-skill'
-			'knowledge history-masteries history-value history-skill'
-			'knowledge nature-masteries nature-value nature-skill'
-			'knowledge occultism-masteries occultism-value occultism-skill'
-			'knowledge religion-masteries religion-value religion-skill'
-			'knowledge skill8-masteries skill8-value skill8-skill'
-			'knowledge skill9-masteries skill9-value skill9-skill';
+			"intelligence-stat intelligence-name intelligence-name intelligence-save"
+			". investigation-masteries investigation-value investigation-skill"
+			". medicine-masteries medicine-value medicine-skill"
+			". survival-masteries survival-value survival-skill"
+			"knowledge arcana-masteries arcana-value arcana-skill"
+			"knowledge history-masteries history-value history-skill"
+			"knowledge nature-masteries nature-value nature-skill"
+			"knowledge occultism-masteries occultism-value occultism-skill"
+			"knowledge religion-masteries religion-value religion-skill"
+			"knowledge custom custom custom"
+			"knowledge buttons buttons buttons";
 	}
 
 	.physical {
 		grid-area: physical;
 		text-align: center;
-		padding-top: .5rem;
+		padding-top: 0.5rem;
 	}
 
 	.mystical {
 		grid-area: mystical;
 		text-align: center;
-		padding-top: .5rem;
+		padding-top: 0.5rem;
 	}
 
 	.knowledge {
@@ -101,6 +101,59 @@
 		width: 0;
 		font-weight: bold;
 		margin-top: 1.5rem;
+	}
+
+	.repcontainer[data-groupname="repeating_skills"] {
+		grid-area: custom;
+
+		.repitem {
+			display: grid;
+			grid-template-areas: "custom-masteries custom-value custom-skill";
+
+			.itemcontrol {
+				.btn {
+					height: 16px;
+					width: 9px;
+
+					&.repcontrol_move {
+						position: relative;
+						float: left;
+						z-index: 2;
+					}
+				}
+			}
+
+			.skill {
+				grid-area: custom-skill;
+				display: flex;
+				margin-bottom: 0.25rem;
+
+				.repeating_name {
+					width: 11ch;
+					height: 3ch;
+				}
+			}
+
+			.masteries {
+				grid-area: custom-masteries;
+				display: flex;
+				align-items: center;
+				width: 64px;
+				height: 22px;
+			}
+
+			.value {
+				grid-area: custom-value;
+			}
+		}
+	}
+
+	.repcontrol[data-groupname="repeating_skills"] {
+		grid-area: buttons;
+
+		.repcontrol_add {
+			float: left;
+		}
 	}
 
 	span {

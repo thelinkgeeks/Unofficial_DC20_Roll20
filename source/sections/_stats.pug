@@ -59,3 +59,14 @@ each stats, group in statsSkills
 								+radiobox({name: skill + 'Mastery', value: 2, total: 5})
 							div(class=skill + '-value')
 								+input({name: skill, type: 'text', value: -2, readonly: true})(class='number')
+					if stat === "intelligence"
+						<fieldset class='repeating_skills'>
+							div(class='skill')
+								+input({name: 'name', type:'text', placeholder: 'Skill Name'})(class='repeating_name')
+								button(type='roll' name='roll_@{name}Check' value='&{template:default} {{name=@{name} Check}} {{roll=[[1d20+@{value}]]}}')
+								//- +button({name: 'value', roll: 'Check'})
+							div(class='masteries')
+								+radiobox({name: 'mastery', value: 2, total: 5})
+							div(class='value')
+								+input({name: 'value', type: 'text', value: -2, readonly: true})(class='number')
+						</fieldset>

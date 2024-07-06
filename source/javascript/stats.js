@@ -119,3 +119,24 @@ Object.keys(skillsList).forEach((key) => {
 });
 
 // When custom skill mastery or intelligence is changed, set the custom skill modifiers
+on('change:intelligence change:repeating_skills:mastery', () => {
+	getSectionIDs('skills', (ids) => {
+		const fields = {};
+
+		ids.forEach((id) => {
+			fields[id] = `repeating_skills_${id}_mastery`;
+		});
+
+		Object.keys(fields).forEach((key) => {
+			getAttrs([fields[key], 'intelligence'], (values) => {
+				const mastery = +values[fields[key]] || 0;
+				const intelligence = +values.intelligence || 0;
+				const total = mastery + intelligence;
+
+				setAttrs({
+					[`repeating_skills_${key}_value`]: total,
+				});
+			});
+		});
+	});
+});

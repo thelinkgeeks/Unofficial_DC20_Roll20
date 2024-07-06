@@ -358,7 +358,24 @@
             </div>
             <div class="religion-value">
               <input class="number" type="text" name="attr_religion" title="@{religion}" value="-2" readonly="readonly"/>
+            </div><fieldset class='repeating_skills'>
+            <div class="skill">
+              <input class="repeating_name" type="text" name="attr_name" title="@{name}" placeholder="Skill Name"/>
+              <button type="roll" name="roll_@{name}Check" value="&amp;{template:default} {{name=@{name} Check}} {{roll=[[1d20+@{value}]]}}"></button>
             </div>
+            <div class="masteries">
+              <div class="radiocontainer">
+                <input class="radiobox reset" type="radio" name="attr_mastery" title="@{mastery}" value="0" checked="checked"/>
+                <input class="radiobox" type="radio" name="attr_mastery" title="@{mastery}" value="2"/>
+                <input class="radiobox" type="radio" name="attr_mastery" title="@{mastery}" value="4"/>
+                <input class="radiobox" type="radio" name="attr_mastery" title="@{mastery}" value="6"/>
+                <input class="radiobox" type="radio" name="attr_mastery" title="@{mastery}" value="8"/>
+                <input class="radiobox" type="radio" name="attr_mastery" title="@{mastery}" value="10"/>
+              </div>
+            </div>
+            <div class="value">
+              <input class="number" type="text" name="attr_value" title="@{value}" value="-2" readonly="readonly"/>
+            </div></fieldset>
           </div>
         </div>
       </div>
@@ -526,5 +543,26 @@ Object.keys(skillsList).forEach((key) => {
 });
 
 // When custom skill mastery or intelligence is changed, set the custom skill modifiers
+on('change:intelligence change:repeating_skills:mastery', () => {
+	getSectionIDs('skills', (ids) => {
+		const fields = {};
+
+		ids.forEach((id) => {
+			fields[id] = `repeating_skills_${id}_mastery`;
+		});
+
+		Object.keys(fields).forEach((key) => {
+			getAttrs([fields[key], 'intelligence'], (values) => {
+				const mastery = +values[fields[key]] || 0;
+				const intelligence = +values.intelligence || 0;
+				const total = mastery + intelligence;
+
+				setAttrs({
+					[`repeating_skills_${key}_value`]: total,
+				});
+			});
+		});
+	});
+});
 
 </script>
